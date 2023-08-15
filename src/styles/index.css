@@ -1,0 +1,290 @@
+/* src/styles/index.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  padding: 50px 90px 50px 90px;
+  display: flex;
+  background-color: #050A30;  
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.content {
+  /* padding-left: 30px; */
+  width: 33%;
+}
+
+.chart {
+  width: 66%;
+}
+
+.overview {
+  font-size: 16px;
+  margin: 0px;
+}
+
+.horizontal-line {
+  width: 40%;  /* adjusted width */
+  border: 0;
+  border-top: 1px solid #363F63;
+  margin-top: 5px;  /* center the line */
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+.index-level,
+.return {
+  font-size: 16px;
+  margin: 0;
+}
+
+.return-value,
+.index-value {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* new classes to color the percent change */
+.positive-percent {
+  color: green;
+}
+
+.negative-percent {
+  color: red;
+}
+
+.timeframe-buttons {
+  display: flex;
+  justify-content: flex-start; /* align items to the start */
+  margin: 0 0 25px 0;
+  gap: 15px; /* spacing between buttons */
+}
+
+.timeframe-button {
+  border: none;
+  padding: 8px 18px;
+  background-color: #363F63;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.timeframe-button:hover {
+  background-color: #fff;
+  color: #363F63;
+}
+
+.timeframe-button.selected {
+  background-color: #fff;
+  color: #363F63;
+}
+
+/* header styles below */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px 30px 80px;
+  background-color: white;
+}
+
+header img {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px; /* increased gap */
+}
+
+header nav ul li {
+  color: black; /* changed color to black for visibility against white background */
+  cursor: pointer;
+}
+
+/* Added styles for links */
+header nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Information section */
+
+#information-container {
+  margin: auto;
+  padding: 50px 150px;
+  background-color: white;
+}
+
+#information-container h2 {
+  margin: 0 0 20px 0;
+  font-size: 30px;
+  color: #050A30;
+}
+
+#information-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #050A30;
+}
+
+#information-container hr {
+  border: none;
+  border-top: 1px solid #D0D1D3; /* Adjust the pixel value to make the line thinner */
+  width: 50%; /* Adjust this to change how wide the line spans. */
+  margin: 40px auto; /* 'auto' to center the line */
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.content-section .document-preview,
+.content-section .tokens {
+  /* Add styles for these as necessary. Placeholder styling provided as example. */
+  background-color: #363F63;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.content-section a {
+  color: #363F63;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.content-section a:hover {
+  color: #fff;
+  background-color: #363F63;
+}
+
+/* For sections with split content (text and content side-by-side) */
+
+.wide-section {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.wide-section div:first-child {
+  flex-basis: 60%;
+  max-width: 650px;
+}
+
+.wide-section div:last-child {
+  flex-basis: 40%;
+}
+
+#document-preview {
+  max-width: 200px;  /* Adjust this value according to your preference */
+  height: 300px;
+  background: white;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#document-preview button {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  color: blue;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.centered {
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* footer section */
+
+.footer-container {
+  background-color: #050A30;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around; 
+  flex-wrap: wrap; 
+}
+
+.footer-container .footer-section {
+  margin: 10px;
+}
+
+.footer-container .footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-container .footer-section p, 
+.footer-container .footer-section li {
+  margin: 5px 0;
+}
+
+.footer-container .footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-container .footer-section ul {
+  list-style: none;
+  padding: 0; /* Removes the padding that comes along with the list style */
+}
+
+.footer-container .footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for different screens */
+
+
+@media screen and (max-width: 834px) {
+  .container {
+    flex-direction: column;
+  }
+  .content,
+  .chart {
+    width: 100%;
+  }
+  .timeframe-button {
+    padding: 4px 9px; /* reduced padding */
+  }
+  .info-container {
+    flex-direction: row; /* stack them in a column when on mobile */
+    margin-bottom: 30px;
+  }
+}

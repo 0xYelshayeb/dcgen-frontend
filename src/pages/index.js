@@ -1,12 +1,12 @@
 // src/pages/index.js
 import React from "react";
-import Header from "./components/Header";
+import Header from "../components/Header";
 import { BrowserRouter as Router } from 'react-router-dom';
-import ChartSection from "./components/ChartSection";
-import Information from "./components/Information"
-import Footer from './components/Footer';
+import ChartSection from "../components/ChartSection";
+import Information from "../components/Information"
+import Footer from '../components/Footer';
 
-const App = () => {
+const IndexPage = () => {
 
   return (
     <Router>
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default IndexPage;
