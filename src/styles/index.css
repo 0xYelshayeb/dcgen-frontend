@@ -108,6 +108,7 @@ header img {
 header nav ul {
   list-style: none;
   display: flex;
+  align-items: center; /* Vertically center all direct children */
   gap: 50px; /* increased gap */
 }
 
@@ -120,6 +121,25 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: inherit;
+}
+
+header nav ul li .special-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px; /* Add some padding for better design */
+  border-radius: 5px; /* Round the corners */
+  display: flex; /* Make it a flexbox to align the icon and text */
+  align-items: center; /* Vertically center the text and icon */
+  gap: 5px; /* Create a gap between text and icon */
+}
+
+header nav ul li .special-button:hover {
+  background-color: darkblue; /* Change the color on hover for better UX */
+}
+
+header nav ul li .external-link-icon {
+  /* Styles for the external link icon */
+  margin-left: 5px; /* Add a little space to the left */
 }
 
 /* Information section */

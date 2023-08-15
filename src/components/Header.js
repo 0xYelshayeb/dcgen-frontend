@@ -15,7 +15,12 @@ const Header = () => {
           <li><Link to="/ethereum-index">Ethereum index</Link></li>
           <li><Link to="/arbitrum-index">Arbitrum index</Link></li>
           <li><Link to="/research">Research</Link></li>
-          <li><Link to="/index-products">Index products</Link></li>
+          <li>
+            <Link to="/index-products" className="special-button">
+              Index products 
+              <span className="external-link-icon">🔗</span> {/* Here's the emoji as an external link icon */}
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
