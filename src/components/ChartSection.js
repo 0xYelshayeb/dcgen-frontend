@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import maxChartData from '../data/max-chartData';
-import oneMonthChartData from '../data/1m-chartData';
-import sixMonthsChartData from '../data/6m-chartData';
-import oneYearChartData from '../data/1y-chartData';
+import axios from 'axios';
 import MyChart from "./MyChart";
 
 const Button = ({ text, isSelected, onClick }) => (
@@ -13,31 +10,25 @@ const Button = ({ text, isSelected, onClick }) => (
 
 const ChartSection = () => {
 
-    const [timeFrame, setTimeFrame] = useState('MAX'); // Default timeframe is 'MAX'
-    const [chartData, setChartData] = useState([...maxChartData]); // to avoid passing a reference we pass in the array
+  const [timeFrame, setTimeFrame] = useState('MAX'); 
+  const [chartData, setChartData] = useState([]);
   
     useEffect(() => {
-      switch(timeFrame) {
-        case '1M':
-          setChartData([...oneMonthChartData]);
-          break;
-        case '6M':
-          setChartData([...sixMonthsChartData]);
-          break;
-        case '1Y':
-          setChartData([...oneYearChartData]);
-          break;
-        case 'MAX':
-          setChartData([...maxChartData]);
-          break;
-        default:
-          setChartData([...maxChartData]);
-          break;
-      }
-    }, [timeFrame]);
+      const fetchData = async () => {
+          try {
+            console.log("making request")
+            const response = await axios.get(`https://dcgen-backend-12f54977f851.herokuapp.com/timeSeries?timeframe=${timeFrame}`);
+            setChartData(response.data);
+          } catch (error) {
+            console.error("Failed to fetch data", error);
+          }
+      };
+      
+      fetchData();
+  }, [timeFrame]);
   
-    const firstValue = chartData[0][1];
-    const lastValue = chartData[chartData.length - 1][1];
+    const firstValue = chartData.length > 0 ? chartData[0][1] : 0;
+    const lastValue = chartData.length > 0 ? chartData[chartData.length - 1][1] : 0;  
     const difference = lastValue - firstValue;
     const percentChange = (difference / firstValue) * 100;
     const changeClass = percentChange >= 0 ? 'positive-percent' : 'negative-percent'; 
