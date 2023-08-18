@@ -27,7 +27,7 @@ const Footer = () => {
                 </p>
             </div>
             <div className="footer-section">
-                <p>© 2023 DCgen</p>
+                <h4>© 2023 DCgen</h4>
             </div>
         </footer>
     );

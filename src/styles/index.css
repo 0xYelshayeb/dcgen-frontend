@@ -146,7 +146,7 @@ header nav ul li .external-link-icon {
 
 #information-container {
   margin: auto;
-  padding: 50px 150px;
+  padding: 50px 100px;
   background-color: white;
 }
 
@@ -293,8 +293,19 @@ header nav ul li .external-link-icon {
 
 
 @media screen and (max-width: 834px) {
+  #information-container {
+    padding: 25px 10px;
+  }
+
+  #information-container h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #050A30;
+  }
+
   .container {
     flex-direction: column;
+    padding: 50px 50px 50px 50px;
   }
   .content,
   .chart {

@@ -5,19 +5,17 @@ const Information = () => {
     return (
         <section id="information-container">
             <div className="content-section centered">
-                <h2>A capitalization-weighted index tracking the Ethereum ecosystem.</h2>
+                <h2>Navigate the Ethereum landscape with unmatched clarity. DCgen presents the leading capitalization-weighted Index tracking the Ethereum Ecosystem.</h2>
                 <p>
-                DCE provides a comprehensive picture of the market trends and performance metrics within the Ethereum space.lorem ipsum, important information
-                </p>
+                Delve deeper with DCgen. A unique lens provides unmatched insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
             </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
-
-
             <div className="content-section wide-section">
                 <div>
-                    <h2>Research-backed index methodology with rigorous inclusion criteria:</h2>
-                    <p>Lorem ipsum, lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>
+                    <h2>Empowering Insights: DCgen's Research-Centric Approach.</h2>
+                    <p>With a commitment to clarity and precision, DCgen combines advanced research with real-world price movements, curating an index you can confidently rely on.
+                    </p>
                 </div>
                 <div id="document-preview">
                     Document Preview
@@ -29,8 +27,8 @@ const Information = () => {
 
             <div className="content-section wide-section">
                 <div>
-                    <h2>Index constituents: The index contains 30 leading tokens of the Ethereum ecosystem.</h2>
-                    <p>The tokens undergo a rigorous process to be eligible for index conclusion. We work together with ITSA’s ITC classification framework.</p>
+                    <h2>Spotlight on Excellence: Top 30 Ethereum Ecosystem Tokens.</h2>
+                    <p>Curated with DCgen's precision-driven classification algorithm and upholding rigorous eligibility criteria, these 30 tokens are the hallmark of value for Ethereum enthusiasts, encapsulating the very essence of every DCgen index.</p>
                 </div>
                 <div id="document-preview">
                     Document Preview
