@@ -342,10 +342,6 @@ nav ul li {
     display: block; /* show the toggle button on smaller screens */
   }
 
-  header {
-    padding: 25px 10px;
-  }
-
   .menu-toggle {
     display: block; 
   }
@@ -370,5 +366,5 @@ nav ul li {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  
+
 }
