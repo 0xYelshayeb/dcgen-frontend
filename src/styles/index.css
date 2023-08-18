@@ -108,16 +108,15 @@ header img {
 header nav ul {
   list-style: none;
   display: flex;
-  align-items: center; /* Vertically center all direct children */
-  gap: 2vw; /* increased gap */
+  align-items: center;
+  gap: 2vw;
 }
 
 header nav ul li {
-  color: black; /* changed color to black for visibility against white background */
+  color: black;
   cursor: pointer;
 }
 
-/* Added styles for links */
 header nav ul li a {
   text-decoration: none;
   color: inherit;
@@ -126,24 +125,23 @@ header nav ul li a {
 header nav ul li .special-button {
   background-color: blue;
   color: white;
-  padding: 10px 15px; /* Add some padding for better design */
-  border-radius: 5px; /* Round the corners */
-  display: flex; /* Make it a flexbox to align the icon and text */
-  align-items: center; /* Vertically center the text and icon */
-  gap: 5px; /* Create a gap between text and icon */
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 header nav ul li .special-button:hover {
-  background-color: darkblue; /* Change the color on hover for better UX */
+  background-color: darkblue;
 }
 
 header nav ul li .external-link-icon {
-  /* Styles for the external link icon */
-  margin-left: 5px; /* Add a little space to the left */
+  margin-left: 5px;
 }
 
 .menu-toggle {
-  display: none; /* by default, hide the toggle button */
+  display: none; 
   background: none;
   border: none;
   font-size: 24px;
@@ -344,8 +342,16 @@ nav ul li {
     display: block; /* show the toggle button on smaller screens */
   }
 
+  header {
+    padding: 25px 10px;
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+
   nav {
-    display: none; /* hide the nav on smaller screens */
+    display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -361,6 +367,8 @@ nav ul li {
   }
 
   nav ul li {
+    margin-right: 0;
     margin-bottom: 10px;
   }
+  
 }
