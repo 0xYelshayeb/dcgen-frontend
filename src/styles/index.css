@@ -97,7 +97,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 80px 30px 80px;
+  padding: 30px 60px;
   background-color: white;
 }
 
@@ -109,7 +109,7 @@ header nav ul {
   list-style: none;
   display: flex;
   align-items: center; /* Vertically center all direct children */
-  gap: 50px; /* increased gap */
+  gap: 2vw; /* increased gap */
 }
 
 header nav ul li {
@@ -140,6 +140,28 @@ header nav ul li .special-button:hover {
 header nav ul li .external-link-icon {
   /* Styles for the external link icon */
   margin-left: 5px; /* Add a little space to the left */
+}
+
+.menu-toggle {
+  display: none; /* by default, hide the toggle button */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 15px;
 }
 
 /* Information section */
@@ -317,5 +339,28 @@ header nav ul li .external-link-icon {
   .info-container {
     flex-direction: row; /* stack them in a column when on mobile */
     margin-bottom: 30px;
+  }
+  .menu-toggle {
+    display: block; /* show the toggle button on smaller screens */
+  }
+
+  nav {
+    display: none; /* hide the nav on smaller screens */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
   }
 }
