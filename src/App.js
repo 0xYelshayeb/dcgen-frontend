@@ -1,22 +1,22 @@
 // src/pages/index.js
 import React from "react";
-import Header from "./components/Header";
-import { BrowserRouter as Router } from 'react-router-dom';
-import ChartSection from "./components/ChartSection";
-import Information from "./components/Information"
-import Footer from './components/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import IndexPage from "./pages/Index"
+import Constituents from "./pages/Constituents"
+import Contact from "./pages/Contact"
+import Research from "./pages/Research"
 
 const App = () => {
 
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <ChartSection />
-        <Information />
-        <Footer />
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<IndexPage/>} />
+        <Route path="/constituents" element={<Constituents />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/research" element={<Research />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

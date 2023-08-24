@@ -1,5 +1,9 @@
 // src/components/Information.js
 import React from 'react';
+import { Link } from 'react-router-dom';
+import uniswap from "../images/uniswap.png"
+import aave from "../images/aave.png"
+import makerdao from "../images/makerdao.png"
 
 const Information = () => {
     return (
@@ -30,9 +34,33 @@ const Information = () => {
                     <h2>Spotlight on Excellence: Top 30 Ethereum Ecosystem Tokens.</h2>
                     <p>Curated with DCgen's precision-driven classification algorithm and upholding rigorous eligibility criteria, these 30 tokens are the hallmark of value for Ethereum enthusiasts, encapsulating the very essence of every DCgen index.</p>
                 </div>
-                <div id="document-preview">
-                    Document Preview
-                <button>Download</button>
+                <div id="tokens-container">
+                    <div className="token">
+                        <div className="left-group">
+                            <img src={uniswap} alt="icon1"/>
+                            <span className="token-name">Uniswap</span>
+                        </div>
+                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                    </div>
+                    <div className="token">
+                        <div className="left-group">
+                            <img src={aave} alt="icon2" />
+                            <span className="token-name">Aave</span>
+                        </div>
+                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                    </div>
+                    <div className="token">
+                        <div className="left-group">
+                            <img src={makerdao} alt="icon3" />
+                            <span className="token-name">MakerDAO</span>
+                        </div>
+                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                    </div>
+                    <div className="redirect-button-container">
+                        <Link to="/constituents">
+                            <i className="redirect-icon">➡</i>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

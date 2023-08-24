@@ -196,15 +196,6 @@ nav ul li {
   margin-bottom: 30px;
 }
 
-.content-section .document-preview,
-.content-section .tokens {
-  /* Add styles for these as necessary. Placeholder styling provided as example. */
-  background-color: #363F63;
-  color: #fff;
-  padding: 10px;
-  margin-top: 20px;
-}
-
 .content-section a {
   color: #363F63;
   text-decoration: none;
@@ -270,6 +261,57 @@ nav ul li {
   justify-content: center;
 }
 
+/* #tokens-container {
+  max-width: 400px;
+  height: 300px;
+  background: white;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  color: black;
+} */
+
+/* .token {
+  display: flex;
+  align-items: center; /* center content within the token */
+/* } */
+
+#tokens-container {
+  padding: 0px 20px;
+  height: 250px;
+  max-width: 320px;
+  display: grid; /* Changed from flex to grid */
+  grid-template-rows: repeat(3, 1.5fr) 1fr; /* Sets the size of the rows */
+  align-items: center; /* Aligns items in the center of each row */
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+  color: black;
+  align-items: center;
+}
+
+.token {
+  display: flex;
+  justify-content: space-between; /* Aligns groups to the left and right */
+  align-items: center; /* Vertically centers the items */
+  padding: 10px; /* Adds some space inside the div */
+}
+
+.token img {
+  height: 50px;
+}
+
+.token .left-group {
+  display: flex;
+  align-items: center; /* Vertically centers the items */
+}
+
+.token .token-name {
+  margin-left: 20px; /* Adds some space between the icon and the name */
+}
+
+.redirect-button-container {
+  text-align: right; /* Aligns the button to the right */
+}
 
 /* footer section */
 
