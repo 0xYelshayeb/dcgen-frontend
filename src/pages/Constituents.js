@@ -16,6 +16,11 @@ const Constituents = () => {
     { name: 'Ethereum', symbol: 'ETH', price: '2,800', marketCap: "200000", indexPercent: "70%", change: '+1.2%' },
     { name: 'Bitcoin', symbol: 'BTC', price: '42,000', marketCap: "5000000", indexPercent: "30%", change: '+2.5%' },
     { name: 'Ethereum', symbol: 'ETH', price: '2,800', marketCap: "200000", indexPercent: "70%", change: '+1.2%' },
+    { name: 'Ethereum', symbol: 'ETH', price: '2,800', marketCap: "200000", indexPercent: "70%", change: '+1.2%' },
+    { name: 'Bitcoin', symbol: 'BTC', price: '42,000', marketCap: "5000000", indexPercent: "30%", change: '+2.5%' },
+    { name: 'Ethereum', symbol: 'ETH', price: '2,800', marketCap: "200000", indexPercent: "70%", change: '+1.2%' },
+    { name: 'Bitcoin', symbol: 'BTC', price: '42,000', marketCap: "5000000", indexPercent: "30%", change: '+2.5%' },
+    { name: 'Ethereum', symbol: 'ETH', price: '2,800', marketCap: "200000", indexPercent: "70%", change: '+1.2%' },
     // Add more data here...
   ];
 
