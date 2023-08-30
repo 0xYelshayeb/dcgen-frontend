@@ -36,7 +36,7 @@ const ChartSection = () => {
     return (
         <main className="container">
           <section className="content">
-          <h1 className="overview">Overview</h1>
+          <p className="overview">Overview</p>
           <hr className="horizontal-line" />
           <div className="info-container">
             <div>
