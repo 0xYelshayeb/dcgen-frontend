@@ -12,30 +12,33 @@ const options = (chartData) => ({  // Make options a function that takes chartDa
   },
   yAxis: {
     title: {
-      text: '', // remove "Values"
+      text: null,
     },
+    lineWidth: 0,
     labels: {
-      style: {
-        color: '#FFF', // white labels
-      },
+      enabled: false,
     },
+    gridLineWidth: 1,
+    gridLineColor: '#333355',
     crosshair: {
-      dashStyle: 'dash', // horizontal line with gaps
+      dashStyle: 'Dash',
+      width: 2,
+      color: '#999'
     },
-    gridLineWidth: 1, // subtle line for y-axis
-    gridLineColor: '#555', // color of the y-axis line
-    lineWidth: 0, // remove y-axis line
   },
   xAxis: {
     type: 'datetime', // x-axis as dates
     title: null,
     labels: {
+      format: '{value:%d.%m.%Y}',
       style: {
         color: '#FFF', // white labels
       },
     },
     crosshair: {
-      dashStyle: 'Solid', // solid vertical line
+      dashStyle: 'Dash',
+      width: 2,
+      color: '#999'  // Dark gray
     },
     lineWidth: 0, // remove x-axis line
     tickWidth: 0,
@@ -52,6 +55,9 @@ const options = (chartData) => ({  // Make options a function that takes chartDa
       enabled: false, // no dots on each data point
     },
   }],
+  credits: {
+    enabled: false, // This line disables the Highcharts.com label
+  },
 });
 
 function MyChart({ chartData }) { // Use chartData prop

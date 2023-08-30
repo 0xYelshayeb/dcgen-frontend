@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,13 +19,16 @@ const Header = () => {
       </Link>
       <nav className={isMenuOpen ? 'active' : ''}>
         <ul>
-          <li><Link to="/ethereum-index" onClick={toggleMenu}>Ethereum index</Link></li>
-          <li><Link to="/arbitrum-index" onClick={toggleMenu}>Arbitrum index</Link></li>
+          <li><Link to="/ethereum-index" onClick={toggleMenu}>Ethereum Index</Link></li>
+          <li><Link to="/arbitrum-index" onClick={toggleMenu}>Arbitrum Index</Link></li>
           <li><Link to="/research" onClick={toggleMenu}>Research</Link></li>
+          <li><Link to="/documentation" onClick={toggleMenu}>Documentation</Link></li>
           <li>
             <Link to="/index-products" className="special-button" onClick={toggleMenu}>
-              Index products 
-              <span className="external-link-icon">🔗</span>
+              Index Products 
+              <span className="external-link-icon">
+                <i className="fas fa-external-link-alt"></i>
+              </span>
             </Link>
           </li>
         </ul>

@@ -9,9 +9,9 @@ const Information = () => {
     return (
         <section id="information-container">
             <div className="content-section centered">
-                <h2>Navigate the Ethereum landscape with unmatched clarity. DCgen presents the leading capitalization-weighted Index tracking the Ethereum Ecosystem.</h2>
+                <h2>The Premier capitalization-weighted Index tracking the Ethereum Ecosystem.</h2>
                 <p>
-                Delve deeper with DCgen. A unique lens provides unmatched insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
+                Navigate the Ethereum landscape with unmatched clarity. A unique lens provides unmatched insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
             </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
