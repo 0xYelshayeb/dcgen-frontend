@@ -116,6 +116,7 @@ header {
   align-items: center;
   padding: 30px 60px;
   background-color: white;
+  border-bottom: 1px solid #D0D1D3;
 }
 
 header img {
@@ -177,6 +178,21 @@ nav ul {
 nav ul li {
   margin-right: 15px;
 }
+
+/* IndexName section */
+
+.index-name {
+  height: 200px; /* Replace with your desired fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 70px;
+}
+
+.index-image {
+  width: 650px;
+}
+
 
 /* Information section */
 
