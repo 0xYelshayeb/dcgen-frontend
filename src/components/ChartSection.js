@@ -45,7 +45,7 @@ const ChartSection = () => {
             </div>
             <div>
               <h2 className={`return-value ${changeClass}`}>{percentChange.toFixed(2)}%</h2>
-              <p className="return">Overall Return</p>
+              <p className="return">{timeFrame === 'MAX'? "Overall" : timeFrame} Return</p>
             </div>
           </div>
         </section>

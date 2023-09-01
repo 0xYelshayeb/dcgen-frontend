@@ -11,7 +11,7 @@ const Information = () => {
             <div className="content-section centered">
                 <h2>The Premier capitalization-weighted Index tracking the Ethereum Ecosystem.</h2>
                 <p>
-                Navigate the Ethereum landscape with unmatched clarity. A unique lens provides unmatched insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
+                Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
             </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
@@ -21,9 +21,13 @@ const Information = () => {
                     <p>With a commitment to clarity and precision, DCgen combines advanced research with real-world price movements, curating an index you can confidently rely on.
                     </p>
                 </div>
-                <div id="document-preview">
-                    Document Preview
-                <button>Download</button>
+                <div id="document-container">
+                    <div id="document-preview">
+                        Document Preview
+                    </div>
+                    <div id="document-preview">
+                        Document Preview
+                    </div>
                 </div>
             </div>
 
@@ -40,25 +44,25 @@ const Information = () => {
                             <img src={uniswap} alt="icon1"/>
                             <span className="token-name">Uniswap</span>
                         </div>
-                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                        <span className="token-change">13.45%</span>
                     </div>
                     <div className="token">
                         <div className="left-group">
                             <img src={aave} alt="icon2" />
                             <span className="token-name">Aave</span>
                         </div>
-                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                        <span className="token-change">11.25%</span>
                     </div>
                     <div className="token">
                         <div className="left-group">
                             <img src={makerdao} alt="icon3" />
                             <span className="token-name">MakerDAO</span>
                         </div>
-                        <span className="token-change" style={{color: 'green'}}>+10%</span>
+                        <span className="token-change">8.72%</span>
                     </div>
                     <div className="redirect-button-container">
                         <Link to="/constituents">
-                            <i className="redirect-icon">➡</i>
+                            <i className="fas fa-angle-right"></i>
                         </Link>
                     </div>
                 </div>
@@ -67,9 +71,11 @@ const Information = () => {
             <hr style={{borderColor: "#D0D1D3"}} />
 
             <div className="content-section centered">
-                <h2>Index-linked products</h2>
-                <p>DCgen is currently working on index products that track the Ethereum index. Available soon.</p>
-                <a href="/waitlist">Join Waitlist</a>
+                <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
+                <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
+                <Link to="/waitlist" className="special-button">
+                    Join Waitlist
+                </Link>
             </div>
         </section>
     );

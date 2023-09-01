@@ -6,6 +6,7 @@ import HighchartsReact from 'highcharts-react-official';
 const options = (chartData) => ({  // Make options a function that takes chartData
   chart: {
     backgroundColor: null, // no background
+    margin: [0, 0, 50, 0] // [top, right, bottom, left]
   },
   title: {
     text: ''
@@ -29,6 +30,7 @@ const options = (chartData) => ({  // Make options a function that takes chartDa
   xAxis: {
     type: 'datetime', // x-axis as dates
     title: null,
+    tickPixelInterval: 300,  // experiment with this number
     labels: {
       format: '{value:%d.%m.%Y}',
       style: {
@@ -57,6 +59,19 @@ const options = (chartData) => ({  // Make options a function that takes chartDa
   }],
   credits: {
     enabled: false, // This line disables the Highcharts.com label
+  },
+  tooltip: {
+    useHTML: true, // Allows the use of HTML in the tooltip
+    formatter: function () {
+      // The 'this' keyword refers to the data object for the point being hovered over
+      const { point } = this;
+      return `
+        <div style="text-align: center;">
+          <div style="font-size: 1.3em;"><strong>${point.y}</strong></div>
+          <div>${Highcharts.dateFormat('%d %b \'%y', point.x)}</div>
+        </div>
+      `;
+    }
   },
 });
 

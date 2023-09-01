@@ -1,35 +1,37 @@
 // src/components/Footer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.css';
+import logo from "../images/logo-white.png"
     
 const Footer = () => {
     return (
         <footer className="footer-container">
             <div className="footer-section">
-                <h4>Contact Us</h4>
-                <p>123 Main St, Anytown, Anystate, 12345</p>
-                <p>Email: info@example.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <div className="footer-logo">
+                    <Link to="/">
+                        <img src={logo} alt="DCgen Logo" />
+                    </Link>
+                </div>
+                <div className="footer-icons">
+                    <a href="#link1"><i className="fas fa-times"></i></a>
+                    <a href="#link2"><i className="fab fa-discord"></i></a>
+                    <a href="#link3"><i className="fab fa-telegram"></i></a>
+                    <a href="#link4"><i className="fab fa-github"></i></a>
+                    <a href="#link5"><i className="fab fa-gitbook"></i></a>
+                </div>
             </div>
             <div className="footer-section">
-                <h4>Links</h4>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/constituents">Constituents</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/research">Research</Link></li>
-                </ul>
+                <h4>Community</h4>
+                <a href="https://www.facebook.com/YourPage/">Twitter </a>
+                <a href="https://www.twitter.com/YourPage/">Telegram </a>
+                <a href="https://www.instagram.com/YourPage/">Discord </a>
             </div>
             <div className="footer-section">
-                <h4>Follow Us</h4>
-                <p>
-                    <a href="https://www.facebook.com/YourPage/">Facebook </a>
-                    <a href="https://www.twitter.com/YourPage/">Twitter </a>
-                    <a href="https://www.instagram.com/YourPage/">Instagram</a>
-                </p>
-            </div>
-            <div className="footer-section">
-                <h4>© 2023 DCgen</h4>
+                <h4>Resources</h4>
+                <a href="https://www.facebook.com/YourPage/">Documentation </a>
+                <a href="https://www.twitter.com/YourPage/">GitHub </a>
+                <a href="https://www.instagram.com/YourPage/">Research </a>
             </div>
         </footer>
     );

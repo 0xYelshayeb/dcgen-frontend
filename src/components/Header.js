@@ -2,15 +2,18 @@
 
 import React, { useState } from 'react';
 import logo from '../images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();  // Get the current location
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const isActive = (path) => location.pathname === path ? 'active-link' : '';
 
   return (
     <header>
@@ -19,13 +22,13 @@ const Header = () => {
       </Link>
       <nav className={isMenuOpen ? 'active' : ''}>
         <ul>
-          <li><Link to="/ethereum-index" onClick={toggleMenu}>Ethereum Index</Link></li>
-          <li><Link to="/arbitrum-index" onClick={toggleMenu}>Arbitrum Index</Link></li>
-          <li><Link to="/research" onClick={toggleMenu}>Research</Link></li>
-          <li><Link to="/documentation" onClick={toggleMenu}>Documentation</Link></li>
+        <li><Link to="/ethereum-index" className={isActive('/ethereum-index')} onClick={toggleMenu}>Ethereum Index</Link></li>
+        <li><Link to="/arbitrum-index" className={isActive('/arbitrum-index')} onClick={toggleMenu}>Arbitrum Index</Link></li>
+        <li><Link to="/research" className={isActive('/research')} onClick={toggleMenu}>Research</Link></li>
+        <li><Link to="/documentation" className={isActive('/documentation')} onClick={toggleMenu}>Documentation</Link></li>
           <li>
             <Link to="/index-products" className="special-button" onClick={toggleMenu}>
-              Index Products 
+              Index Products
               <span className="external-link-icon">
                 <i className="fas fa-external-link-alt"></i>
               </span>

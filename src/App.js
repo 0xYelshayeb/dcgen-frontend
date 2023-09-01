@@ -12,6 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<IndexPage/>} />
+        <Route path="/ethereum-index" element={<IndexPage/>} />
         <Route path="/constituents" element={<Constituents />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/research" element={<Research />} />
