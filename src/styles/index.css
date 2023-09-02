@@ -453,6 +453,12 @@ nav ul li a:hover {
     height: 500px;
   }
 
+  #document-preview {
+    min-width: 150px;
+    max-width: 150px;
+    height: 225px;
+  }
+
 }
 
 /* footer section */
