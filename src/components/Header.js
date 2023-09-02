@@ -41,7 +41,7 @@ const Header = () => {
         </nav>
       </div>
       <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? 'x' : '☰'}
+        {isMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
       </button>
     </header>
   );
