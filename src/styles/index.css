@@ -286,6 +286,19 @@ nav ul li a:hover {
   width: 35vw;
 }
 
+/* Mobile view */
+@media (max-width: 834px) {
+
+  .index-name {
+    height: 20vw;
+  }
+  
+  .index-image {
+    width: 70vw;
+  }
+
+}
+
 
 /* Information section */
 
