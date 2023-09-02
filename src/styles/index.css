@@ -462,16 +462,24 @@ nav ul li a:hover {
 
 /* footer section */
 
+.footer-section-logo{
+  width: 40vw;
+}
+
 .footer-container {
   display: flex;
-  justify-content: space-around;
   padding: 20px;
   background-color: #050A30;
   color: white;
 }
 
+.footer-sections-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+}
+
 .footer-section {
-  flex: 1;
   padding: 30px;
 }
 
@@ -506,4 +514,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 834px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
