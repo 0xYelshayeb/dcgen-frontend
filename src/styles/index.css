@@ -24,6 +24,8 @@ body {
   color: black;
 }
 
+/* Chart section styles below */
+
 .container {
   padding: 50px 90px 50px 90px;
   display: flex;
@@ -107,6 +109,47 @@ body {
 .timeframe-button.selected {
   background-color: #fff;
   color: #363F63;
+}
+
+@media screen and (max-width: 834px) {
+  .container {
+    flex-direction: column;
+    padding: 50px 10px 50px 10px;
+  }
+  .content {
+    width: 70%;
+    margin-left: 20px;
+  }
+  .container hr {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: 35px;
+  }
+  .chart {
+    width: 100%;
+  }
+  .timeframe-button {
+    padding: 8px 14px; /* reduced padding */
+  }
+
+  .timeframe-buttons {
+    padding-left: 20px;
+  }
+
+  .info-container {
+    flex-direction: row; /* stack them in a column when on mobile */
+    margin-bottom: 30px;
+  }
+
+  .index-image {
+    width: 80vw;
+  }
+
+  .index-name {
+    height: 20vw;
+  }
 }
 
 /* header styles below */
@@ -361,6 +404,44 @@ nav ul li a:hover {
   text-align: right; /* Aligns the button to the right */
 }
 
+
+/* Media queries for different screens */
+
+@media screen and (max-width: 1100px) {
+  .centered {
+    width: 80vw;
+  }
+
+  #information-container h2 {
+    font-size: 24px;
+  }
+
+  #information-container {
+    padding: 50px 50px;
+  }
+
+}
+
+@media screen and (max-width: 834px) {
+  #information-container {
+    padding: 25px 10px;
+  }
+
+  #information-container h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #050A30;
+  }
+
+  .wide-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 0px;
+    height: 500px;
+  }
+
+}
+
 /* footer section */
 
 .footer-container {
@@ -407,49 +488,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Media queries for different screens */
-
-@media screen and (max-width: 1100px) {
-  .centered {
-    width: 80vw;
-  }
-}
-
-@media screen and (max-width: 834px) {
-  #information-container {
-    padding: 25px 10px;
-  }
-
-  #information-container h2 {
-    margin: 0 0 20px 0;
-    font-size: 20px;
-    color: #050A30;
-  }
-
-  .container {
-    flex-direction: column;
-    padding: 50px 50px 50px 50px;
-  }
-  .content,
-  .chart {
-    width: 100%;
-  }
-  .timeframe-button {
-    padding: 4px 9px; /* reduced padding */
-  }
-  .info-container {
-    flex-direction: row; /* stack them in a column when on mobile */
-    margin-bottom: 30px;
-  }
-
-  .index-image {
-    width: 80vw;
-  }
-
-  .index-name {
-    height: 20vw;
-  }
-
 }
