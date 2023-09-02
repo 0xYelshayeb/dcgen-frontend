@@ -1,5 +1,6 @@
 // src/pages/Constituents.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import '../styles/constituents.css';
@@ -30,6 +31,12 @@ const Constituents = () => {
   return (
     <div className="app">
       <Header />
+      <div className="back-home">
+        <Link style={{ color: 'black' }} to="/ethereum-index" className="back-container">
+            <i className="fas fa-angle-left"></i>
+            <p>Back</p>
+        </Link>
+      </div>
       <IndexName />
       <h3>Index Constituents</h3>
       <div className="constituents-container">

@@ -353,9 +353,10 @@ nav ul li {
   max-width: 200px;
 }
 
-.footer-icons i {
-  font-size: 24px;
-  margin-right: 15px;
+.footer-icons img {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
 }
 
 a {

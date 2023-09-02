@@ -1,4 +1,24 @@
 /* Style for the table header */
+.back-home {
+  margin-left: 5%;
+  margin-top: 4%;
+}
+
+.back-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.back-container:hover{
+  text-decoration: none;
+}
+
+.back-container p {
+  margin: 0;
+  padding-left: 10px;
+}
+
 table thead {
   background-color: #050A30;
 }
