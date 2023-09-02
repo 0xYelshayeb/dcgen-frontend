@@ -62,7 +62,7 @@ const Information = () => {
                     </div>
                     <div className="redirect-button-container">
                         <Link to="/constituents">
-                            <i className="fas fa-angle-right"></i>
+                            <i className="fas fa-angle-right" style={{ color: 'black' }}></i>
                         </Link>
                     </div>
                 </div>
