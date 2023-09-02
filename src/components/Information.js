@@ -61,7 +61,7 @@ const Information = () => {
                         <span className="token-change">8.72%</span>
                     </div>
                     <div className="redirect-button-container">
-                        <Link to="/constituents">
+                        <Link to="/ethereum-constituents">
                             <i className="fas fa-angle-right" style={{ color: 'black' }}></i>
                         </Link>
                     </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 import logo from "../images/logo-white.png"
-    
+
 const Footer = () => {
     return (
         <footer className="footer-container">
@@ -14,11 +14,11 @@ const Footer = () => {
                     </Link>
                 </div>
                 <div className="footer-icons">
-                    <a href="#link1"><i className="fas fa-times"></i></a>
+                    <a href="#link1"><i className="fas fa-x"></i></a>
                     <a href="#link2"><i className="fab fa-discord"></i></a>
                     <a href="#link3"><i className="fab fa-telegram"></i></a>
                     <a href="#link4"><i className="fab fa-github"></i></a>
-                    <a href="#link5"><i className="fab fa-gitbook"></i></a>
+                    <a href="#link5"><i className="fas fa-gitbook"></i></a>
                 </div>
             </div>
             <div className="footer-section">

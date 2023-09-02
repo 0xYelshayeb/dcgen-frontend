@@ -13,7 +13,9 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isActive = (path) => location.pathname === path ? 'active-link' : '';
+  const isActive = (paths) => {
+    return paths.includes(location.pathname) ? 'active-link' : '';
+  };
 
   return (
     <header>
@@ -22,10 +24,10 @@ const Header = () => {
       </Link>
       <nav className={isMenuOpen ? 'active' : ''}>
         <ul>
-        <li><Link to="/ethereum-index" className={isActive('/ethereum-index')} onClick={toggleMenu}>Ethereum Index</Link></li>
-        <li><Link to="/arbitrum-index" className={isActive('/arbitrum-index')} onClick={toggleMenu}>Arbitrum Index</Link></li>
-        <li><Link to="/research" className={isActive('/research')} onClick={toggleMenu}>Research</Link></li>
-        <li><Link to="/documentation" className={isActive('/documentation')} onClick={toggleMenu}>Documentation</Link></li>
+        <li><Link to="/ethereum-index" className={isActive(['/','/ethereum-index', '/ethereum-constituents'])} onClick={toggleMenu}>Ethereum Index</Link></li>
+        <li><Link to="/arbitrum-index" className={isActive(['/arbitrum-index'])} onClick={toggleMenu}>Arbitrum Index</Link></li>
+        <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
+        <li><Link to="/documentation" className={isActive(['/documentation'])} onClick={toggleMenu}>Documentation</Link></li>
           <li>
             <Link to="/index-products" className="special-button" onClick={toggleMenu}>
               Index Products

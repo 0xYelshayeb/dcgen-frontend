@@ -21,13 +21,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  color: white;
+  color: black;
 }
 
 .container {
   padding: 50px 90px 50px 90px;
   display: flex;
   background-color: #050A30;  
+  color: white;
 }
 
 .info-container {
@@ -114,7 +115,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 90px;
+  padding: 30px 5%;
   background-color: white;
   border-bottom: 1px solid #D0D1D3;
 }
@@ -139,6 +140,10 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: gray;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
 }
 
 .active-link {
@@ -188,15 +193,15 @@ nav ul li {
 /* IndexName section */
 
 .index-name {
-  height: 200px; /* Replace with your desired fixed height */
+  height: 10vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 90px;
+  margin-left: 5%;
 }
 
 .index-image {
-  width: 650px;
+  width: 35vw;
 }
 
 
