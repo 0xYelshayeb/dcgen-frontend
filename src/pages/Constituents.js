@@ -37,9 +37,9 @@ const Constituents = () => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Symbol</th>
-              <th>Price $</th>
-              <th>Market Cap $</th>
+              <th class="hide-on-extra-small">Symbol</th>
+              <th class="hide-on-small">Price $</th>
+              <th class="hide-on-medium">Market Cap $</th>
               <th>Allocation %</th>
             </tr>
           </thead>
@@ -47,9 +47,9 @@ const Constituents = () => {
             {data.map((item, index) => (
               <tr key={index}>
                 <td>{item.name}</td>
-                <td>{item.symbol}</td>
-                <td>{item.price}</td>
-                <td>{item.marketCap}</td>
+                <td class="hide-on-extra-small">{item.symbol}</td>
+                <td class="hide-on-small">{item.price}</td>
+                <td class="hide-on-medium">{item.marketCap}</td>
                 <td>{item.indexPercent}</td>
               </tr>
             ))}

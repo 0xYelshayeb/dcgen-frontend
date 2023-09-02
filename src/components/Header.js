@@ -27,14 +27,14 @@ const Header = () => {
         <li><Link to="/ethereum-index" className={isActive(['/','/ethereum-index', '/ethereum-constituents'])} onClick={toggleMenu}>Ethereum Index</Link></li>
         <li><Link to="/arbitrum-index" className={isActive(['/arbitrum-index'])} onClick={toggleMenu}>Arbitrum Index</Link></li>
         <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
-        <li><Link to="/documentation" className={isActive(['/documentation'])} onClick={toggleMenu}>Documentation</Link></li>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Documentation </a></li>
           <li>
-            <Link to="/index-products" className="special-button" onClick={toggleMenu}>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" className="special-button" onClick={toggleMenu}>
               Index Products
               <span className="external-link-icon">
                 <i className="fas fa-external-link-alt"></i>
               </span>
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>

@@ -432,4 +432,12 @@ a:hover {
     margin-bottom: 10px;
   }
 
+  .index-image {
+    width: 80vw;
+  }
+
+  .index-name {
+    height: 20vw;
+  }
+
 }
