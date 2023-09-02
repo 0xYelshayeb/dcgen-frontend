@@ -465,11 +465,12 @@ nav ul li a:hover {
 
 .footer-section-logo{
   width: 40vw;
+  margin-left: 20px;
 }
 
 .footer-container {
   display: flex;
-  padding: 20px;
+  padding: 40px;
   background-color: #050A30;
   color: white;
 }
