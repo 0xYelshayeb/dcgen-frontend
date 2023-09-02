@@ -36,7 +36,7 @@ const Footer = () => {
                 <h4>Resources</h4>
                 <a href="https://www.facebook.com/YourPage/">Documentation </a>
                 <a href="https://www.twitter.com/YourPage/">GitHub </a>
-                <a href="https://www.instagram.com/YourPage/">Research </a>
+                <Link to="/research">Research</Link>
             </div>
         </footer>
     );
