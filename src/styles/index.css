@@ -549,10 +549,6 @@ nav ul li a:hover {
   padding-top: 0px;
 }
 
-.footer-logo img {
-  max-width: 180px;
-}
-
 .footer-icons {
   display: flex;
   justify-content: space-between;
