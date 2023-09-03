@@ -382,7 +382,7 @@ nav ul li a:hover {
 #tokens-container {
   padding: 15px 20px 10px 20px;
   height: 250px;
-  width: 280px;
+  width: 270px;
   display: grid; /* Changed from flex to grid */
   grid-template-rows: repeat(3, 1.5fr) 1fr; /* Sets the size of the rows */
   align-items: center; /* Aligns items in the center of each row */
