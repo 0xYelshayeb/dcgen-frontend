@@ -379,6 +379,11 @@ nav ul li a:hover {
   color: black;
 }
 
+#document-preview img {
+  width: 100%;
+  filter: blur(2px);  /* Adjust the pixel value to control the amount of blur */
+}
+
 .centered {
   width: 50vw;
   height: 300px;
@@ -492,7 +497,6 @@ nav ul li a:hover {
   #waitlist-section {
     height: calc(150px + 0.2 * (834px - 100vw));
   }
-
 }
 
 /* footer section */

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import uniswap from "../images/uniswap.png"
 import aave from "../images/aave.png"
 import makerdao from "../images/makerdao.png"
+import preview1 from "../images/preview1.jpg"
+import preview2 from "../images/preview2.jpg"
 
 const Information = () => {
     return (
@@ -23,10 +25,10 @@ const Information = () => {
                 </div>
                 <Link to="/research" id="document-container">
                     <div id="document-preview">
-                        Document Preview
+                        <img src={preview1} alt="Preview 1"></img>
                     </div>
                     <div id="document-preview">
-                        Document Preview
+                        <img src={preview2} alt="Preview 2"></img>
                     </div>
                 </Link>
             </div>
