@@ -27,7 +27,7 @@ body {
 /* Chart section styles below */
 
 .container {
-  padding: 50px 90px 50px 90px;
+  padding: 110px 90px 110px 90px;
   display: flex;
   background-color: #050A30;  
   color: white;
@@ -109,6 +109,15 @@ body {
 .timeframe-button.selected {
   background-color: #fff;
   color: #363F63;
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    padding: 110px 40px 110px 60px;
+    display: flex;
+    background-color: #050A30;  
+    color: white;
+  }
 }
 
 @media screen and (max-width: 834px) {
