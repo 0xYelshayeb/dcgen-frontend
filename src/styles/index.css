@@ -274,7 +274,11 @@ nav ul li a:hover {
   .menu-open .menu-toggle {
     position: absolute;
     top: 58px;
-    right: 3vw;
+    right: 6vw;
+  }
+
+  header {
+    padding: 30px 6vw 20px 4vw;
   }
 }
 
