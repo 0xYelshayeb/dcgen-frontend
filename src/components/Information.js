@@ -21,14 +21,14 @@ const Information = () => {
                     <p>With a commitment to clarity and precision, DCgen combines advanced research with real-world price movements, curating an index you can confidently rely on.
                     </p>
                 </div>
-                <div id="document-container">
+                <Link to="/research" id="document-container">
                     <div id="document-preview">
                         Document Preview
                     </div>
                     <div id="document-preview">
                         Document Preview
                     </div>
-                </div>
+                </Link>
             </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
