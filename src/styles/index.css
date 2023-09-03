@@ -462,8 +462,12 @@ nav ul li a:hover {
 /* footer section */
 
 .footer-section-logo{
-  width: 40vw;
+  width: 35vw;
   margin-left: 20px;
+}
+
+.footer-logo img{
+  width: 150px;
 }
 
 .footer-container {
@@ -523,6 +527,12 @@ a:hover {
   }
 
   .footer-section-logo{
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    order: 2;
+  }
+
+  .footer-sections-wrapper {
+    order: 1;
   }
 }
