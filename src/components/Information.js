@@ -8,13 +8,12 @@ import makerdao from "../images/makerdao.png"
 const Information = () => {
     return (
         <section id="information-container">
-                <div className="content-section centered" id="hero-section">
-                    <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
-                    <p>
-                    Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
-                    </p>
-                </div>
-
+            <div className="content-section centered" id="hero-section">
+                <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
+                <p>
+                Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
+                </p>
+            </div>
             <hr style={{borderColor: "#D0D1D3"}} />
             <div className="content-section wide-section" id="preview-section">
                 <div>

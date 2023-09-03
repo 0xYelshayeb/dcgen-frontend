@@ -159,7 +159,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #D0D1D3;
-  padding: 30px 5vw 20px 4vw;
+  padding: 30px 3vw 20px 4vw;
   position: relative;
 }
 
@@ -262,7 +262,7 @@ nav ul li a:hover {
   .menu-open .menu-toggle {
     position: absolute;
     top: 58px;
-    right: 5vw;
+    right: 3vw;
   }
 }
 

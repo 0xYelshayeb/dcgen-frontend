@@ -5,7 +5,6 @@ import IndexPage from "./pages/Index";
 import Constituents from "./pages/Constituents";
 import Contact from "./pages/Contact";
 import Research from "./pages/Research";
-// import Dummy from "./pages/Dummy";
 import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";
 import ComingSoon from "./components/ComingSoon";
