@@ -1,14 +1,18 @@
 // src/pages/Contact.js
 import React from 'react';
-import Header from "../components/Header";
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 const Contact = () => {
+  const schema = {
+    "@context": "https://dcgen.finance/contact",
+    "@type": "WebPage",
+    "name": "DCGen Contact Page",
+    "description": "Website to Contact DCGen team",
+  };
     return (
-        <div className="app">
-          <Header />
-          <Footer />
-        </div>
+        <Layout title="Contact" name="Contact page" description="A page allowing users to contact the team by sending emails" schema={schema}>
+        
+        </Layout>
     );
 };
 

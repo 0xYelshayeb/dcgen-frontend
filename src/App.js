@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Research from "./pages/Research";
 import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";
-import ComingSoon from "./components/ComingSoon";
+import Arbitrum from "./pages/Arbitrum"
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<IndexPage/>} />
-        <Route path="/arbitrum-index" element={<ComingSoon/>} />
+        <Route path="/arbitrum-index" element={<Arbitrum/>} />
         <Route path="/ethereum-index" element={<IndexPage/>} />
         <Route path="/ethereum-constituents" element={<Constituents />} />
         <Route path="/contact" element={<Contact />} />

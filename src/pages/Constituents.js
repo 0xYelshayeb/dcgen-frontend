@@ -1,12 +1,17 @@
 // src/pages/Constituents.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from "../components/Header";
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 import '../styles/constituents.css';
 import IndexName from '../components/IndexName';
 
 const Constituents = () => {
+  const schema = {
+    "@context": "https://dcgen.finance/ethereum-constituents",
+    "@type": "WebPage",
+    "name": "Ethereum Index Constituents",
+    "description": "A Website showing all the constituents of the DCGen Ethereum Ecosystem Index",
+  };
   const data = [
     { name: 'Bitcoin', symbol: 'BTC', price: '$42,000', marketCap: "$5,000,000", indexPercent: "30 %"},
     { name: 'Ethereum', symbol: 'ETH', price: '$2,800', marketCap: "$200,000", indexPercent: "70 %"},
@@ -29,8 +34,7 @@ const Constituents = () => {
   ];
 
   return (
-    <div className="app">
-      <Header />
+    <Layout title="Eth index Constituents" name="Ethereum ecosystem Index Constituents" description="This page shows the constituents of the ethereum ecosystem index" schema={schema}>
       <div className="back-home">
         <Link style={{ color: 'black' }} to="/ethereum-index" className="back-container">
             <i className="fas fa-angle-left"></i>
@@ -63,8 +67,7 @@ const Constituents = () => {
           </tbody>
         </table>
       </div>  
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

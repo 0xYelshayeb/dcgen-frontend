@@ -5,13 +5,13 @@ import Layout from "../components/Layout";
 
 const Research = () => {
     const schema = {
-        "@context": "https://dcgen.finance/research",
+        "@context": "https://dcgen.finance/arbitrum-index",
         "@type": "WebPage",
-        "name": "DCGen Research Page",
-        "description": "Page containing all the Research for the Ethereum Ecosystem Index",
+        "name": "Arbitrum Index",
+        "description": "An index tracking the Arbitrum ecosystem",
       };
     return (
-        <Layout title="Research" name="Research Page" description="Page including research papers released by dcgen" schema={schema}>
+        <Layout title="Arbitrum Index" name="Arbitrum Ecosystem Index" description="Page laying out Arbitrum Ecosystem Index" schema={schema}>
             <ComingSoon/>
         </Layout>
     );

@@ -1,20 +1,23 @@
 // src/pages/Index.js
 import React from "react";
-import Header from "../components/Header";
 import ChartSection from "../components/ChartSection";
 import Information from "../components/Information"
-import Footer from '../components/Footer';
 import IndexName from "../components/IndexName";
+import Layout from "../components/Layout";
 
 const Index = () => {
+    const schema = {
+      "@context": "https://dcgen.finance",
+      "@type": "WebPage",
+      "name": "Ethereum Index",
+      "description": "An index tracking the Ethereum ecosystem",
+    };
     return (
-        <div className="app">
-          <Header />
+        <Layout title="DCGen" name="DCGen index page" description="Index page of DCGen Research showcasing the ethereum ecosystem index" schema={schema}>
           <IndexName />
           <ChartSection />
           <Information />
-          <Footer />
-        </div>
+        </Layout>
     );
 };
 

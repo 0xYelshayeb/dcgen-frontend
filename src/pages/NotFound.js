@@ -1,21 +1,24 @@
 // src/pages/NotFound.js
 import React from "react";
 import { Link } from 'react-router-dom';
-import Header from "../components/Header";
-import Footer from '../components/Footer';
-import '../styles/notFound.css'; // Import styles
+import Layout from "../components/Layout";
+import '../styles/notFound.css';
 
 const NotFound = () => {
+  const schema = {
+    "@context": "https://dcgen.finance",
+    "@type": "WebPage",
+    "name": "Ethereum Index not found page",
+    "description": "Page that loads when the requested page isn't found",
+  };
   return (
-    <div className="not-found-app">
-      <Header />
+    <Layout title="404 Not Found" name="Page not found" description="Page that loads when the requested page isn't found" schema={schema}>
       <div className="not-found-content">
         <h1>404: Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
         <Link to="/">Go Back Home</Link>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
