@@ -373,7 +373,7 @@ nav ul li a:hover {
 #document-container {
   display: flex;
   justify-content: flex-end;
-  gap: 20px; /* You can adjust the size of the gap */
+  gap: 20px;
 }
 
 #document-preview {
@@ -471,8 +471,9 @@ nav ul li a:hover {
   .token {
     width: 250px;
   }
+
   #information-container {
-    padding: 40px 10vw;
+    padding: 40px 5vw;
   }
 
   #information-container h2 {
@@ -485,7 +486,10 @@ nav ul li a:hover {
     flex-direction: column;
     text-align: center;
     gap: 0px;
-    height: 500px;
+  }
+
+  .centered{
+    width: 100%;
   }
 
   #document-preview {
