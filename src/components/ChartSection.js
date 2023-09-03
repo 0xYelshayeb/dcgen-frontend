@@ -56,7 +56,7 @@ const ChartSection = () => {
               <Button text="1Y" isSelected={timeFrame === '1Y'} onClick={() => setTimeFrame('1Y')} />
               <Button text="MAX" isSelected={timeFrame === 'MAX'} onClick={() => setTimeFrame('MAX')} />
             </div>
-            <MyChart chartData={chartData} />
+            <MyChart chartData={chartData} timeFrame={timeFrame} />
           </section>
         </main>
     )
