@@ -8,11 +8,12 @@ import makerdao from "../images/makerdao.png"
 const Information = () => {
     return (
         <section id="information-container">
-            <div className="content-section centered">
-                <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
-                <p>
-                Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.</p>
-            </div>
+                <div className="content-section centered">
+                    <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
+                    <p>
+                    Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
+                    </p>
+                </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
             <div className="content-section wide-section">
@@ -38,7 +39,7 @@ const Information = () => {
                     <h2>Spotlight on Excellence: Top 30 Ethereum Ecosystem Tokens.</h2>
                     <p>Curated with DCgen's precision-driven classification algorithm and upholding rigorous eligibility criteria, these 30 tokens are the hallmark of value for Ethereum enthusiasts, encapsulating the very essence of every DCgen index.</p>
                 </div>
-                <div id="tokens-container">
+                <Link to="/ethereum-constituents" id="tokens-container">
                     <div className="token">
                         <div className="left-group">
                             <img src={uniswap} alt="icon1"/>
@@ -61,11 +62,11 @@ const Information = () => {
                         <span className="token-change">8.72%</span>
                     </div>
                     <div className="redirect-button-container">
-                        <Link to="/ethereum-constituents">
+                        <div>
                             <i className="fas fa-angle-right" style={{ color: 'black' }}></i>
-                        </Link>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
