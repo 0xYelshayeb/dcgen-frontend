@@ -2,6 +2,9 @@
 import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import AccessibilityModule from 'highcharts/modules/accessibility';
+
+AccessibilityModule(Highcharts);
 
 const options = (chartData, timeFrame) => { // Make options a function that takes chartData and timeFrame
 
@@ -26,9 +29,13 @@ const options = (chartData, timeFrame) => { // Make options a function that take
 
   return {
 
+    accessibility: {
+      enabled: true
+    },
     chart: {
       backgroundColor: null, // no background
-      margin: [0, 0, 50, 0] // [top, right, bottom, left]
+      margin: [0, 0, 50, 0], // [top, right, bottom, left]
+      ariaLabel: 'Chart containing Ethereum Index Data',
     },
     title: {
       text: ''
