@@ -377,6 +377,13 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   color: black;
+  position: relative;
+}
+
+#document-preview i {
+  position: absolute;
+  bottom: 7%;
+  right: 7%;
 }
 
 #document-preview img {

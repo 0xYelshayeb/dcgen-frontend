@@ -26,9 +26,11 @@ const Information = () => {
                 <Link to="/research" id="document-container">
                     <div id="document-preview">
                         <img src={preview1} alt="Preview 1"></img>
+                        <i className="fas fa-angle-right" style={{ color: 'black' }}></i>
                     </div>
                     <div id="document-preview">
                         <img src={preview2} alt="Preview 2"></img>
+                        <i className="fas fa-angle-right" style={{ color: 'black' }}></i>
                     </div>
                 </Link>
             </div>
