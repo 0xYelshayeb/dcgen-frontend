@@ -52,12 +52,25 @@ const options = (chartData, timeFrame) => { // Make options a function that take
     xAxis: {
       type: 'datetime', // x-axis as dates
       title: null,
-      tickPixelInterval: 300,  // experiment with this number
       labels: {
         format: labelFormat,
         style: {
           color: '#FFF', // white labels
         },
+      },
+      tickPositioner: function(min, max) {
+        const positions = [];
+        const tickCount = 5; // You can change this to 4 or 6 if you prefer
+        const interval = (max - min) / (tickCount - 1);
+    
+        for (let i = 0; i < tickCount; i++) {
+          positions.push(min + (interval * i));
+        }
+    
+        // Sort positions so they appear in ascending order on the axis
+        positions.sort((a, b) => a - b);
+    
+        return positions;
       },
       crosshair: {
         dashStyle: 'Dash',
