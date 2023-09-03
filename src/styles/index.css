@@ -436,7 +436,7 @@ nav ul li a:hover {
     width: 250px;
   }
   #information-container {
-    padding: 25px 10px;
+    padding: 40px 10vw;
   }
 
   #information-container h2 {
@@ -457,6 +457,28 @@ nav ul li a:hover {
     max-width: 150px;
     height: 225px;
   }
+
+  #hero-section {
+    height: calc(155px + 0.2 * (834px - 100vw));
+  }
+
+  #hero-section p{
+    margin: 0;
+    padding: 0;
+  }
+
+  #preview-section {
+    height: calc(370px + 0.2 * (834px - 100vw));
+  }
+
+  #tokens-section {
+    height: calc(450px + 0.2 * (834px - 100vw));
+  }
+
+  #waitlist-section {
+    height: calc(150px + 0.2 * (834px - 100vw));
+  }
+
 }
 
 /* footer section */
@@ -527,7 +549,8 @@ a:hover {
   }
 
   .footer-section-logo{
-    margin-top: 20px;
+    width: 270px;
+    margin-top: 40px;
     margin-left: 0px;
     order: 2;
   }

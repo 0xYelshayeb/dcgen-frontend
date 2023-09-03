@@ -8,7 +8,7 @@ import makerdao from "../images/makerdao.png"
 const Information = () => {
     return (
         <section id="information-container">
-                <div className="content-section centered">
+                <div className="content-section centered" id="hero-section">
                     <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
                     <p>
                     Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
@@ -16,7 +16,7 @@ const Information = () => {
                 </div>
 
             <hr style={{borderColor: "#D0D1D3"}} />
-            <div className="content-section wide-section">
+            <div className="content-section wide-section" id="preview-section">
                 <div>
                     <h2>Empowering Insights: DCgen's Research-Centric Approach.</h2>
                     <p>With a commitment to clarity and precision, DCgen combines advanced research with real-world price movements, curating an index you can confidently rely on.
@@ -34,7 +34,7 @@ const Information = () => {
 
             <hr style={{borderColor: "#D0D1D3"}} />
 
-            <div className="content-section wide-section">
+            <div className="content-section wide-section" id="tokens-section">
                 <div>
                     <h2>Spotlight on Excellence: Top 30 Ethereum Ecosystem Tokens.</h2>
                     <p>Curated with DCgen's precision-driven classification algorithm and upholding rigorous eligibility criteria, these 30 tokens are the hallmark of value for Ethereum enthusiasts, encapsulating the very essence of every DCgen index.</p>
@@ -71,7 +71,7 @@ const Information = () => {
 
             <hr style={{borderColor: "#D0D1D3"}} />
 
-            <div className="content-section centered">
+            <div className="content-section centered" id="waitlist-section">
                 <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
                 <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
                 <Link to="/waitlist" className="special-button">
