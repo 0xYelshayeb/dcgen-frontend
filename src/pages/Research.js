@@ -11,12 +11,14 @@ const Research = () => {
         {
           title: "Ethereum Ecosystem Index: A Comprehensive Study of Index Construction and Performance.",
           description: "In the multifaceted cryptocurrency ecosystem, the need for accurate benchmarks has never been more pressing. This study introduces an index for the Ethereum ecosystem, comparing capitalization-weighted (CW) and equal-weighted (EW) methodologies. Utilizing data from January 2021 to April 2023, the research reveals CW indices outperform EW by an average total return of 127.63%. The proposed CW30 index surpasses existing, widely adopted benchmarks. This research paper serves as a foundational cornerstone for DCgen Index Research, shaping our approach and index methodologies. It also provides any market participants with a robust, data-backed framework for understanding and engaging with the Ethereum ecosystem.",
-          img: preview1
+          img: preview1,
+          pdf: '/MKCS_BThesis.pdf'
         },
         {
           title: "Analyzing the Quantitative Impact of Constituent Counts and Rebalancing Intervals on Ethereum Market Index Performance Metrics.",
           description: "This study dives deep into the Capitalization-Weighted (CW) Ethereum Market Index to reveal the quantitative significance of varying constituent counts and rebalancing intervals. Using data from January 2020 to July 2023, the paper concludes that an index with 30 constituents and an 8-week rebalancing interval exhibits superior performance across multiple metrics, including Total Return, Mean Return, and key risk-adjusted ratios like Sharpe and Sortino. This specific configuration accounts for an astounding 73.6% variation in total returns, serving as a milestone for those aiming for balanced and optimal portfolio performance. This research serves as a foundation for DCgen Index Research.",
-          img: preview2
+          img: preview2,
+          pdf: '/MKCS_BThesis.pdf'
         }
       ];
 
@@ -42,7 +44,9 @@ const Research = () => {
               </div>
               <div className="document-preview">
                 <img src={paper.img} alt={paper.title} />
-                <button>Download</button>
+                <a href={paper.pdf} download>
+                    <button>Download</button>
+                </a>
               </div>
             </section>
           ))}
