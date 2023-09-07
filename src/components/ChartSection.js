@@ -10,18 +10,38 @@ const Button = ({ text, isSelected, onClick }) => (
 
 const ChartSection = () => {
 
+  const chartRef = useRef(null);
+
   const [timeFrame, setTimeFrame] = useState('MAX'); 
   const [chartData, setChartData] = useState([]);
+
+  useEffect(() => {
+    const chartElement = chartRef.current;
+
+    const preventScroll = (e) => {
+      e.preventDefault();
+    };
+
+    if (chartElement) {
+      chartElement.addEventListener('touchmove', preventScroll, { passive: false });
+    }
+
+    return () => {
+      if (chartElement) {
+        chartElement.removeEventListener('touchmove', preventScroll);
+      }
+    };
+  }, []);
   
-    useEffect(() => {
-      const fetchData = async () => {
-          try {
-            const response = await axios.get(`https://dcgen-backend-12f54977f851.herokuapp.com/timeSeries?timeframe=${timeFrame}`);
-            setChartData(response.data);
-          } catch (error) {
-            console.error("Failed to fetch data", error);
-          }
-      };
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+          const response = await axios.get(`https://dcgen-backend-12f54977f851.herokuapp.com/timeSeries?timeframe=${timeFrame}`);
+          setChartData(response.data);
+        } catch (error) {
+          console.error("Failed to fetch data", error);
+        }
+    };
       
       fetchData();
   }, [timeFrame]);
@@ -48,7 +68,7 @@ const ChartSection = () => {
             </div>
           </div>
         </section>
-          <section className="chart">
+          <section ref={chartRef} className="chart">
             <div className="timeframe-buttons">
               <Button text="1M" isSelected={timeFrame === '1M'} onClick={() => setTimeFrame('1M')} />
               <Button text="6M" isSelected={timeFrame === '6M'} onClick={() => setTimeFrame('6M')} />
