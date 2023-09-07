@@ -13,7 +13,7 @@ const Constituents = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get(`https://165.232.113.176/constituents`);
+          const response = await axios.get(`https://api.dcgen.finance/constituents`);
           setData(response.data);  // Set state with fetched data
         } catch (error) {
           console.error("Failed to fetch data", error);

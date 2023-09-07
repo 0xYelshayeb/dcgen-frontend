@@ -36,7 +36,7 @@ const ChartSection = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get(`https://dcgen-backend-12f54977f851.herokuapp.com/timeSeries?timeframe=${timeFrame}`);
+          const response = await axios.get(`https://api.dcgen.finance/timeSeries?timeframe=${timeFrame}`);
           setChartData(response.data);
         } catch (error) {
           console.error("Failed to fetch data", error);
