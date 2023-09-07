@@ -1,4 +1,4 @@
-// src/pages/Research.js
+// src/pages/Arbitrum.js
 import React from "react";
 import ComingSoon from "../components/ComingSoon";
 import Layout from "../components/Layout";

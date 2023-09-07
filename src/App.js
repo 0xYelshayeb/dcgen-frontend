@@ -8,18 +8,20 @@ import Research from "./pages/Research";
 import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";
 import Arbitrum from "./pages/Arbitrum"
+import ComingSoon from "./components/ComingSoon";
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<IndexPage/>} />
-        <Route path="/arbitrum-index" element={<Arbitrum/>} />
-        <Route path="/ethereum-index" element={<IndexPage/>} />
+        <Route path="/" element={<IndexPage />} />
+        <Route path="/arbitrum-index" element={<Arbitrum />} />
+        <Route path="/ethereum-index" element={<IndexPage />} />
         <Route path="/ethereum-constituents" element={<Constituents />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="*" element={<NotFound />} /> {/* Default 404 route */}
       </Routes>
     </BrowserRouter>
