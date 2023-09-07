@@ -13,7 +13,7 @@ const Index = () => {
       "description": "An index tracking the Ethereum ecosystem",
     };
     return (
-        <Layout title="DCGen" name="DCGen index page" description="Index page of DCGen Research showcasing the ethereum ecosystem index" schema={schema}>
+        <Layout title="DCgen" name="DCgen index page" description="Index page of DCgen Research showcasing the ethereum ecosystem index" schema={schema}>
           <IndexName />
           <ChartSection />
           <Information />
