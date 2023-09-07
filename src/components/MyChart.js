@@ -14,7 +14,7 @@ const options = (chartData, timeFrame) => { // Make options a function that take
   let adjustedLineWidth = 3; // Default line width
 
   if (screenWidth <= 834) { // For screens narrower than 768px
-    adjustedLineWidth = 1.5; // Make the line thinner
+    adjustedLineWidth = 2; // Make the line thinner
   }
 
   switch (timeFrame) {
