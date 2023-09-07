@@ -10,6 +10,13 @@ const options = (chartData, timeFrame) => { // Make options a function that take
 
   let labelFormat;
 
+  const screenWidth = window.innerWidth;
+  let adjustedLineWidth = 3; // Default line width
+
+  if (screenWidth <= 834) { // For screens narrower than 768px
+    adjustedLineWidth = 1.5; // Make the line thinner
+  }
+
   switch (timeFrame) {
     case 'MAX':
       labelFormat = '{value:%Y}'; // Just the year
@@ -94,7 +101,7 @@ const options = (chartData, timeFrame) => { // Make options a function that take
       name: 'Index', // series name
       data: chartData,
       color: '#FFF', // white line
-      lineWidth: 3, // thicker line
+      lineWidth: adjustedLineWidth, // thicker line
       marker: {
         enabled: false, // no dots on each data point
       },
