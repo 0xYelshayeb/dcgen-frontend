@@ -7,8 +7,8 @@ const ComingSoon = () => {
   return (
     <div className="coming-soon-content">
       <h1>Coming Soon</h1>
-      <p>This feature is under development. Stay tuned!</p>
-      <Link to="/">Go Back Home</Link>
+      <p>Stay tuned!</p>
+      <Link className="no-corners" to="/">Go Back Home</Link>
     </div>
   );
 };
