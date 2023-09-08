@@ -8,7 +8,7 @@ import Research from "./pages/Research";
 import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";
 import Arbitrum from "./pages/Arbitrum"
-import ComingSoon from "./components/ComingSoon";
+import ComingSoon from "./pages/ComingSoon";
 
 const App = () => {
   return (

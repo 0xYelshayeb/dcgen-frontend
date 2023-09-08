@@ -19,24 +19,24 @@ const Footer = () => {
                     </Link>
                 </div>
                 <div className="footer-icons">
-                    <a target="_blank" rel="noopener noreferrer" href="#link1"><img src={x} alt="X Icon" /></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance"><img src={x} alt="X Icon" /></a>
                     <a target="_blank" rel="noopener noreferrer" href="#link2"><img src={discord} alt="Discord Icon" /></a>
                     <a target="_blank" rel="noopener noreferrer" href="#link3"><img src={telegram} alt="Telegram Icon" /></a>
                     <a target="_blank" rel="noopener noreferrer" href="#link4"><img src={github} alt="GitHub Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="#link5"><img src={gitbook} alt="GitBook Icon" /></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/"><img src={gitbook} alt="GitBook Icon" /></a>
                 </div>
             </div>
             <div className="footer-sections-wrapper">
                 <div className="footer-section footer-section-rest">
                     <h4>Community</h4>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/YourPage/">Twitter </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/YourPage/">Telegram </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/YourPage/">Discord </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance">X (Twitter) </a>
+                    <a target="_blank" rel="noopener noreferrer" href="#Telegram">Telegram </a>
+                    <a target="_blank" rel="noopener noreferrer" href="#Discord">Discord </a>
                 </div>
                 <div className="footer-section footer-section-rest">
                     <h4>Resources</h4>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/YourPage/">Documentation </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/YourPage/">GitHub </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a>
+                    <a target="_blank" rel="noopener noreferrer" href="#Github">GitHub </a>
                     <Link to="/research">Research</Link>
                 </div>
             </div>

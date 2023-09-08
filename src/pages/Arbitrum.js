@@ -3,7 +3,7 @@ import React from "react";
 import ComingSoon from "../components/ComingSoon";
 import Layout from "../components/Layout";
 
-const Research = () => {
+const Arbitrum = () => {
     const schema = {
         "@context": "https://dcgen.finance/arbitrum-index",
         "@type": "WebPage",
@@ -17,4 +17,4 @@ const Research = () => {
     );
 };
 
-export default Research;
+export default Arbitrum;
