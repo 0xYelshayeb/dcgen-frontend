@@ -554,7 +554,7 @@ nav ul li a:hover {
 
 .footer-container {
   display: flex;
-  padding: 40px;
+  padding: 60px 40px 60px 40px;
   background-color: #050A30;
   color: white;
 }
