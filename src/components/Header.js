@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../images/logo.png';
 import { Link, useLocation } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const headerRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,8 +16,24 @@ const Header = () => {
     return paths.includes(location.pathname) ? 'active-link' : '';
   };
 
+  useEffect(() => {
+    const setPadding = () => {
+      if (headerRef.current) {
+        const headerHeight = headerRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+      }
+    };
+  
+    setPadding();
+    window.addEventListener('resize', setPadding);
+  
+    return () => {
+      window.removeEventListener('resize', setPadding);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <div className='header-container'>
+    <div className='header-container' ref={headerRef}>
     <header className={isMenuOpen ? 'menu-open' : ''}>
       <div className="menu-container">
         <div className="logo-container">

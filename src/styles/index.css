@@ -34,7 +34,7 @@ body {
 }
 
 .content-with-padding{
-  padding-top: 120px;
+  padding-top: var(--header-height);
 }
 
 /* Chart section styles below */
@@ -180,11 +180,10 @@ body {
 .header-container {
   position: fixed;
   width: 100vw;
+  padding: 0;
   background: white;
   z-index: 10;
-  top: 0;
   left: 0;
-  height: 120px;
 }
 
 header {
@@ -193,7 +192,6 @@ header {
   align-items: center;
   border-bottom: 1px solid #D0D1D3;
   padding: 30px 3vw 20px 4vw;
-  height: 70px;
   position: relative;
 }
 
@@ -302,11 +300,6 @@ nav ul li a:hover {
   header {
     padding: 30px 6vw 20px 4vw;
   }
-
-  .header-container{
-    height: 200px;
-  }
-
 }
 
 /* IndexName section */
@@ -333,9 +326,7 @@ nav ul li a:hover {
   .index-image {
     width: 70vw;
   }
-
 }
-
 
 /* Information section */
 
