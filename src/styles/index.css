@@ -228,6 +228,7 @@ nav ul li a:hover {
 
 /* Style for the special button */
 .special-button {
+  margin-top: 20px;
   background-color: blue;
   color: white;
   border-radius: 0; /* No rounded corners */
@@ -389,12 +390,11 @@ nav ul li a:hover {
   justify-content: center;
   color: black;
   position: relative;
+  transition: transform 0.2s ease;  /* Add transition for smooth scaling */
 }
 
-#document-preview i {
-  position: absolute;
-  bottom: 7%;
-  right: 7%;
+#document-preview:hover{
+  transform: scale(104%)
 }
 
 #document-preview img {
@@ -420,10 +420,12 @@ nav ul li a:hover {
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
   color: black;
   align-items: center;
+  transition: transform 0.2s ease;  /* Add transition for smooth scaling */
 }
 
 #tokens-container:hover {
   text-decoration: none;
+  transform: scale(103%)
 }
 
 .token {
