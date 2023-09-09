@@ -16,6 +16,7 @@ const Header = () => {
   };
 
   return (
+    <div className='header-container'>
     <header className={isMenuOpen ? 'menu-open' : ''}>
       <div className="menu-container">
         <div className="logo-container">
@@ -44,6 +45,7 @@ const Header = () => {
         {isMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
       </button>
     </header>
+    </div>
   );
 };
 

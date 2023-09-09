@@ -5,7 +5,7 @@ import '../styles/comingSoon.css'; // Import styles
 
 const ComingSoon = () => {
   return (
-    <div className="coming-soon-content">
+    <div id="coming-soon-content">
       <h1>Coming Soon</h1>
       <p>Stay tuned!</p>
       <Link className="no-corners" to="/">Go Back Home</Link>

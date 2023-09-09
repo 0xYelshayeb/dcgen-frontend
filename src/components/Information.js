@@ -75,7 +75,7 @@ const Information = () => {
             <div className="content-section centered" id="waitlist-section">
                 <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
                 <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
-                <Link to="/waitlist" className="special-button">
+                <Link to="/waitlist" className="special-button waitlist">
                     Join Waitlist
                 </Link>
             </div>

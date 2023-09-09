@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const Layout = ({ children, title, name, description, schema }) => {
   return (
-    <div className="app">
+    <div id="app">
       <Helmet>
         <title>{title}</title>
         <meta name={name} content={description} />
@@ -22,7 +22,9 @@ const Layout = ({ children, title, name, description, schema }) => {
         <meta name="twitter:image" content="https://dcgen.netlify.app/dcgen.jpeg" />
       </Helmet>
       <Header />
-      {children}
+      <div className="content-with-padding">
+        {children}
+      </div>
       <Footer />
     </div>
   );
