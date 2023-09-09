@@ -557,7 +557,7 @@ nav ul li a:hover {
 
 .footer-sections-wrapper {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 80px;
 }x
 
