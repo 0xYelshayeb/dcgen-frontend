@@ -302,6 +302,11 @@ nav ul li a:hover {
   header {
     padding: 30px 6vw 20px 4vw;
   }
+
+  .header-container{
+    height: 200px;
+  }
+
 }
 
 /* IndexName section */
