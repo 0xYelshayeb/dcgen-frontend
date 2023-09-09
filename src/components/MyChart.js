@@ -116,7 +116,7 @@ const options = (chartData, timeFrame) => { // Make options a function that take
         const { point } = this;
         return `
           <div style="text-align: center;">
-            <div style="font-size: 1.3em;"><strong>${point.y}</strong></div>
+            <div style="font-size: 1.3em;"><strong>${parseFloat(point.y).toFixed(2)}</strong></div>
             <div>${Highcharts.dateFormat('%d %b \'%y', point.x)}</div>
           </div>
         `;
