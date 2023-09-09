@@ -27,8 +27,8 @@ const options = (chartData, timeFrame) => { // Make options a function that take
     case '6M':
       labelFormat = '{value:%b \'%y}'; // Same as 1Y
       break;
-    case '1M':
-      labelFormat = '{value:%d/%m}'; // dd/mm
+    case '3M':
+      labelFormat = '{value:%b \'%y}'; // Same as 1Y
       break;
     default:
       labelFormat = '{value:%d.%m.%Y}'; // Default format
