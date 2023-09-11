@@ -12,7 +12,7 @@ const ChartSection = () => {
 
   const chartRef = useRef(null);
 
-  const [timeFrame, setTimeFrame] = useState('MAX'); 
+  const [timeFrame, setTimeFrame] = useState('3M'); 
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
