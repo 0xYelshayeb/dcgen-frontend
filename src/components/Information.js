@@ -8,15 +8,31 @@ import preview1 from "../images/preview1.jpg"
 import preview2 from "../images/preview2.jpg"
 
 const Information = () => {
+
+    const [constituents, setConstituents] = useState([]);  // Added state to store data
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`https://api.dcgen.finance/constituents`);
+                setConstituents(response.data);  // Set state with fetched data
+            } catch (error) {
+                console.error("Failed to fetch data", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <section id="information-container">
             <div className="content-section centered" id="hero-section">
                 <h2>The Premier Capitalization-Weighted Index for the Ethereum Ecosystem.</h2>
                 <p>
-                Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
+                    Navigate the Ethereum landscape with unmatched clarity. DCgen's unique lens offers profound insights into Ethereum's market dynamics, guiding you towards informed and confident investment decisions.
                 </p>
             </div>
-            <hr style={{borderColor: "#D0D1D3"}} />
+            <hr style={{ borderColor: "#D0D1D3" }} />
             <div className="content-section wide-section" id="preview-section">
                 <div>
                     <h2>Empowering Insights: DCgen's Research-Centric Approach.</h2>
@@ -33,7 +49,7 @@ const Information = () => {
                 </Link>
             </div>
 
-            <hr style={{borderColor: "#D0D1D3"}} />
+            <hr style={{ borderColor: "#D0D1D3" }} />
 
             <div className="content-section wide-section" id="tokens-section">
                 <div>
@@ -43,7 +59,7 @@ const Information = () => {
                 <Link to="/ethereum-constituents" id="tokens-container">
                     <div className="token">
                         <div className="left-group">
-                            <img src={uniswap} alt="icon1"/>
+                            <img src={uniswap} alt="icon1" />
                             <span className="token-name">Uniswap</span>
                         </div>
                         <span className="token-change">13.45%</span>
@@ -70,7 +86,7 @@ const Information = () => {
                 </Link>
             </div>
 
-            <hr style={{borderColor: "#D0D1D3"}} />
+            <hr style={{ borderColor: "#D0D1D3" }} />
 
             <div className="content-section centered" id="waitlist-section">
                 <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
