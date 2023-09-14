@@ -369,18 +369,19 @@ nav ul li a:hover {
   height: 400px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
+  padding: 0px 2vw;
 }
 
 .wide-section div:first-child {
-  flex-basis: 60%;
+  flex-basis: 70%;
   max-width: 800px;
 }
 
 .wide-section div:last-child {
-  flex-basis: 40%;
+  flex-basis: 30%;
 }
 
 #document-container {
@@ -560,10 +561,6 @@ nav ul li a:hover {
   display: flex;
   align-items: flex-start;
   gap: 80px;
-}x
-
-.footer-section {
-  padding: 30px;
 }
 
 .footer-section h4{
@@ -598,17 +595,32 @@ a:hover {
 @media screen and (max-width: 834px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 7vw 7vw;
+  }
+
+  .footer-logo img{
+    width: 100px;
+  }
+
+  .footer-icons img {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
   }
 
   .footer-section-logo{
     width: 270px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 0px;
     order: 2;
   }
 
   .footer-sections-wrapper {
     order: 1;
+  }
+
+  .footer-icons {
+    max-width: 150px;
   }
 }
