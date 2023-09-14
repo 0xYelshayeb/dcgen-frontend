@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import uniswap from "../images/uniswap.png"
 import preview1 from "../images/preview1.jpg"
 import preview2 from "../images/preview2.jpg"
 
@@ -59,8 +58,8 @@ const Information = () => {
                     {constituents.map((item, index) => (
                         <div className="token" key={index}>
                             <div className="left-group">
-                                {/* You can dynamically set the image source if you have a mapping */}
-                                <img src={uniswap} alt={`icon${index + 1}`} />
+                                {console.log(`../images/${item.Symbol}.png`)}
+                                <img src={require(`../images/${item.Symbol}.png`).default} alt={`icon${index + 1}`} />
                                 <span className="token-name">{item.Name}</span>
                             </div>
                             <span className="token-change">
