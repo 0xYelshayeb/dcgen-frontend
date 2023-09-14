@@ -68,14 +68,14 @@ const ChartSection = () => {
             </div>
           </div>
         </section>
-          <section ref={chartRef} className="chart">
+          <section className="chart">
             <div className="timeframe-buttons">
               <Button text="3M" isSelected={timeFrame === '3M'} onClick={() => setTimeFrame('3M')} />
               <Button text="6M" isSelected={timeFrame === '6M'} onClick={() => setTimeFrame('6M')} />
               <Button text="1Y" isSelected={timeFrame === '1Y'} onClick={() => setTimeFrame('1Y')} />
               <Button text="MAX" isSelected={timeFrame === 'MAX'} onClick={() => setTimeFrame('MAX')} />
             </div>
-            <MyChart className="chart-area" chartData={chartData} timeFrame={timeFrame} />
+            <MyChart  ref={chartRef} className="chart-area" chartData={chartData} timeFrame={timeFrame} />
           </section>
         </main>
     )

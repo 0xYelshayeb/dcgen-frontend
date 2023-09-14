@@ -55,9 +55,9 @@ const Constituents = () => {
             {data.map((item, index) => (
               <tr key={index}>
                 <td>{item.Name}</td>
-                <td class="hide-on-extra-small">{item.Symbol}</td>
-                <td class="hide-on-small">${parseFloat(item.Price).toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</td>
-                <td class="hide-on-medium">${parseFloat(item["Market cap"]).toLocaleString('en-US')}</td>
+                <td class="hide-on-extra-small">{item.Symbol.toUpperCase()}</td>
+                <td class="hide-on-small">${parseFloat(item.Price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                <td class="hide-on-medium">${parseFloat(item["Market cap"]).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
                 <td>{parseFloat(item["Allocation %"]).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %</td>
               </tr>
             ))}
