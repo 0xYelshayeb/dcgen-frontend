@@ -8,7 +8,7 @@ const Layout = ({ children, title, name, description, schema }) => {
   return (
     <div id="app">
       <Helmet>
-        <title>{title}</title>
+        <title>{title || "DCgen"}</title>
         <meta name={name} content={description} />
         {schema && <script type="application/ld+json">{JSON.stringify(schema)}</script>}
         <meta property="og:title" content="DCgen" />
