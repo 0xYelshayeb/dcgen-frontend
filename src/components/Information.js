@@ -58,8 +58,8 @@ const Information = () => {
                     {constituents.map((item, index) => (
                         <div className="token" key={index}>
                             <div className="left-group">
-                                {console.log(`../images/${item.Symbol}.png`)}
-                                <img src={require(`../images/${item.Symbol}.png`).default} alt={`icon${index + 1}`} />
+                                {console.log(item.logoURI)}
+                                <img src={item.logoURI} alt={`icon${index + 1}`} />
                                 <span className="token-name">{item.Name}</span>
                             </div>
                             <span className="token-change">
