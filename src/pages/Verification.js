@@ -5,7 +5,7 @@ import "../styles/waitlist.css"
 
 const Verification = () => {
 
-    const [apiResponse, setApiResponse] = useState({ status: null, message: null });
+    const [apiResponse, setApiResponse] = useState({ status: "success", message: null });
 
     useEffect(() => {
         // Parse URL to get the token parameter
