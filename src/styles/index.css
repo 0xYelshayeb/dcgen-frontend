@@ -565,7 +565,7 @@ nav ul li a:hover {
   }
 
   #waitlist-section {
-    height: calc(150px + 0.2 * (834px - 100vw));
+    height: calc(200px + 0.2 * (834px - 100vw));
   }
 }
 
