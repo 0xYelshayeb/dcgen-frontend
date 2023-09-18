@@ -17,9 +17,7 @@ const Verification = () => {
             try {
                 const response = await axios.post('https://api.dcgen.finance/processToken', { token });
                 setApiResponse({ status: "success", message: response.data });
-                console.log("success")
             } catch (error) {
-                console.log("error")
                 const errorMessage = error.response?.data || "An error occurred";
                 setApiResponse({ status: "error", message: errorMessage });
             }
@@ -42,7 +40,6 @@ const Verification = () => {
         <Layout title="Verification" name="Verification page" description="Page that renders when you want to verify your email" schema={schema}>
             <div className="waitlist-content">
                 <h1>Thank you for signing up to our Waitlist</h1>
-                {console.log(apiResponse)}
                 {
                     apiResponse.status === "success" ? (
                         <p>You will be notified about future DCgen research developments and updates!</p>

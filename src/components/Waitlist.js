@@ -20,8 +20,6 @@ const Information = () => {
     };
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        console.log("here");
         let apiResponse = { status: null, message: null }; // Initialize a variable to store the API response
         if (isValid) {
             try {
