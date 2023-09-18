@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";
 import Arbitrum from "./pages/Arbitrum"
 import ComingSoon from "./pages/ComingSoon";
+import Waitlist from "./pages/Waitlist";
+import Verification from "./pages/Verification";
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/research" element={<Research />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
+        <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/verify" element={<Verification />} />
         <Route path="*" element={<NotFound />} /> {/* Default 404 route */}
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 // src/components/Information.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import preview1 from "../images/preview1.jpg"
 import preview2 from "../images/preview2.jpg"
 
@@ -11,6 +11,7 @@ const Information = () => {
     const [email, setEmail] = useState("");
     const [isValid, setIsValid] = useState(false);
     const [isTouched, setIsTouched] = useState(false); // New state to track if the input has been touched
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         if (!isTouched) {
@@ -27,7 +28,7 @@ const Information = () => {
         if (isValid) {
             try {
                 await axios.post('https://api.dcgen.finance/joinWaitlist', { email });
-                alert('You have successfully joined the waitlist.');
+                navigate('/waitlist'); // Redirect to /waitlist page using React Router v6
             } catch (err) {
                 alert('An error occurred.');
             }

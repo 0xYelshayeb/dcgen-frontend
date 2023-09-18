@@ -1,0 +1,19 @@
+  /* Content takes up all available space and centers the inner content */
+  .waitlist-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 68vh;
+  }
+
+  /* Style the link */
+  .waitist-content a {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: blue;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+  }
