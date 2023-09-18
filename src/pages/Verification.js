@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import "../styles/waitlist.css"
+import axios from 'axios'; // Import axios
 
 const Verification = () => {
 
@@ -12,26 +13,23 @@ const Verification = () => {
         const urlParams = new URLSearchParams(window.location.search);
         const token = urlParams.get('token');
 
-        // Send token to your backend for processing
+        const processToken = async () => {
+            try {
+                const response = await axios.post('https://api.dcgen.finance/processToken', { token });
+                setApiResponse({ status: "success", message: response.data });
+                console.log("success")
+            } catch (error) {
+                console.log("error")
+                const errorMessage = error.response?.data || "An error occurred";
+                setApiResponse({ status: "error", message: errorMessage });
+            }
+        };
+
+        // Call the function if token exists
         if (token) {
-            fetch('https://api.dcgen.finance/processToken', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ token })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the response from your backend
-                    setApiResponse({ status: "success", message: data });
-                    console.log("success")
-                })
-                .catch(_ => {
-                    // Handle errors
-                    setApiResponse({ status: "error", message: "An error occurred" });
-                });
+            processToken();
         }
+
     }, []);
 
     const schema = {
