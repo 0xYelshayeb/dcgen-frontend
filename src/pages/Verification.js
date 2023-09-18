@@ -5,7 +5,7 @@ import "../styles/waitlist.css"
 
 const Verification = () => {
 
-    const [apiResponse, setApiResponse] = useState({ status: "success", message: null });
+    const [apiResponse, setApiResponse] = useState({ status: null, message: null });
 
     useEffect(() => {
         // Parse URL to get the token parameter
@@ -25,6 +25,7 @@ const Verification = () => {
                 .then(data => {
                     // Handle the response from your backend
                     setApiResponse({ status: "success", message: data });
+                    console.log("success")
                 })
                 .catch(_ => {
                     // Handle errors
@@ -43,6 +44,7 @@ const Verification = () => {
         <Layout title="Verification" name="Verification page" description="Page that renders when you want to verify your email" schema={schema}>
             <div className="waitlist-content">
                 <h1>Thank you for signing up to our Waitlist</h1>
+                {console.log(apiResponse)}
                 {
                     apiResponse.status === "success" ? (
                         <p>You will be notified about future DCgen research developments and updates!</p>
