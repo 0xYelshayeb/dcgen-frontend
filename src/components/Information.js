@@ -8,6 +8,27 @@ import preview2 from "../images/preview2.jpg"
 const Information = () => {
 
     const [constituents, setConstituents] = useState([]);  // Added state to store data
+    const [email, setEmail] = useState("");
+    const [isValid, setIsValid] = useState(false);
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+        setIsValid(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value));
+    };
+
+    const handleSubmit = async (e) => {
+        // e.preventDefault();
+        console.log("here")
+        if (isValid) {
+            try {
+                await axios.post('https://api.dcgen.finance/joinWaitlist', { email });
+                alert('You have successfully joined the waitlist.');
+            } catch (err) {
+                alert('An error occurred.');
+            }
+        }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -80,9 +101,16 @@ const Information = () => {
             <div className="content-section centered" id="waitlist-section">
                 <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
                 <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
-                <Link to="/waitlist" className="special-button waitlist">
+                <input
+                    type="text"
+                    value={email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email"
+                    className={`email-input ${isValid ? "valid" : "invalid"}`}
+                />
+                <button onClick={handleSubmit} className={`special-button waitlist`}>
                     Join Waitlist
-                </Link>
+                </button>
             </div>
         </section>
     );

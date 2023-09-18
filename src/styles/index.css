@@ -470,6 +470,36 @@ nav ul li a:hover {
   margin-top: 20px;
 }
 
+.email-input {
+  border-radius: 8px;
+  padding: 8px;
+  transition: border-color 0.3s ease;
+  /* height: 30px; */
+  font-size: 20px;
+}
+
+.email-input.valid {
+  border-color: green;
+}
+
+.email-input.invalid {
+  border-color: red;
+}
+
+.email-input:focus {
+  outline: none;
+}
+
+.special-button.waitlist {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.special-button.waitlist:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1100px) {
   .centered {
     width: 80vw;
