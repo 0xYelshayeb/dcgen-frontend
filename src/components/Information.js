@@ -10,8 +10,12 @@ const Information = () => {
     const [constituents, setConstituents] = useState([]);  // Added state to store data
     const [email, setEmail] = useState("");
     const [isValid, setIsValid] = useState(false);
+    const [isTouched, setIsTouched] = useState(false); // New state to track if the input has been touched
 
     const handleInputChange = (e) => {
+        if (!isTouched) {
+            setIsTouched(true);
+        }
         const value = e.target.value;
         setEmail(value);
         setIsValid(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value));
@@ -106,7 +110,7 @@ const Information = () => {
                     value={email}
                     onChange={handleInputChange}
                     placeholder="Enter your email"
-                    className={`email-input ${isValid ? "valid" : "invalid"}`}
+                    className={`email-input ${isTouched ? (isValid ? "valid" : "invalid") : ""}`}
                 />
                 <button onClick={handleSubmit} className={`special-button waitlist`}>
                     Join Waitlist

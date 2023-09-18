@@ -473,21 +473,20 @@ nav ul li a:hover {
 .email-input {
   border-radius: 8px;
   padding: 8px;
-  transition: border-color 0.3s ease;
-  /* height: 30px; */
+  transition: background-color 0.3s ease;
   font-size: 20px;
 }
 
 .email-input.valid {
-  border-color: green;
+  background-color: rgba(0, 128, 0, 0.2); /* Green with 30% opacity */
 }
 
 .email-input.invalid {
-  border-color: red;
+  background-color: rgba(255, 0, 0, 0.2); /* Red with 30% opacity */
 }
 
-.email-input:focus {
-  outline: none;
+.email-input {
+  background-color: white;
 }
 
 .special-button.waitlist {
