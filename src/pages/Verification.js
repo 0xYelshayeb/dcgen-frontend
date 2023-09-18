@@ -1,9 +1,11 @@
 // src/pages/Verification.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import "../styles/waitlist.css"
 
 const Verification = () => {
+
+    const [apiResponse, setApiResponse] = useState({ status: null, message: null });
 
     useEffect(() => {
         // Parse URL to get the token parameter
@@ -22,11 +24,14 @@ const Verification = () => {
                 .then(response => response.json())
                 .then(data => {
                     // Handle the response from your backend
-                    console.log(data);
+                    setApiResponse({ status: "success", message: data });
                 })
                 .catch(error => {
+                    if(error.response){
+                        setApiResponse({ status: "error", message: error.response.data });
+                    }
                     // Handle errors
-                    console.log('Error sending token:', error);
+                    setApiResponse({ status: "error", message: "An error occurred" });
                 });
         }
     }, []);
@@ -41,7 +46,13 @@ const Verification = () => {
         <Layout title="Verification" name="Verification page" description="Page that renders when you want to verify your email" schema={schema}>
             <div className="waitlist-content">
                 <h1>Thank you for signing up to our Waitlist</h1>
-                <p>You will be notified about future DCgen research developments and updates!</p>
+                {
+                    apiResponse.status === "success" ? (
+                        <p>You will be notified about future DCgen research developments and updates!</p>
+                    ) : (
+                        <p>{apiResponse.message || "An error occurred. Please try again."}</p>
+                    )
+                }
             </div>
         </Layout>
     );

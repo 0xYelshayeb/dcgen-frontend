@@ -1,23 +1,37 @@
 // src/pages/Waitlist.js
-import React from "react";
+import React from 'react';
 import Layout from "../components/Layout";
 import "../styles/waitlist.css"
+import { useLocation } from 'react-router-dom';
 
-const Waitlist = () => {
+const WaitlistPage = () => {
+
+    const location = useLocation();
+    const apiResponse = location.state?.apiResponse; // Access the API response passed as state
+
     const schema = {
-        "@context": "https://dcgen.finance/coming-soon",
+        "@context": "https://dcgen.finance/waitlist",
         "@type": "WebPage",
         "name": "Waitlist",
         "description": "Waitlist Page",
     };
+
+    console.log(apiResponse?.message)
+
     return (
         <Layout title="Waitlist" name="Waitlist page" description="Page that renders when you request to enter the waitlist" schema={schema}>
             <div className="waitlist-content">
                 <h1>Thank you for signing up to our Waitlist</h1>
-                <p>Please check your inbox to verify your email address</p>
+                {
+                    apiResponse?.status === "success" ? (
+                        <p>Please check your inbox to verify your email address</p>
+                    ) : (
+                        <p>{apiResponse?.message || "An error occurred. Please try again."}</p>
+                    )
+                }
             </div>
         </Layout>
     );
 };
 
-export default Waitlist;
+export default WaitlistPage;

@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/research" element={<Research />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
-        <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/waitlist/*" element={<Waitlist />} />
         <Route path="/verify" element={<Verification />} />
         <Route path="*" element={<NotFound />} /> {/* Default 404 route */}
       </Routes>

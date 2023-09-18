@@ -1,39 +1,14 @@
 // src/components/Information.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import preview1 from "../images/preview1.jpg"
 import preview2 from "../images/preview2.jpg"
+import Waitlist from './Waitlist';
 
 const Information = () => {
 
     const [constituents, setConstituents] = useState([]);  // Added state to store data
-    const [email, setEmail] = useState("");
-    const [isValid, setIsValid] = useState(false);
-    const [isTouched, setIsTouched] = useState(false); // New state to track if the input has been touched
-    const navigate = useNavigate();
-
-    const handleInputChange = (e) => {
-        if (!isTouched) {
-            setIsTouched(true);
-        }
-        const value = e.target.value;
-        setEmail(value);
-        setIsValid(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value));
-    };
-
-    const handleSubmit = async (e) => {
-        // e.preventDefault();
-        console.log("here")
-        if (isValid) {
-            try {
-                await axios.post('https://api.dcgen.finance/joinWaitlist', { email });
-                navigate('/waitlist'); // Redirect to /waitlist page using React Router v6
-            } catch (err) {
-                alert('An error occurred.');
-            }
-        }
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -84,7 +59,6 @@ const Information = () => {
                     {constituents.map((item, index) => (
                         <div className="token" key={index}>
                             <div className="left-group">
-                                {console.log(item.logoURI)}
                                 <img src={item.logoURI} alt={`icon${index + 1}`} />
                                 <span className="token-name">{item.Name}</span>
                             </div>
@@ -103,20 +77,7 @@ const Information = () => {
 
             <hr style={{ borderColor: "#D0D1D3" }} />
 
-            <div className="content-section centered" id="waitlist-section">
-                <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
-                <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
-                <input
-                    type="text"
-                    value={email}
-                    onChange={handleInputChange}
-                    placeholder="Enter your email"
-                    className={`email-input ${isTouched ? (isValid ? "valid" : "invalid") : ""}`}
-                />
-                <button onClick={handleSubmit} className={`special-button waitlist`}>
-                    Join Waitlist
-                </button>
-            </div>
+            <Waitlist />
         </section>
     );
 };
