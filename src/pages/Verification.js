@@ -1,5 +1,6 @@
 // src/pages/Verification.js
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from "../components/Layout";
 import "../styles/waitlist.css"
 import axios from 'axios'; // Import axios
@@ -47,6 +48,7 @@ const Verification = () => {
                         <p>{apiResponse.message || "An error occurred. Please try again."}</p>
                     )
                 }
+            <Link to="/">Go Back Home</Link>
             </div>
         </Layout>
     );

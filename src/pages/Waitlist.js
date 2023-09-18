@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from "../components/Layout";
 import "../styles/waitlist.css"
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const WaitlistPage = () => {
 
@@ -29,6 +29,7 @@ const WaitlistPage = () => {
                         <p>{apiResponse?.message || "An error occurred. Please try again."}</p>
                     )
                 }
+                <Link to="/">Go Back Home</Link>
             </div>
         </Layout>
     );

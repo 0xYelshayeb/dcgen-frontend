@@ -12,3 +12,17 @@
     font-size: 20px;
   }
 
+    /* Style the link */
+    .waitlist-content a {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: blue;
+      color: white;
+      text-decoration: none;  
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Hover effect */
+    .waitlist-content a:hover {
+      background-color: darkblue;
+    }
