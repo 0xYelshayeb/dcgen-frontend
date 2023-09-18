@@ -26,10 +26,7 @@ const Verification = () => {
                     // Handle the response from your backend
                     setApiResponse({ status: "success", message: data });
                 })
-                .catch(error => {
-                    if(error.response){
-                        setApiResponse({ status: "error", message: error.response.data });
-                    }
+                .catch(_ => {
                     // Handle errors
                     setApiResponse({ status: "error", message: "An error occurred" });
                 });
