@@ -21,7 +21,6 @@ const App = () => {
         <Route path="/arbitrum-index" element={<Arbitrum />} />
         <Route path="/ethereum-index" element={<IndexPage />} />
         <Route path="/ethereum-constituents" element={<Constituents />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/research" element={<Research />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/waitlist/*" element={<Waitlist />} />
