@@ -29,6 +29,9 @@ const Footer = () => {
                     <h4>Community</h4>
                     <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance">X (Twitter) </a>
                     <a target="_blank" rel="noopener noreferrer" href="#Discord">Discord </a>
+                    <a href="mailto:contact@dcgen.finance">
+                        Contact us
+                    </a>
                 </div>
                 <div className="footer-section footer-section-rest">
                     <h4>Resources</h4>
