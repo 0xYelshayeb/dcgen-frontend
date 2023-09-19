@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
     height: 68vh;
+    text-align: center;
+    padding: 40px
   }
   
   /* Style the link */
