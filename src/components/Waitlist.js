@@ -60,7 +60,7 @@ const Information = () => {
                 </button>
             </div>
             {response.message !== null && (
-                <p className={`response-message ${response.status}`}>
+                <p id="response-message">
                     {response.message}
                 </p>
             )}
