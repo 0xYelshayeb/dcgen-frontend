@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import IndexPage from "./pages/Index";
 import Constituents from "./pages/Constituents";
-import Contact from "./pages/Contact";
 import Research from "./pages/Research";
 import NotFound from "./pages/NotFound"; // Import NotFound
 import ScrollToTop from "./components/ScrollToTop";

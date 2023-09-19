@@ -466,8 +466,15 @@ nav ul li a:hover {
   text-align: right; /* Aligns the button to the right */
 }
 
-.waitlist{
+.waitlist-container{
+  display: flex;
+  align-items: center;
   margin-top: 20px;
+}
+
+.check {
+  margin-right: 10px;
+  font-size: 24px;
 }
 
 .email-input {
@@ -487,17 +494,23 @@ nav ul li a:hover {
 }
 
 .email-input {
-  background-color: white;
-}
-
-.special-button.waitlist {
+  background-color: rgba(50, 50, 50, 0.1);
   border: none;
-  font-size: 16px;
-  cursor: pointer;
+  height: 26px
 }
 
-.special-button.waitlist:hover {
-  text-decoration: none;
+#waitlist{
+  height: 42px;
+  width: 130px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1100px) {
