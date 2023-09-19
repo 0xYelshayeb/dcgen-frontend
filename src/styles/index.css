@@ -496,7 +496,7 @@ nav ul li a:hover {
 .email-input {
   background-color: rgba(50, 50, 50, 0.1);
   border: none;
-  height: 26px
+  height: 26px;
 }
 
 #waitlist{
@@ -514,6 +514,7 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 1100px) {
+
   .centered {
     width: 80vw;
   }
@@ -529,6 +530,18 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 834px) {
+
+  .email-input {
+    height: 20px;
+    width: 160px;
+    font-size: 18px;
+  }
+
+  #waitlist{
+    height: 36px;
+    width: 120px;
+    font-size: 15px;
+  }
 
   .token {
     width: 250px;
