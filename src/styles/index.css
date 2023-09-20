@@ -538,15 +538,14 @@ p#response-message{
 @media screen and (max-width: 834px) {
 
   .email-input {
-    height: 20px;
     width: 160px;
-    font-size: 18px;
+    font-size: 14px;
   }
 
   #waitlist{
-    height: 36px;
+    height: 40px;
     width: 120px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .token {
