@@ -52,7 +52,7 @@ const Information = () => {
                     type="text"
                     value={email}
                     onChange={handleInputChange}
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     className={`email-input ${isTouched ? (isValid ? "valid" : "invalid") : ""}`}
                 />
                 <button onClick={handleSubmit} className="special-button" id="waitlist">

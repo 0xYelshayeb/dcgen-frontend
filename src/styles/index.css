@@ -478,11 +478,15 @@ nav ul li a:hover {
 }
 
 .email-input {
-  padding: 8px;
   transition: background-color 0.3s ease;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #757575;
   border: #050A30 1px solid;
-  text-align: center;
+  text-align: left;
+  background-color: rgba(50, 50, 50, 0.1);
+  border: none;
+  padding: 12px;
 }
 
 .email-input.valid {
@@ -493,19 +497,10 @@ nav ul li a:hover {
   background-color: rgba(255, 0, 0, 0.2); /* Red with 30% opacity */
 }
 
-.email-input {
-  background-color: rgba(50, 50, 50, 0.1);
-  border: none;
-  height: 26px;
-}
-
 #waitlist{
-  height: 42px;
-  width: 130px;
   font-size: 16px;
   font-weight: bold;
-  padding: 0;
-  margin: 0;
+  padding: 12px;
   border: none;
   cursor: pointer;
   display: flex;
