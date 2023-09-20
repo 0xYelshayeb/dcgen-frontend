@@ -242,7 +242,7 @@ nav ul li a:hover {
 
 /* Style for the special button */
 .special-button {
-  background-color: blue;
+  background-color: #233DFF;
   color: white;
   border-radius: 0; /* No rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
