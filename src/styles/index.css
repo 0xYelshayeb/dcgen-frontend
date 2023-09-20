@@ -477,16 +477,21 @@ nav ul li a:hover {
   font-size: 24px;
 }
 
+.email-input::placeholder {
+  color: #D0D2D4;
+}
+
 .email-input {
   transition: background-color 0.3s ease;
   font-size: 16px;
   font-weight: bold;
-  color: #757575;
   border: #050A30 1px solid;
   text-align: left;
-  background-color: rgba(50, 50, 50, 0.1);
+  background-color: #F7F7F7;
   border: none;
   padding: 12px;
+  color: #535353;
+  border-radius: 0px;
 }
 
 .email-input.valid {
@@ -506,6 +511,8 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 42px;
+  width: 127px;
 }
 
 p#response-message{
