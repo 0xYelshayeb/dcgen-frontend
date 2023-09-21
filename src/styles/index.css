@@ -544,13 +544,13 @@ p#response-message{
 
   .email-input {
     width: 160px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   #waitlist{
     height: 42px;
-    width: 120px;
-    font-size: 14px;
+    width: 130px;
+    font-size: 16px;
   }
 
   .token {
