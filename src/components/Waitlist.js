@@ -8,15 +8,12 @@ const Information = () => {
     const [email, setEmail] = useState("");
     const [response, setResponse] = useState({ status: null, message: null });
     const [isValid, setIsValid] = useState(false);
-    const [isTouched, setIsTouched] = useState(false); // New state to track if the input has been touched
 
     const handleInputChange = (e) => {
-        if (!isTouched) {
-            setIsTouched(true);
-        }
         const value = e.target.value;
         setEmail(value);
         setIsValid(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value));
+        setResponse({ status: null, message: null })
     };
 
     const handleSubmit = async (e) => {
@@ -40,6 +37,9 @@ const Information = () => {
                 }
             }
         }
+        else{
+            setResponse({ status: "error", message: "Please input a valid email address" })
+        }
     };
 
     return (
@@ -53,7 +53,7 @@ const Information = () => {
                     value={email}
                     onChange={handleInputChange}
                     placeholder="Email"
-                    className={`email-input ${isTouched ? (isValid ? "valid" : "invalid") : ""}`}
+                    className="email-input"
                 />
                 <button onClick={handleSubmit} className="special-button" id="waitlist">
                     {response.status !== null ? (response.status === "success" ? <><i className="fas fa-check check"></i> Added</> : "Error") : "Stay Updated"}
