@@ -63,7 +63,7 @@ const ChartSection = () => {
             <p className="index-level">Index Level</p>
           </div>
           <div>
-            <h2 className={`return-value ${changeClass}`}>{percentChange.toFixed(2)}%</h2>
+            <h2 className={`return-value ${changeClass}`}>{isNaN(percentChange) ? "---" : percentChange.toFixed(2)}%</h2>
             <p className="return">{timeFrame === 'MAX' ? "Overall" : timeFrame} Return</p>
           </div>
         </div>
