@@ -17,9 +17,12 @@ const ChartSection = () => {
   const [timeFrame, setTimeFrame] = useState('3M');
   const [chartData, setChartData] = useState([]);
 
+  const [changeClass, setChangeClass] = useState('positive-percent');  // color-coded text
+
   const updateValues = (indexValue, returnPercentage) => {
     setCurrentIndexValue(indexValue);
     setCurrentReturn(returnPercentage);
+    setChangeClass(returnPercentage >= 0 ? 'positive-percent' : 'negative-percent');
   };
 
   useEffect(() => {
@@ -50,13 +53,13 @@ const ChartSection = () => {
           const lastValue = response.data[response.data.length - 1][1];
           const difference = lastValue - firstValue;
           const percentChange = (difference / firstValue) * 100;
-          updateValues(lastValue.toFixed(2), isNaN(percentChange) ? "---" : percentChange.toFixed(2));
+          updateValues(lastValue.toFixed(2), isNaN(percentChange) ? 0 : parseFloat(percentChange.toFixed(2)));
         }
       } catch (error) {
         console.error("Failed to fetch data", error);
       }
     };
-      
+
     fetchData();
   }, [timeFrame]);
 
@@ -64,7 +67,6 @@ const ChartSection = () => {
   const lastValue = chartData.length > 0 ? chartData[chartData.length - 1][1] : 0;
   const difference = lastValue - firstValue;
   const percentChange = (difference / firstValue) * 100;
-  const changeClass = percentChange >= 0 ? 'positive-percent' : 'negative-percent';
 
   return (
     <main className="container">
