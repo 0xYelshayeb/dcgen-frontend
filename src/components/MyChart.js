@@ -129,7 +129,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
           color: '#FFFFFF'  // Sets the text color in the tooltip
       },
       shadow: false,  // Removes the shadow effect
-      padding: 5,  // Adds padding inside the tooltip
+      padding: 8,  // Adds padding inside the tooltip
       formatter: function () {
         const { point } = this;
         const indexValue = parseFloat(point.y).toFixed(2);
@@ -137,12 +137,11 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
         const returnPercentage = (((indexValue - initialIndexValue) / initialIndexValue) * 100).toFixed(2);
         onUpdateValues(indexValue, returnPercentage);  // update the values in the parent component
         return `
-          <div style="text-align: center; padding-left: 8px; padding-right: 8px;">
-                <div style="font-size: 1.2em;"><strong>${indexValue}</strong></div>
-                <div>${Highcharts.dateFormat('%d %b %y', point.x)}</div>
-            </div>
+        <div style="text-align: center; padding-left: 8px; padding-right: 8px; font-weight: 600">
+          <div>${Highcharts.dateFormat('%d %b %y', point.x)}</div>
+        </div> 
         `;
-    },
+      },
       positioner: function(labelWidth, labelHeight, point) { // Showing label while interacting in the top of the vertical line
           // Get the chart layout values to calculate edges
           const plotLeft = this.chart.plotLeft;
@@ -157,7 +156,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
         
           return { x: adjustedX, y: 0 };  // Adjust y to 10 to create a gap between the tooltip and the crosshair
       }
-  }  
+    }  
   };
 }
 
