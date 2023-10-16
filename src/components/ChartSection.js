@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 import MyChart from "./MyChart";
 
-const Button = ({ text, isSelected, onClick }) => (
-  <button onClick={onClick} className={`timeframe-button ${isSelected ? 'selected' : ''}`}>
+const Button = ({ text, isSelected, onClick, ...props }) => (
+  <button onClick={onClick} className={`timeframe-button ${isSelected ? 'selected' : ''}`} {...props}>
     {text}
   </button>
 );
@@ -11,9 +11,16 @@ const Button = ({ text, isSelected, onClick }) => (
 const ChartSection = () => {
 
   const chartRef = useRef(null);
+  const [currentIndexValue, setCurrentIndexValue] = useState(null);
+  const [currentReturn, setCurrentReturn] = useState(null);
 
   const [timeFrame, setTimeFrame] = useState('3M');
   const [chartData, setChartData] = useState([]);
+
+  const updateValues = (indexValue, returnPercentage) => {
+    setCurrentIndexValue(indexValue);
+    setCurrentReturn(returnPercentage);
+  };
 
   useEffect(() => {
     const chartElement = chartRef.current;
@@ -38,11 +45,18 @@ const ChartSection = () => {
       try {
         const response = await axios.get(`https://api.dcgen.finance/timeSeries?timeframe=${timeFrame}`);
         setChartData(response.data);
+        if(response.data && response.data.length > 0) {
+          const firstValue = response.data[0][1];
+          const lastValue = response.data[response.data.length - 1][1];
+          const difference = lastValue - firstValue;
+          const percentChange = (difference / firstValue) * 100;
+          updateValues(lastValue.toFixed(2), isNaN(percentChange) ? "---" : percentChange.toFixed(2));
+        }
       } catch (error) {
         console.error("Failed to fetch data", error);
       }
     };
-
+      
     fetchData();
   }, [timeFrame]);
 
@@ -59,24 +73,44 @@ const ChartSection = () => {
         <hr className="horizontal-line" />
         <div className="info-container">
           <div>
-            <h2 className="index-value">{lastValue.toFixed(2)}</h2>
+            <h2 className="index-value">{currentIndexValue || lastValue.toFixed(2)}</h2>
             <p className="index-level">Index Level</p>
           </div>
           <div>
-            <h2 className={`return-value ${changeClass}`}>{isNaN(percentChange) ? "---" : percentChange.toFixed(2)}%</h2>
+            <h2 className={`return-value ${changeClass}`}>{currentReturn || (isNaN(percentChange) ? "---" : percentChange.toFixed(2))}%</h2>
             <p className="return">{timeFrame === 'MAX' ? "Overall" : timeFrame} Return</p>
           </div>
         </div>
       </section>
       <section className="chart">
         <div className="timeframe-buttons">
-          <Button text="3M" isSelected={timeFrame === '3M'} onClick={() => setTimeFrame('3M')} />
-          <Button text="6M" isSelected={timeFrame === '6M'} onClick={() => setTimeFrame('6M')} />
-          <Button text="1Y" isSelected={timeFrame === '1Y'} onClick={() => setTimeFrame('1Y')} />
-          <Button text="MAX" isSelected={timeFrame === 'MAX'} onClick={() => setTimeFrame('MAX')} />
+          <Button 
+          text="3M" 
+          isSelected={timeFrame === '3M'} 
+          onClick={() => setTimeFrame('3M')} 
+          style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          />
+          <Button 
+            text="6M" 
+            isSelected={timeFrame === '6M'} 
+            onClick={() => setTimeFrame('6M')} 
+            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          />
+          <Button 
+            text="1Y" 
+            isSelected={timeFrame === '1Y'} 
+            onClick={() => setTimeFrame('1Y')} 
+            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          />
+          <Button 
+            text="MAX" 
+            isSelected={timeFrame === 'MAX'} 
+            onClick={() => setTimeFrame('MAX')} 
+            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          />
         </div>
         <div>
-          <MyChart className="chart-area" chartData={chartData} timeFrame={timeFrame} />
+          <MyChart className="chart-area" chartData={chartData} timeFrame={timeFrame} onUpdateValues={updateValues} />
         </div>
       </section>
     </main>

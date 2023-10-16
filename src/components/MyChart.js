@@ -1,12 +1,12 @@
 // src/components/MyChart.js
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import AccessibilityModule from 'highcharts/modules/accessibility';
 
 AccessibilityModule(Highcharts);
 
-const options = (chartData, timeFrame) => { // Make options a function that takes chartData and timeFrame
+const options = (chartData, timeFrame, onUpdateValues) => { // Make options a function that takes chartData and timeFrame
 
   let labelFormat;
 
@@ -131,15 +131,18 @@ const options = (chartData, timeFrame) => { // Make options a function that take
       shadow: false,  // Removes the shadow effect
       padding: 5,  // Adds padding inside the tooltip
       formatter: function () {
-          // The 'this' keyword refers to the data object for the point being hovered over
-          const { point } = this;
-          return `
-            <div style="text-align: center; padding-left: 8px; padding-right: 8px;">
-                  <div style="font-size: 1.2em;"><strong>${parseFloat(point.y).toFixed(2)}</strong></div>
-                  <div>${Highcharts.dateFormat('%d %b %y', point.x)}</div>
-              </div>
-          `;
-      },
+        const { point } = this;
+        const indexValue = parseFloat(point.y).toFixed(2);
+        const initialIndexValue = parseFloat(chartData[0][1]).toFixed(2);
+        const returnPercentage = (((indexValue - initialIndexValue) / initialIndexValue) * 100).toFixed(2);
+        onUpdateValues(indexValue, returnPercentage);  // update the values in the parent component
+        return `
+          <div style="text-align: center; padding-left: 8px; padding-right: 8px;">
+                <div style="font-size: 1.2em;"><strong>${indexValue}</strong></div>
+                <div>${Highcharts.dateFormat('%d %b %y', point.x)}</div>
+            </div>
+        `;
+    },
       positioner: function(labelWidth, labelHeight, point) { // Showing label while interacting in the top of the vertical line
           // Get the chart layout values to calculate edges
           const plotLeft = this.chart.plotLeft;
@@ -158,13 +161,38 @@ const options = (chartData, timeFrame) => { // Make options a function that take
   };
 }
 
-function MyChart({ chartData, timeFrame }) {
-  // Use chartData prop
+function MyChart({ chartData, timeFrame, onUpdateValues }) {
+  const chartContainerRef = useRef(null);
+
+  useEffect(() => {
+    const handleMouseLeave = () => {
+      const lastDataPoint = chartData[chartData.length - 1];
+      const indexValue = lastDataPoint ? parseFloat(lastDataPoint[1]).toFixed(2) : null;
+      const initialIndexValue = parseFloat(chartData[0][1]).toFixed(2);
+      const returnPercentage = (((indexValue - initialIndexValue) / initialIndexValue) * 100).toFixed(2);
+      onUpdateValues(indexValue, returnPercentage);
+    };
+
+    const chartContainer = chartContainerRef.current;
+    if (chartContainer) {
+      chartContainer.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      if (chartContainer) {
+        chartContainer.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, [chartData, onUpdateValues]);
+  
   return (
-    <HighchartsReact
-      highcharts={Highcharts}
-      options={options(chartData, timeFrame)}  // Pass chartData and timeFrame to options
-    />
+    <div ref={chartContainerRef} className="chart-container">
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={options(chartData, timeFrame, onUpdateValues)}
+      />
+    </div>
   );
 }
 
