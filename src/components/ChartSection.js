@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 import MyChart from "./MyChart";
 
-const Button = ({ text, isSelected, onClick, ...props }) => (
-  <button onClick={onClick} className={`timeframe-button ${isSelected ? 'selected' : ''}`} {...props}>
+const Button = ({ text, isSelected, onClick }) => (
+  <button onClick={onClick} className={`timeframe-button ${isSelected ? 'selected' : ''}`}>
     {text}
   </button>
 );
@@ -48,7 +48,7 @@ const ChartSection = () => {
       try {
         const response = await axios.get(`https://api.dcgen.finance/timeSeries?timeframe=${timeFrame}`);
         setChartData(response.data);
-        if(response.data && response.data.length > 0) {
+        if (response.data && response.data.length > 0) {
           const firstValue = response.data[0][1];
           const lastValue = response.data[response.data.length - 1][1];
           const difference = lastValue - firstValue;
@@ -86,29 +86,25 @@ const ChartSection = () => {
       </section>
       <section className="chart">
         <div className="timeframe-buttons">
-          <Button 
-          text="3M" 
-          isSelected={timeFrame === '3M'} 
-          onClick={() => setTimeFrame('3M')} 
-          style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          <Button
+            text="3M"
+            isSelected={timeFrame === '3M'}
+            onClick={() => setTimeFrame('3M')}
           />
-          <Button 
-            text="6M" 
-            isSelected={timeFrame === '6M'} 
-            onClick={() => setTimeFrame('6M')} 
-            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          <Button
+            text="6M"
+            isSelected={timeFrame === '6M'}
+            onClick={() => setTimeFrame('6M')}
           />
-          <Button 
-            text="1Y" 
-            isSelected={timeFrame === '1Y'} 
-            onClick={() => setTimeFrame('1Y')} 
-            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          <Button
+            text="1Y"
+            isSelected={timeFrame === '1Y'}
+            onClick={() => setTimeFrame('1Y')}
           />
-          <Button 
-            text="MAX" 
-            isSelected={timeFrame === 'MAX'} 
-            onClick={() => setTimeFrame('MAX')} 
-            style={{ fontWeight: 500, fontFamily: 'Roboto, sans-serif' }}
+          <Button
+            text="MAX"
+            isSelected={timeFrame === 'MAX'}
+            onClick={() => setTimeFrame('MAX')}
           />
         </div>
         <div>
