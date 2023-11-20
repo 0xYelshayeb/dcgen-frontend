@@ -112,6 +112,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+  font-weight: bold;
 }
 
 .timeframe-button:hover {
@@ -450,7 +451,7 @@ nav ul li a:hover {
 .token img {
   height: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 50%; /* Ensures the image is circular */
+  border-radius: 50%;
 }
 
 .token .left-group {
