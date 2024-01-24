@@ -23,10 +23,10 @@ const Header = () => {
         document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
       }
     };
-  
+
     setPadding();
     window.addEventListener('resize', setPadding);
-  
+
     return () => {
       window.removeEventListener('resize', setPadding);
     };
@@ -34,34 +34,33 @@ const Header = () => {
 
   return (
     <div className='header-container' ref={headerRef}>
-    <header className={isMenuOpen ? 'menu-open' : ''}>
-      <div className="menu-container">
-        <div className="logo-container">
-          <Link to="/">
-            <img src={logo} alt="Logo" />
-          </Link>
+      <header className={isMenuOpen ? 'menu-open' : ''}>
+        <div className="menu-container">
+          <div className="logo-container">
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
+          </div>
+          <nav className={isMenuOpen ? 'active' : ''}>
+            <ul>
+              <li><Link to="/ethereum-index" className={isActive(['/', '/ethereum-index', '/ethereum-constituents'])} onClick={toggleMenu}>Ethereum Index</Link></li>
+              <li><Link to="/arbitrum-index" className={isActive(['/arbitrum-index'])} onClick={toggleMenu}>Arbitrum Index</Link></li>
+              <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
+              <li>
+                <a target="_blank" rel="noopener noreferrer" href="https://app.dcgen.finance">
+                  <span className="external-link-icon">
+                    <i className="fas fa-external-link-alt"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav className={isMenuOpen ? 'active' : ''}>
-          <ul>
-          <li><Link to="/ethereum-index" className={isActive(['/','/ethereum-index', '/ethereum-constituents'])} onClick={toggleMenu}>Ethereum Index</Link></li>
-          <li><Link to="/arbitrum-index" className={isActive(['/arbitrum-index'])} onClick={toggleMenu}>Arbitrum Index</Link></li>
-          <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
-            <li>
-              <Link to="/coming-soon" className="special-button" onClick={toggleMenu}>
-                Index Products
-                <span className="external-link-icon">
-                  <i className="fas fa-external-link-alt"></i>
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
-      </button>
-    </header>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          {isMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+        </button>
+      </header>
     </div>
   );
 };
