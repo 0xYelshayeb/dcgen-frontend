@@ -48,7 +48,7 @@ const Header = () => {
               <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
               <li>
-                <a target="_blank" rel="noopener noreferrer" href="https://app.dcgen.finance">
+                <a target="_blank" rel="noopener noreferrer" className="special-button" href="https://app.dcgen.finance">Index Products
                   <span className="external-link-icon">
                     <i className="fas fa-external-link-alt"></i>
                   </span>
