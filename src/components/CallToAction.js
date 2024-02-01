@@ -7,7 +7,9 @@ import {
     Button,
 } from '@chakra-ui/react';
 
-import dcgen from "../icons/DCgen.svg";
+import dcgen_blue from "../icons/DCgen_blue.svg";
+import dcgen_black from "../icons/DCgen_black.svg";
+
 
 const CallToAction = () => {
     return (
@@ -15,7 +17,7 @@ const CallToAction = () => {
             <Heading fontSize="xxxl" width="70%" textAlign="center" marginBottom={7}>
                 Grow Your Portfolio with{" "}
                 <img
-                    src={dcgen}
+                    src={dcgen_blue}
                     alt="DCgen"
                     style={{
                         display: 'inline-block',
