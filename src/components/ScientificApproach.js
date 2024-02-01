@@ -5,11 +5,14 @@ import {
     Text,
     Flex,
     Box,
+    Image
 } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { colors } from '../styles/theme';
+import triangles from "../icons/triangles.svg";
+import chart from "../images/chart.png";
 
 const MotionBox = motion(Box);
 
@@ -53,7 +56,7 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                 >
-                    <Box height={400}></Box>
+                    <Image src={triangles} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Market Research</Heading>
                     <Text>We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.</Text>
                 </MotionBox>
@@ -64,9 +67,9 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                 >
-                    <Box height={400}></Box>
+                    <Image src={chart} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Structured Products</Heading>
-                    <Text>Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.</Text>
+                    <Text width="70%">Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.</Text>
                 </MotionBox>
             </Flex>
         </VStack>

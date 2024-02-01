@@ -5,11 +5,14 @@ import {
     Text,
     Flex,
     Box,
+    Image
 } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { colors } from '../styles/theme';
+import rectangles from "../icons/rectangles.svg";
+import ellipses from "../icons/ellipses.svg";
 
 const MotionBox = motion(Box);
 
@@ -53,7 +56,7 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                 >
-                    <Box height={400}></Box>
+                    <Image src={rectangles} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Built on SetProtocol</Heading>
                     <Text>DCgen leverages SetProtocol's infrastructure to ensure robust and secure tokenization of products. SetProtocol has been audited meticulously.</Text>
                 </MotionBox>
@@ -64,9 +67,9 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                 >
-                    <Box height={400}></Box>
+                    <Image src={ellipses} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Roadmap to Decentralization</Heading>
-                    <Text>We are steadily progressing towards becoming a community-governed protocol, reflecting our commitment to decentralization and community empowerment.</Text>
+                    <Text width="70%">We are steadily progressing towards becoming a community-governed protocol, reflecting our commitment to decentralization and community empowerment.</Text>
                 </MotionBox>
             </Flex>
         </VStack>
