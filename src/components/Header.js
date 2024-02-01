@@ -43,8 +43,6 @@ const Header = () => {
           </div>
           <nav className={isMenuOpen ? 'active' : ''}>
             <ul>
-              <li><Link to="/ethereum-index" className={isActive(['/', '/ethereum-index', '/ethereum-constituents'])} onClick={toggleMenu}>Ethereum Index</Link></li>
-              <li><Link to="/arbitrum-index" className={isActive(['/arbitrum-index'])} onClick={toggleMenu}>Arbitrum Index</Link></li>
               <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
               <li>

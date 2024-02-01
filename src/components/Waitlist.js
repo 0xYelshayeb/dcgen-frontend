@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '@fortawesome/fontawesome-free/css/all.css';
 
+import {
+    VStack,
+    Heading,
+    Text,
+} from '@chakra-ui/react';
+
 const Information = () => {
 
     const [email, setEmail] = useState("");
@@ -37,16 +43,18 @@ const Information = () => {
                 }
             }
         }
-        else{
+        else {
             setResponse({ status: "error", message: "Please input a valid email address" })
         }
     };
 
     return (
 
-        <div className="content-section centered" id="waitlist-section">
-            <h2>Unveiling the Future: DCgen's Index-Linked Innovations.</h2>
-            <p>Step into tomorrow with DCgen. The soon-to-launch index products are second to none, set to elevate market benchmarks. Stay tuned for a transformative reveal!</p>
+        <VStack align="left" p={10} width="70%">
+            <Heading fontSize="xxl" fontWeight="600" mb={3} width="60%">
+                Join DCgen's Journey.
+            </Heading>
+            <Text>Stay informed about the latest developments in crypto investment and DCgen's offerings.</Text>
             <div className="waitlist-container">
                 <input
                     type="text"
@@ -64,7 +72,7 @@ const Information = () => {
                     {response.message}
                 </p>
             )}
-        </div>
+        </VStack>
     );
 };
 

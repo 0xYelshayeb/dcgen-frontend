@@ -1,9 +1,13 @@
 // src/pages/Index.js
 import React from "react";
-import ChartSection from "../components/ChartSection";
-import Information from "../components/Information"
-import IndexName from "../components/IndexName";
+import CallToAction from "../components/CallToAction";
+import FoundationalElements from "../components/FoundationalElements";
+import ScientificApproach from "../components/ScientificApproach";
+import Returns from "../components/Returns";
+import Mission from "../components/Mission";
 import Layout from "../components/Layout";
+import Waitlist from "../components/Waitlist";
+import { VStack } from '@chakra-ui/react';
 
 const Index = () => {
     const schema = {
@@ -14,9 +18,14 @@ const Index = () => {
     };
     return (
         <Layout title="DCgen" name="DCgen index page" description="Index page of DCgen Research showcasing the ethereum ecosystem index" schema={schema}>
-          <IndexName />
-          <ChartSection />
-          <Information />
+          <VStack p={15}>
+            <CallToAction />
+            <ScientificApproach />
+            <Returns />
+            <FoundationalElements />
+            <Mission />
+            <Waitlist />
+          </VStack>
         </Layout>
     );
 };

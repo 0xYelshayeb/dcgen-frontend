@@ -5,6 +5,17 @@ import { Link } from 'react-router-dom';
 import preview1 from "../images/preview1.jpg"
 import preview2 from "../images/preview2.jpg"
 import Waitlist from './Waitlist';
+import {
+    Box,
+    VStack,
+    Heading,
+    Text,
+    Button,
+    Flex,
+    Grid,
+    Image,
+    Input
+  } from '@chakra-ui/react';
 
 const Information = () => {
 
