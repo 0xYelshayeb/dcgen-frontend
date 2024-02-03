@@ -5,14 +5,18 @@ import {
     Text,
     Flex,
     Box,
-    Image
+    Image,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { colors } from '../styles/theme';
 import triangles from "../icons/triangles.svg";
 import chart from "../images/chart.png";
+
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const MotionBox = motion(Box);
 
@@ -58,7 +62,14 @@ const ScientificApproach = () => {
                 >
                     <Image src={triangles} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Market Research</Heading>
-                    <Text>We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.</Text>
+                    <Flex align="end" justify="space-between">
+                        <Text pb="10px">
+                            We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
+                        </Text>
+                        <Link to="/research" style={{ padding: "0px 15px 10px 0px" }}>
+                            <i className="fas fa-external-link-alt" style={{ color: "black" }}></i>
+                        </Link>
+                    </Flex>
                 </MotionBox>
                 <MotionBox
                     flex="60%"
@@ -69,7 +80,14 @@ const ScientificApproach = () => {
                 >
                     <Image src={chart} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Structured Products</Heading>
-                    <Text width="70%">Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.</Text>
+                    <Flex align="end" justify="space-between">
+                        <Text pb="10px" width="70%">
+                            Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.
+                        </Text>
+                        <Link to="https://app.dcgen.finance" style={{ padding: "0px 15px 10px 0px" }}>
+                            <i className="fas fa-external-link-alt" style={{ color: "blue" }}></i>
+                        </Link>
+                    </Flex>
                 </MotionBox>
             </Flex>
         </VStack>

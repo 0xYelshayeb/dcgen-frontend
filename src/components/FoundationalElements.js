@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 import { colors } from '../styles/theme';
 import rectangles from "../icons/rectangles.svg";
@@ -58,7 +59,14 @@ const ScientificApproach = () => {
                 >
                     <Image src={rectangles} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Built on SetProtocol</Heading>
-                    <Text>DCgen leverages SetProtocol's infrastructure to ensure robust and secure tokenization of products. SetProtocol has been audited meticulously.</Text>
+                    <Flex align="end" justify="space-between">
+                        <Text pb="10px">
+                            We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
+                        </Text>
+                        <Link to="https://www.tokensets.com/" style={{ padding: "0px 15px 10px 0px" }}>
+                            <i className="fas fa-external-link-alt" style={{ color: "purple" }}></i>
+                        </Link>
+                    </Flex>
                 </MotionBox>
                 <MotionBox
                     flex="60%"
@@ -69,7 +77,14 @@ const ScientificApproach = () => {
                 >
                     <Image src={ellipses} height={400} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Roadmap to Decentralization</Heading>
-                    <Text width="70%">We are steadily progressing towards becoming a community-governed protocol, reflecting our commitment to decentralization and community empowerment.</Text>
+                    <Flex align="end" justify="space-between">
+                        <Text pb="10px" width="70%">
+                            We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
+                        </Text>
+                        <Link to="/research" style={{ padding: "0px 15px 10px 0px" }}>
+                            <i className="fas fa-external-link-alt" style={{ color: "orange" }}></i>
+                        </Link>
+                    </Flex>
                 </MotionBox>
             </Flex>
         </VStack>

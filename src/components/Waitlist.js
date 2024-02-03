@@ -54,7 +54,7 @@ const Information = () => {
             <Heading fontSize="xxl" fontWeight="600" mb={3} width="60%">
                 Join DCgen's Journey.
             </Heading>
-            <Text>Stay informed about the latest developments in crypto investment and DCgen's offerings.</Text>
+            <Text>Stay updated on the latest news on a new generation of financial products. We will keep you posted with our latest suite of products and solutions.</Text>
             <div className="waitlist-container">
                 <input
                     type="text"

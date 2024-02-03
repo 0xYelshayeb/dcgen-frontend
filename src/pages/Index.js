@@ -18,7 +18,7 @@ const Index = () => {
     };
     return (
         <Layout title="DCgen" name="DCgen index page" description="Index page of DCgen Research showcasing the ethereum ecosystem index" schema={schema}>
-          <VStack p={15}>
+          <VStack pt={15} pb={15} gap={15}>
             <CallToAction />
             <ScientificApproach />
             <Returns />
