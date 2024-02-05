@@ -41,7 +41,7 @@ const theme = extendTheme({
         Button: {
             baseStyle: {
                 fontWeight: 'semibold',
-                borderRadius: '0',
+                borderRadius: '6px',
             },
             defaultProps: {
                 colorScheme: 'brand',

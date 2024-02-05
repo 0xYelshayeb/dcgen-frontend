@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from '../images/logo.png';
 import { Link, useLocation } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 const Header = () => {
@@ -46,11 +47,16 @@ const Header = () => {
               <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
               <li>
-                <a target="_blank" rel="noopener noreferrer" className="special-button" href="https://app.dcgen.finance">Index Products
-                  <span className="external-link-icon">
+                <Button
+                  as="a"
+                  href="https://app.dcgen.finance/swap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  height="45px"
+                >Index Products<span className="external-link-icon">
                     <i className="fas fa-external-link-alt"></i>
                   </span>
-                </a>
+                </Button>
               </li>
             </ul>
           </nav>
