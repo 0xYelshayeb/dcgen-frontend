@@ -13,13 +13,13 @@ const CallToAction = () => {
 
     // Motion variants for the animations
     const variants = {
-        wiggle: { 
-            y: [0, -5, 5, -5, 0], 
-            transition: { duration: 0.3 } 
+        wiggle: {
+            y: [0, -5, 5, -5, 0],
+            transition: { duration: 0.3 }
         },
-        change: { 
-            opacity: 0, 
-            transition: { duration: 0.1 } 
+        change: {
+            opacity: 0,
+            transition: { duration: 0.1 }
         },
         visible: {
             opacity: 1,
@@ -63,7 +63,12 @@ const CallToAction = () => {
             <Text fontSize="xl" fontWeight="600" marginBottom={5} width="40%" textAlign={'center'} lineHeight="xl">
                 Unlock Genuine Alpha with DCgen's Structured Products.
             </Text>
-            <Button>Invest Now</Button>
+            <Button
+                as="a"
+                href="https://app.dcgen.finance/swap"
+                target="_blank"
+                rel="noopener noreferrer"
+            >Invest Now</Button>
         </VStack>
     );
 };
