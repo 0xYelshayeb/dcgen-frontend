@@ -61,7 +61,7 @@ const CallToAction = () => {
                 {" "}Products.
             </Heading>
             <Text fontSize="xl" fontWeight="600" marginBottom={5} width="40%" textAlign={'center'} lineHeight="xl">
-                Unlock Genuine Alpha with DCgen's Structured Products.
+                Seize Market Alpha with DCgen's Fee-Free Structured Products.
             </Text>
             <Button
                 as="a"

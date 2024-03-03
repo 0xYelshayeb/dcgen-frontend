@@ -50,7 +50,7 @@ const ScientificApproach = () => {
     return (
         <VStack p={10} align="left" width="70%" gap={5}>
             <Text fontSize="xxl" fontWeight="600" mb={5} width="60%" lineHeight="xxl">
-                We take a scientific approach to constructing high-quality products.
+                Delve into Our Research. Invest in Your Future With Our Structured Products.
             </Text>
             <Flex width="full" justifyContent="space-between" gap="5" ref={ref}>
                 <MotionBox

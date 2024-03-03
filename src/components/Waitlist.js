@@ -7,6 +7,9 @@ import {
     VStack,
     Heading,
     Text,
+    Box,
+    Input,
+    Button
 } from '@chakra-ui/react';
 
 const Information = () => {
@@ -52,21 +55,30 @@ const Information = () => {
 
         <VStack align="left" p={10} width="70%">
             <Heading fontSize="xxl" fontWeight="600" mb={3} width="60%">
-                Join DCgen's Journey.
+                Join Us On Building A New Financial System.
             </Heading>
-            <Text>Stay updated on the latest news on a new generation of financial products. We will keep you posted with our latest suite of products and solutions.</Text>
-            <div className="waitlist-container">
-                <input
+            <Text>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>
+            <Box display="flex" alignItems="center" borderRadius="6px" boxShadow="md" p="2" width="400px">
+                <Input
                     type="text"
                     value={email}
                     onChange={handleInputChange}
                     placeholder="Email"
-                    className="email-input"
+                    borderRadius="6px" // Rounded corners on the left side
+                    border="none"
+                    _focus={{
+                        boxShadow: 'none', // Removes the default focus outline
+                    }}
                 />
-                <button onClick={handleSubmit} className="special-button" id="waitlist">
-                    {response.status !== null ? (response.status === "success" ? <><i className="fas fa-check check"></i> Added</> : "Error") : "Stay Updated"}
-                </button>
-            </div>
+                <Button
+                    onClick={handleSubmit}
+                    borderRadius="6px" // Rounded corners on the right side
+                    colorScheme="blue" // Use a color scheme that matches your branding
+                    px="8" // Padding left and right
+                >
+                    Stay Updated
+                </Button>
+            </Box>
             {response.message !== null && (
                 <p id="response-message">
                     {response.message}
