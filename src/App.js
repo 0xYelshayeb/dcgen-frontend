@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Arbitrum from "./pages/Arbitrum"
 import ComingSoon from "./pages/ComingSoon";
 import Verification from "./pages/Verification";
+import Benchmark from "./pages/Benchmark";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/research" element={<Research />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/verify" element={<Verification />} />
+        <Route path="/benchmark" element={<Benchmark />} />
         <Route path="*" element={<NotFound />} /> {/* Default 404 route */}
       </Routes>
     </BrowserRouter>

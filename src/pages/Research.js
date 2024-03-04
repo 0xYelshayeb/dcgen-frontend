@@ -48,9 +48,9 @@ const Research = () => {
             </Text>
           </Box>
 
-          <Table variant="simple" colorScheme="transparent" size="md">
+          <Table variant="simple" size="md" bg="transparent">
             <Thead bgColor={borderColor}>
-              <Tr>
+              <Tr bg="transparent">
                 <Th borderColor={borderColor}>Topic</Th>
                 <Th borderColor={borderColor}>Title</Th>
                 <Th borderColor={borderColor}>Summary</Th>
@@ -58,7 +58,7 @@ const Research = () => {
             </Thead>
             <Tbody>
               {papers.map((paper, index) => (
-                <Tr key={index}>
+                <Tr key={index} bg="transparent">
                   <Td borderColor={borderColor}>{paper.topic}</Td>
                   <Td borderColor={borderColor}>{paper.title}</Td>
                   <Td borderColor={borderColor}>{paper.description}</Td>

@@ -12,8 +12,8 @@ import { colors } from '../styles/theme';
 
 import ChartSVG from "../images/product-chart.svg";
 
-const MotionFlex = motion(Flex);
 const MotionVStack = motion(VStack);
+const MotionImage = motion(Image);
 
 const Costly = () => {
     const controls = useAnimation();
@@ -43,9 +43,9 @@ const Costly = () => {
             <Heading fontSize="xxl" fontWeight="600" mb={10} lineHeight="xxl" width="60%">
                 Investing Can Be Costly.
             </Heading>
-            <MotionFlex gap={10} ref={ref} initial="hidden" animate={controls}>
-                <Image src={ChartSVG} alt="Typical Fees for Financial Products" />
-                <MotionVStack align="left" spacing={4} variants={item}>
+            <Flex gap={10} ref={ref}>
+                <MotionImage variants={item} initial="hidden" animate={controls} src={ChartSVG} alt="Typical Fees for Financial Products" />
+                <MotionVStack align="left" spacing={4} variants={item} initial="hidden" animate={controls}>
                     <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
                     <Text>
                         Hidden fees stealthily chip away at potential profits, culminating in significant underperformance over time.
@@ -55,7 +55,7 @@ const Costly = () => {
                         The true magnitude of fees emerges over time, as the compounding effect escalates their impact, silently but substantially reducing long-term investment gains.
                     </Text>
                 </MotionVStack>
-            </MotionFlex>
+            </Flex>
         </VStack>
     );
 };
