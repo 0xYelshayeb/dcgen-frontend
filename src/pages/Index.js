@@ -8,8 +8,8 @@ import Mission from "../components/Mission";
 import Layout from "../components/Layout";
 import Waitlist from "../components/Waitlist";
 import NewFinance from "../components/NewFinance";
-import ZeroFee from "../components/ZeroFee";
 import Costly from "../components/Costly";
+import ZeroFee from "../components/ZeroFee";
 import { VStack } from '@chakra-ui/react';
 
 const Index = () => {
@@ -21,7 +21,7 @@ const Index = () => {
   };
   return (
     <Layout title="DCgen" name="DCgen index page" description="Index page of DCgen Research showcasing the ethereum ecosystem index" schema={schema}>
-      <VStack pt={15} pb={15} gap={15}>
+      <VStack pt={15} pb={15} gap={20}>
         <CallToAction />
         <Costly />
         <ZeroFee />
