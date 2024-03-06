@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Box,
   VStack,
+  HStack,
   Heading,
   Text,
   Table,
@@ -12,11 +13,18 @@ import {
   Th,
   Td,
   Divider,
-  SimpleGrid,
   Image,
   useColorModeValue,
+  Flex
 } from '@chakra-ui/react';
 import Layout from '../components/Layout';
+import chartlines from "../images/chart-lines.svg";
+import '@fortawesome/fontawesome-free/css/all.css';
+
+
+import { colors } from '../styles/theme';
+import { Link } from 'react-router-dom';
+
 
 // Assuming you have these images in your project's public directory or imported
 // import marketChartImg from '../images/market-chart.svg';
@@ -72,29 +80,48 @@ const Research = () => {
         <Divider orientation="horizontal" />
 
         <VStack p={10} align="left" width="70%" gap={5}>
-          <Box>
-            <Heading size="lg" mb={4}>Market Benchmarks</Heading>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-              <Image src="" alt="Market Benchmark Chart" />
-              <VStack align="start">
-                <Text fontWeight="bold">Summary</Text>
-                <Text>The Ethereum Governance Index by DCgen is a market-capitalization weighted benchmark tracking the top thirty governance tokens on Ethereum, offering a dynamic measure of this segment's performance.</Text>
-                <Box>
-                  <Text fontWeight="bold">Index Level</Text>
-                  <Text>$ 142.56</Text>
-                </Box>
-                <Box>
-                  <Text fontWeight="bold">1M Change</Text>
-                  <Text color="green.500">32.63%</Text>
-                </Box>
-                <Text fontWeight="bold">Weighting Method</Text>
-                <Text>capitalization-weighted</Text>
-                {/* <Link href="#" isExternal>
-                More details <ExternalLinkIcon mx="2px" />
-              </Link> */}
-              </VStack>
-            </SimpleGrid>
-          </Box>
+          <Heading size="lg" mb={4}>Market Benchmarks</Heading>
+          <HStack spacing={10}>
+
+            <VStack
+              align="start"
+              borderRadius="8px"
+              boxShadow="0px 5px 10px rgba(0, 0, 0, 0.25)"
+              width="120%"
+              height="100%"
+              as={Link}
+              to={"/benchmark"}
+              p={2}
+            >
+              <Image src={chartlines}></Image>
+              <Divider orientation="horizontal" mb={0} pb={0} />
+              <Flex justify="space-between" align="center" width="100%">
+                <Text fontWeight={'Bold'}>Ethereum Governance Index</Text>
+                <span className="external-link-icon">
+                  <i className="fas fa-external-link-alt"></i>
+                </span>
+              </Flex>
+            </VStack>
+            <VStack align="start" gap={5}>
+              <Text fontWeight="bold" color={colors.gray_content}>Summary</Text>
+              <Text>The Ethereum Governance Index by DCgen is a market-capitalization weighted benchmark tracking the top thirty governance tokens on Ethereum, offering a dynamic measure of this segment's performance.</Text>
+              <Box width="50%">
+                <Text fontWeight="bold" color={colors.gray_content}>Index Level</Text>
+                <HStack width="100%" justify="space-between">
+                  <Box>
+                    <Text fontWeight="bold" fontSize="xl">$ 142.56</Text>
+                    <Text fontWeight="bold" color={colors.gray_content}>NAV</Text>
+                  </Box>
+                  <Box>
+                    <Text color="green.500" fontWeight="bold" fontSize="xl">32.63%</Text>
+                    <Text fontWeight="bold" color={colors.gray_content}>1M Change</Text>
+                  </Box>
+                </HStack>
+              </Box>
+              <Text fontWeight="bold" color={colors.gray_content}>Weighting Method</Text>
+              <Text fontWeight="bold" fontSize="xl">capitalization-weighted</Text>
+            </VStack>
+          </HStack>
         </VStack>
       </VStack>
     </Layout >

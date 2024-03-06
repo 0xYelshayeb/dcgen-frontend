@@ -5,7 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const colors = {
     t2Blue: "#3751FF",
     t1Blue: "#050A30",
-    gray: "#FCFCFC"
+    gray: "#FCFCFC",
+    gray_content: "#757575"
 }
 
 // 3. Customize the theme

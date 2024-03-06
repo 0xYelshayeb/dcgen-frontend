@@ -8,13 +8,13 @@ const TimeFrameButton = ({ text, isSelected, onClick }) => {
     <Button
       size="sm"
       onClick={onClick}
-      bg={isSelected ? "#233DFF" : "gray.200"}
+      bg={isSelected ? "#000000" : "gray.200"}
       color={isSelected ? "white" : "black"}
       _hover={{
-        bg: isSelected ? "#233DFF" : "gray.300",
+        bg: isSelected ? "#000000" : "gray.300",
       }}
       _active={{
-        bg: isSelected ? "#233DAA" : "gray.400",
+        bg: isSelected ? "#000000" : "gray.400",
       }}
       borderRadius="0"
       border="none"
@@ -87,10 +87,10 @@ const ChartSection = () => {
     <Box>
       <VStack spacing align="stretch">
         <Text fontSize="xl" fontWeight="bold" color="gray">Performance</Text>
-        <Flex justifyContent="space-between" paddingTop={3}>
+        <Flex justifyContent="space-between" paddingTop={3} width="40%">
           <Box>
             <Heading as="h2" size="xl">
-              $ {currentIndexValue || lastValue.toFixed(2)}
+              ${currentIndexValue || lastValue.toFixed(2)}
             </Heading>
             <Text fontSize="md" fontWeight="bold">Price</Text>
           </Box>

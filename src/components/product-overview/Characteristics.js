@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Text, SimpleGrid, Divider, Heading, } from '@chakra-ui/react';
 
-const QuickFacts = () => {
-  const quickFacts = {
-    'Constituents': '30',
-    'Weighting Method': 'market-capitalization',
-    'Rebalancing Frequency': 'two-month interval',
+const Characteristics = () => {
+  const characteristics = {
+    'Largest Market Cap': '30,582 m$',
+    'Smallest Market Cap': '30,582 m$',
+    'Mean Market Cap': '30,582 m$',
     'Launch Date': '14.02.2024',
     'Market': 'Ethereum',
     'AUM': '$ 30,536,531.65',
@@ -14,10 +14,10 @@ const QuickFacts = () => {
   return (
     <Box>
       <Heading fontSize="xl" fontWeight="bold" mb="4">
-        Quick Facts
+        Characteristics
       </Heading>
       <SimpleGrid columns={3} spacing={4}>
-        {Object.entries(quickFacts).map(([key, value]) => (
+        {Object.entries(characteristics).map(([key, value]) => (
           <Box key={key}>
             <Text fontSize="md">
               {key}:
@@ -31,4 +31,4 @@ const QuickFacts = () => {
   );
 };
 
-export default QuickFacts;
+export default Characteristics;

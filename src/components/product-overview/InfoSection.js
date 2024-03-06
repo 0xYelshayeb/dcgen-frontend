@@ -67,7 +67,7 @@ const InfoSection = () => {
 
     return (
         <VStack spacing={8} align="stretch">
-            <Heading size="sm" mb={4}>Asset Allocation</Heading>
+            <Heading fontSize="xl" mb={4}>Asset Allocation</Heading>
             <Flex>
                 <Box flex="5.5">
                     <PieChart tokens={tokens} />
