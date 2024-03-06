@@ -58,22 +58,22 @@ const Information = () => {
                 Join Us On Building A New Financial System.
             </Heading>
             <Text>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>
-            <Box display="flex" alignItems="center" borderRadius="6px" boxShadow="md" p="2" width="400px">
+            <Box display="flex" alignItems="center" borderRadius="10px" p="2" width="400px" bg="#F7F7F7">
                 <Input
                     type="text"
                     value={email}
                     onChange={handleInputChange}
                     placeholder="Email"
-                    borderRadius="6px" // Rounded corners on the left side
+                    borderRadius="4px" // Rounded corners on the left side
                     border="none"
+                    boxShadow="none"
                     _focus={{
                         boxShadow: 'none', // Removes the default focus outline
                     }}
                 />
                 <Button
                     onClick={handleSubmit}
-                    borderRadius="6px" // Rounded corners on the right side
-                    colorScheme="blue" // Use a color scheme that matches your branding
+                    borderRadius="7px" // Rounded corners on the right side
                     px="8" // Padding left and right
                 >
                     Stay Updated
