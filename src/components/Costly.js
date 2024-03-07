@@ -95,7 +95,7 @@ const Costly = () => {
                 <MotionImage variants={item} initial="hidden" animate={controls} src={ChartSVG} alt="Typical Fees for Financial Products" />
                 <MotionVStack align="left" spacing={4} variants={item} initial="hidden" animate={controls}>
                     <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
-                    <Text>Hidden streaming fees stealthily chip away at potential profits, culminating in significant underperformance over time.</Text>
+                    <Text>Hidden<Text as="span" fontWeight="bold" > streaming fees</Text> stealthily chip away at potential profits, culminating in <Text as="span" fontWeight="bold" >significant underperformance</Text> over time.</Text>
                     <Table variant="simple" size="md" bg="transparent">
                         <Thead bgColor={borderColor}>
                             <Tr bg="transparent">
