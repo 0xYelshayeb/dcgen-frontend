@@ -50,7 +50,7 @@ const PieChart = ({ tokens }) => {
     }));
 
     return (
-        <Box width="80%">
+        <Box width="auto">
             <MinimalPieChart
                 data={chartData}
                 lineWidth={15} // Adjust to the desired thickness
