@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Box,
-    Text,
-    Image,
-    HStack,
-    VStack,
-    Heading,
-    Divider,
-    Flex
+    Box, Text, Image, HStack, VStack, Heading, Divider, Flex,
+    Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
+    useDisclosure
 } from '@chakra-ui/react';
 import axios from 'axios';
 import PieChart from './PieChart'; // Assume this is your custom pie chart component
+import ConstituentDetail from './ConstituentDetail';
 
 const TokenDetail = ({ name, image, constituency, color }) => {
 
@@ -37,15 +33,18 @@ const TokenDetail = ({ name, image, constituency, color }) => {
 
 const InfoSection = () => {
     const [tokens, setTokens] = useState([]);
+    const [allTokens, setAllTokens] = useState([]);
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     useEffect(() => {
         const fetchTokens = async () => {
             try {
                 const response = await axios.get('https://api.dcgen.finance/constituents');
                 const sortedTokens = response.data.sort((a, b) => b['Allocation %'] - a['Allocation %']);
+                setAllTokens(sortedTokens); // Store all tokens
                 const topThreeTokens = sortedTokens.slice(0, 3);
                 const othersPercentage = sortedTokens.slice(3).reduce((acc, token) => acc + token['Allocation %'], 0);
-                const tokensWithOthers = topThreeTokens;
+                const tokensWithOthers = [...topThreeTokens]; // Clone the array before pushing
 
                 if (sortedTokens.length > 3) {
                     tokensWithOthers.push({
@@ -72,19 +71,49 @@ const InfoSection = () => {
                 <Box flex="3">
                     <PieChart tokens={tokens} />
                 </Box>
-                <VStack flex="4.5" align="stretch">
+                <VStack
+                    flex="4.5"
+                    align="stretch"
+                    as="button"
+                    onClick={onOpen}
+                    cursor="pointer" // Changes cursor to pointer when hovering over the section
+                    _hover={{ shadow: "lg" }} // Applies larger shadow on hover to indicate clickability
+                    boxShadow="md" // Applies default medium shadow around the section to indicate it's clickable
+                    transition="box-shadow 0.2s ease" // Smooth transition for the shadow effect
+                    p={4}
+                    borderRadius="20"
+                >
                     {tokens.map((token, index) => (
                         <TokenDetail
                             key={index}
                             name={token.Name}
                             image={token.logoURI}
                             color={token.Color}
-                            constituency={`${token['Allocation %'].toFixed(2)}%`} // Accessing Allocation % with bracket notation
+                            constituency={`${token['Allocation %'].toFixed(2)}%`}
                         />
                     ))}
                 </VStack>
             </Flex>
             <Divider />
+
+            <Modal isOpen={isOpen} onClose={onClose} isCentered size="100%">
+                <ModalOverlay backdropFilter="blur(10px)" />
+                <ModalContent width="70%">
+                    <ModalHeader>Full Asset Allocation</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <VStack spacing={4}>
+                            {allTokens.map((token, index) => (
+                                <ConstituentDetail
+                                    key={index}
+                                    name={token.Name}
+                                    percentage={token['Allocation %'].toFixed(2)}
+                                />
+                            ))}
+                        </VStack>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
         </VStack>
     );
 };
