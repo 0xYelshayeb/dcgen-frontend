@@ -82,6 +82,8 @@ const InfoSection = () => {
                     transition="box-shadow 0.2s ease" // Smooth transition for the shadow effect
                     p={4}
                     borderRadius="20"
+                    _focus={{ outline: "none" }} // Removes the blue outline on focus
+
                 >
                     {tokens.map((token, index) => (
                         <TokenDetail
