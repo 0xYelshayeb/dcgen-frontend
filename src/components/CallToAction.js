@@ -68,6 +68,10 @@ const CallToAction = () => {
                 href="https://app.dcgen.finance/swap"
                 target="_blank"
                 rel="noopener noreferrer"
+                _hover={{
+                    bg: 'brand.600',
+                    textDecoration: 'none',
+                }}
             >Invest Now</Button>
         </VStack>
     );
