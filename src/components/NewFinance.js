@@ -66,7 +66,7 @@ const NewFinance = () => {
                 <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>
                     <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>Advancing Financial Democracy</Text>
                     <Text>
-                        AWe believe financial products are basic public goods that are governed by its community. This is a testament to our belief in a decentralized, democratic financial system.
+                        We believe financial products should be basic public goods that are governed by its community. This is a testament to our belief in a decentralized, democratic financial system.
                     </Text>
                 </MotionVStack>
                 <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>

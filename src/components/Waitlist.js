@@ -57,7 +57,7 @@ const Information = () => {
             <Heading fontSize="xxl" fontWeight="600" mb={3} width="60%">
                 Join Us On Building A New Financial System.
             </Heading>
-            <Text>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>
+            <Text pb={4}>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>
             <Box display="flex" alignItems="center" borderRadius="10px" p="2" width="400px" bg="#F7F7F7">
                 <Input
                     type="text"
