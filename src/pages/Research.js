@@ -82,7 +82,6 @@ const Research = () => {
         <VStack p={10} align="left" width="70%" gap={5}>
           <Heading size="lg" mb={4}>Market Benchmarks</Heading>
           <HStack spacing={10}>
-
             <VStack
               align="start"
               borderRadius="8px"
@@ -95,17 +94,19 @@ const Research = () => {
             >
               <Image src={chartlines}></Image>
               <Divider orientation="horizontal" mb={0} pb={0} />
-              <Flex justify="space-between" align="center" width="100%">
+              <Flex justify="space-between" align="center" width="100%" p={2}>
                 <Text fontWeight={'Bold'}>Ethereum Governance Index</Text>
                 <span className="external-link-icon">
                   <i className="fas fa-external-link-alt"></i>
                 </span>
               </Flex>
             </VStack>
-            <VStack align="start" gap={5}>
-              <Text fontWeight="bold" color={colors.gray_content}>Summary</Text>
-              <Text>The Ethereum Governance Index by DCgen is a market-capitalization weighted benchmark tracking the top thirty governance tokens on Ethereum, offering a dynamic measure of this segment's performance.</Text>
-              <Box width="50%">
+            <VStack align="start" gap={7}>
+              <VStack align="start" gap={3}>
+                <Text fontWeight="bold" color={colors.gray_content}>Summary</Text>
+                <Text>The Ethereum Governance Index by DCgen is a market-capitalization weighted benchmark tracking the top thirty governance tokens on Ethereum, offering a dynamic measure of this segment's performance.</Text>
+              </VStack>
+              <VStack width="50%" align="start" gap={3}>
                 <Text fontWeight="bold" color={colors.gray_content}>Index Level</Text>
                 <HStack width="100%" justify="space-between">
                   <Box>
@@ -117,9 +118,11 @@ const Research = () => {
                     <Text fontWeight="bold" color={colors.gray_content}>1M Change</Text>
                   </Box>
                 </HStack>
-              </Box>
-              <Text fontWeight="bold" color={colors.gray_content}>Weighting Method</Text>
-              <Text fontWeight="bold" fontSize="xl">capitalization-weighted</Text>
+              </VStack>
+              <VStack align="start" gap={3}>
+                <Text fontWeight="bold" color={colors.gray_content} m={0}>Weighting Method</Text>
+                <Text fontWeight="bold" fontSize="xl" m={0}>capitalization-weighted</Text>
+              </VStack>
             </VStack>
           </HStack>
         </VStack>
