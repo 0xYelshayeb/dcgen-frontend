@@ -64,6 +64,10 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                     mb={{ base: 5, md: 0 }}
+                    as={Link}
+                    to="/research"
+                    _hover={{ textDecoration: 'none' }} // Remove underline on hover
+
                 >
                     <Image src={triangles} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Market Research</Heading>
@@ -82,6 +86,9 @@ const ScientificApproach = () => {
                     variants={item}
                     initial="hidden"
                     animate={controls}
+                    as={Link}
+                    to="https://app.dcgen.finance"
+                    _hover={{ textDecoration: 'none' }} // Remove underline on hover
                 >
                     <Image src={chart} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Structured Products</Heading>

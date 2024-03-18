@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import logo from '../images/logo.png';
+import logo from '../images/logo-black.png';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -39,7 +39,7 @@ const Header = () => {
         <div className="menu-container">
           <div className="logo-container">
             <Link to="/">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" style={{padding:"12px"}}/>
             </Link>
           </div>
           <nav className={isMenuOpen ? 'active' : ''}>
