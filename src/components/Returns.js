@@ -4,7 +4,8 @@ import {
     Heading,
     Text,
     Image,
-    Flex
+    Flex,
+    useBreakpointValue
 } from '@chakra-ui/react';
 
 import { colors } from '../styles/theme';
@@ -16,13 +17,24 @@ const MotionVStack = motion(VStack);
 
 const Returns = () => {
 
+    const gap = useBreakpointValue({ base: 5, md: 10, lg: 100 });
+
+
     return (
-        <VStack align="left" p={10} width="70%">
-            <Heading fontSize="xxl" fontWeight="600" mb={10} lineHeight="xxl" width="60%">
+        <VStack align="left" p={{ base: 4, md: 8, lg: 10 }} width={{ base: "90%", md: "70%" }}>
+            <Heading
+                fontSize={{ base: "xl", md: "xxl" }}
+                fontWeight="600"
+                mb={10}
+                lineHeight="shorter"
+                width={{ base: "100%", lg: "60%" }}
+            >
                 Maximize Your Returns with DCgen's Diverse Offer of Products.
             </Heading>
-            <Flex gap={100}>
-                <Image src={ChartSVG} alt="Typical Fees for Financial Products" />
+            <Flex direction={{ base: 'column', xl: 'row' }} gap={gap} align="left">
+                <Image src={ChartSVG} alt="Typical Fees for Financial Products" 
+                width={{ base: "90%", md: "70%", xl: "70%" }}
+                />
                 <MotionVStack align="left" spacing={4} initial="hidden">
                     <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>A Commitment to Zero fees</Text>
                     <Text>

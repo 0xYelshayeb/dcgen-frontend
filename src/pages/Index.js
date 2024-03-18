@@ -10,7 +10,7 @@ import Waitlist from "../components/Waitlist";
 import NewFinance from "../components/NewFinance";
 import Costly from "../components/Costly";
 import ZeroFee from "../components/ZeroFee";
-import { VStack } from '@chakra-ui/react';
+import { VStack, useBreakpointValue } from '@chakra-ui/react';
 
 const Index = () => {
   const schema = {
@@ -19,9 +19,13 @@ const Index = () => {
     "name": "Ethereum Index",
     "description": "An index tracking the Ethereum ecosystem",
   };
+
+  const stackPadding = useBreakpointValue({ base: 8, md: 15 });
+  const stackGap = useBreakpointValue({ base: 10, md: 20 });
+
   return (
     <Layout title="DCgen" name="DCgen index page" description="Index page of DCgen Research showcasing the ethereum ecosystem index" schema={schema}>
-      <VStack pt={15} pb={15} gap={20}>
+      <VStack pt={stackPadding} pb={stackPadding} gap={stackGap}>
         <CallToAction />
         <Costly />
         <ZeroFee />

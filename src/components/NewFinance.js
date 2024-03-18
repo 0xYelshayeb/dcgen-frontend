@@ -40,13 +40,13 @@ const NewFinance = () => {
     };
 
     return (
-        <VStack align="left" p={10} width="70%">
-            <Heading fontSize="xxl" fontWeight="600" mb={10} lineHeight="xxl" width="60%">
+        <VStack align="left" p={{ base: 4, md: 8, lg: 10 }} width={{ base: "90%", md: "70%"}}>
+            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={10} lineHeight="xxl" width={{ base: "100%", md: "70%" }}>
                 Building a New Finance with Decentralized Infrastructure.
             </Heading>
             <SimpleGrid
                 ref={ref}
-                columns={2}
+                columns={{ base: 1, md: 2 }}
                 spacing={10}
                 width="full"
                 initial="hidden"

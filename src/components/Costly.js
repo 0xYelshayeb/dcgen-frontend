@@ -87,12 +87,29 @@ const Costly = () => {
 
 
     return (
-        <VStack align="left" p={10} width="70%">
-            <Heading fontSize="xxl" fontWeight="600" mb={10} lineHeight="xxl" width="60%">
+        <VStack align="left" p={{ base: 4, md: 10 }} width={{ base: "90%", md: "70%" }}>
+            <Heading
+                fontSize={{ base: "xl", md: "xxl" }}
+                fontWeight="600"
+                mb={10}
+                lineHeight="shorter"
+                width={{ base: "70%", md: "60%" }}
+            >
                 Investing Can Be Costly.
             </Heading>
-            <Flex gap={10} ref={ref}>
-                <MotionImage variants={item} initial="hidden" animate={controls} src={ChartSVG} alt="Typical Fees for Financial Products" />
+            <Flex
+                direction={{ base: "column", xl: "row" }}
+                gap={10}
+                ref={ref}
+            >
+                <MotionImage
+                    variants={item}
+                    initial="hidden"
+                    animate={controls}
+                    src={ChartSVG}
+                    alt="Typical Fees for Financial Products"
+                    width={{ base: "100%", md: "100%", xl: "70%" }}
+                />
                 <MotionVStack align="left" spacing={4} variants={item} initial="hidden" animate={controls}>
                     <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
                     <Text>Hidden<Text as="span" fontWeight="bold" > streaming fees</Text> stealthily chip away at potential profits, culminating in <Text as="span" fontWeight="bold" >significant underperformance</Text> over time.</Text>
@@ -101,7 +118,7 @@ const Costly = () => {
                             <Tr bg="transparent">
                                 <Th>Cryptocurrency</Th>
                                 <Th>Current Value</Th>
-                                <Th>2% Fee Diluted Value</Th>
+                                <Th>2% Diluted Value</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -115,7 +132,7 @@ const Costly = () => {
                         </Tbody>
                     </Table>
                     <Text>
-                        Understand the impact: from <Text as="span" fontWeight="bold" >${prices.bitcoin.current}</Text> to <Text as="span" fontWeight="bold" >${prices.bitcoin.diluted}</Text>, every penny lost to fees is a chunk of your future eroded. Don't let the invisible drain your potential; <Text as="span" fontWeight="bold">witness the difference and act to safeguard your growth</Text>.
+                        Understanding the impact: from <Text as="span" fontWeight="bold" >${prices.bitcoin.current}</Text> to <Text as="span" fontWeight="bold" >${prices.bitcoin.diluted}</Text>, every penny lost to fees is a chunk of your future eroded. Don't let the invisible drain your potential; <Text as="span" fontWeight="bold">witness the difference and act to safeguard your growth</Text>.
                     </Text>
                 </MotionVStack>
             </Flex>

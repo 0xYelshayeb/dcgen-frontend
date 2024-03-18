@@ -23,7 +23,7 @@ const ZeroFee = () => {
 
     return (
         <VStack p={10} gap={5} align="left" width="100%" background={colors.t1Blue} textColor="white" pl={`calc(15% + 40px)`} pr={`calc(15% + 40px)`} pt={75} pb={75}>
-            <Heading fontSize="xxxl">
+            <Heading fontSize={{ base: "xxl", md: "xxxl" }}>
                 <MotionSpan variants={wiggleVariant} animate="wiggle" style={{ display: 'inline-block', fontSize: '1.5em' }}>0%</MotionSpan> Fees.
             </Heading>
             <Text fontSize="xl">At DCgen, we build products that cost you nothing.</Text>

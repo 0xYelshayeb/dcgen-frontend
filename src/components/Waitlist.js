@@ -53,8 +53,8 @@ const Information = () => {
 
     return (
 
-        <VStack align="left" p={10} width="70%">
-            <Heading fontSize="xxl" fontWeight="600" mb={3} width="60%">
+        <VStack align="left" p={{ base: 4, md: 10 }} width={{ base: "90%", lg: "70%" }}>
+            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={3} width="60%">
                 Join Us On Building A New Financial System.
             </Heading>
             <Text pb={4}>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>

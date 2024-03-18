@@ -45,7 +45,12 @@ const CallToAction = () => {
 
     return (
         <VStack align="center" p={10}>
-            <Heading fontSize="xxxl" width="70%" textAlign="center" marginBottom={7}>
+            <Heading
+                fontSize={{ base: "xl", md: "xxl", lg: "xxxl" }} // Responsive font sizes
+                width={{ base: "90%", sm: "85%", md: "70%" }} // Responsive widths
+                textAlign="center"
+                marginBottom={7}
+            >
                 Grow Your Portfolio with{" "}
                 <MotionImg
                     src={icon}
@@ -60,7 +65,14 @@ const CallToAction = () => {
                 />
                 {" "}Products.
             </Heading>
-            <Text fontSize="xl" fontWeight="600" marginBottom={5} width="40%" textAlign={'center'} lineHeight="xl">
+            <Text
+                fontSize={{ base: "l", md: "xl" }} // Responsive font sizes
+                fontWeight="600"
+                marginBottom={5}
+                width={{ base: "95%", sm: "85%", md: "40%" }} // Responsive widths
+                textAlign={'center'}
+                lineHeight="tall"
+            >
                 Seize Market Alpha with DCgen's Fee-Free Structured Products.
             </Text>
             <Button
@@ -68,11 +80,14 @@ const CallToAction = () => {
                 href="https://app.dcgen.finance/swap"
                 target="_blank"
                 rel="noopener noreferrer"
+                size={{ base: "sm", md: "lg" }} // Responsive button sizes
                 _hover={{
                     bg: 'brand.600',
-                    textDecoration: 'none',
+                    transform: 'scale(1.05)'
                 }}
-            >Invest Now</Button>
+            >
+                Invest Now
+            </Button>
         </VStack>
     );
 };

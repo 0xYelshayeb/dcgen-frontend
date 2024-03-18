@@ -48,19 +48,20 @@ const ScientificApproach = () => {
     };
 
     return (
-        <VStack p={10} align="left" width="70%" gap={5}>
-            <Text fontSize="xxl" fontWeight="600" mb={5} width="60%" lineHeight="xxl">
+        <VStack p={{ base: 5, md: 10 }} align="left" width={{ base: "90%", lg: "70%" }} gap={5}>
+            <Text fontSize={{ base: "xl", lg: "xxl" }} fontWeight="600" mb={5} lineHeight="shorter">
                 Delve into Our Research. Invest in Your Future With Our Structured Products.
             </Text>
-            <Flex width="full" justifyContent="space-between" gap="5" ref={ref}>
+            <Flex width="full" justifyContent="space-between" gap="5" ref={ref} direction={{ base: 'column', md: 'row' }}>
                 <MotionBox
-                    flex="40%"
+                    flex={{ base: "1 1 auto", md: "40%" }}
                     backgroundColor={colors.gray}
                     variants={item}
                     initial="hidden"
                     animate={controls}
+                    mb={{ base: 5, md: 0 }}
                 >
-                    <Image src={triangles} height={400} filter="blur(5px)"></Image>
+                    <Image src={triangles} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Market Research</Heading>
                     <Flex align="end" justify="space-between">
                         <Text pb="10px">
@@ -78,7 +79,7 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                 >
-                    <Image src={chart} height={400} filter="blur(5px)"></Image>
+                    <Image src={chart} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
                     <Heading fontSize="xl">Structured Products</Heading>
                     <Flex align="end" justify="space-between">
                         <Text pb="10px" width="70%">
