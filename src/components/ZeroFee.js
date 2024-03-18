@@ -22,7 +22,12 @@ const ZeroFee = () => {
     };
 
     return (
-        <VStack p={10} gap={5} align="left" width="100%" background={colors.t1Blue} textColor="white" pl={`calc(15% + 40px)`} pr={`calc(15% + 40px)`} pt={75} pb={75}>
+        <VStack gap={5} align="left" width="100%" background={colors.t1Blue} textColor="white" 
+            pl={{ base: 10, md: `calc(15% + 40px)` }}
+            pr={{ base: 10, md: `calc(15% + 40px)` }}
+            pt={{ base: 20, md: 75 }}
+            pb={{ base: 20, md: 75 }}
+            >
             <Heading fontSize={{ base: "xxl", md: "xxxl" }}>
                 <MotionSpan variants={wiggleVariant} animate="wiggle" style={{ display: 'inline-block', fontSize: '1.5em' }}>0%</MotionSpan> Fees.
             </Heading>
