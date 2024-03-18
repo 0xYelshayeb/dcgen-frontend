@@ -13,16 +13,16 @@ const QuickFacts = () => {
 
   return (
     <Box>
-      <Heading fontSize="xl" fontWeight="bold" mb="4">
+      <Heading fontSize={{base:"lg", lg:"xl"}} fontWeight="bold" mb="4">
         Quick Facts
       </Heading>
-      <SimpleGrid columns={3} spacing={4}>
+      <SimpleGrid columns={{base: 2, lg: 3}} spacing={4}>
         {Object.entries(quickFacts).map(([key, value]) => (
           <Box key={key}>
-            <Text fontSize="md">
+            <Text fontSize={{base:"sm", lg:"md"}}>
               {key}:
             </Text>
-            <Text fontSize="md" fontWeight="bold">{value}</Text>
+            <Text fontSize={{base:"sm", lg:"md"}} fontWeight="bold">{value}</Text>
           </Box>
         ))}
       </SimpleGrid>

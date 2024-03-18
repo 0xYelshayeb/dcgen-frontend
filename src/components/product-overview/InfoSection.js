@@ -67,12 +67,15 @@ const InfoSection = () => {
     return (
         <VStack spacing={8} align="stretch">
             <Heading fontSize="xl" mb={4}>Asset Allocation</Heading>
-            <Flex gap="30%">
-                <Box flex="3">
+            <Flex
+                gap="20%"
+                justifyContent={{ base: "flex-start", lg: "space-between" }}
+                alignItems={{ base: "center", lg: "normal" }}
+                flexDirection={{ base: "column", lg: "row" }}>
+                <Box width={{ base: "80%", md: "60%", lg: "auto" }} pb={{base: "15px", lg:"0"}}>
                     <PieChart tokens={tokens} />
                 </Box>
                 <VStack
-                    flex="4.5"
                     align="stretch"
                     as="button"
                     onClick={onOpen}
@@ -83,6 +86,7 @@ const InfoSection = () => {
                     p={4}
                     borderRadius="20"
                     _focus={{ outline: "none" }} // Removes the blue outline on focus
+                    width={{ base: "80%", md: "60%", lg: "38%" }}
 
                 >
                     {tokens.map((token, index) => (

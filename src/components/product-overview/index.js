@@ -7,7 +7,7 @@ import Characteristics from './Characteristics.js';
 
 const OverviewAndPerformance = () => {
   return (
-    <Box background="#FCFCFC" p="24px" mb="24px" width="70%">
+    <Box background="#FCFCFC" p="24px" mb="24px" width={{ base: "95%", lg: "70%" }}>
       <Text fontSize="lg" fontWeight="bold" mb="4">
         Ethereum Governance Index
       </Text>

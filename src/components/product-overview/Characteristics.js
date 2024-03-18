@@ -13,10 +13,10 @@ const Characteristics = () => {
 
   return (
     <Box>
-      <Heading fontSize="xl" fontWeight="bold" mb="4">
+      <Heading fontSize={{base:"lg", lg:"xl"}} fontWeight="bold" mb="4">
         Characteristics
       </Heading>
-      <SimpleGrid columns={3} spacing={4}>
+      <SimpleGrid columns={{base: 2, lg: 3}} spacing={4}>
         {Object.entries(characteristics).map(([key, value]) => (
           <Box key={key}>
             <Text fontSize="md">
