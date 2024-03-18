@@ -6,6 +6,7 @@ import {
     Flex,
     Box,
     Image,
+    useBreakpointValue
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +25,10 @@ const ScientificApproach = () => {
 
     // Animation controls to start the animations when the element is in view
     const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.8 });
+
+    const inViewThreshold = useBreakpointValue({ base: 0.4, md: 0.8 });
+
+    const { ref, inView } = useInView({ threshold: inViewThreshold });
 
     // Start the animation when the element comes into view
     React.useEffect(() => {

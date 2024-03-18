@@ -12,6 +12,7 @@ import {
     Th,
     Td,
     useColorModeValue,
+    useBreakpointValue
 } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -24,7 +25,10 @@ const MotionImage = motion(Image);
 
 const Costly = () => {
     const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 1 });
+
+    const inViewThreshold = useBreakpointValue({ base: 0.4, md: 0.8 });
+
+    const { ref, inView } = useInView({ threshold: inViewThreshold });
     const [prices, setPrices] = useState({
         bitcoin: { current: '...', diluted: '...' },
         ethereum: { current: '...', diluted: '...' },
