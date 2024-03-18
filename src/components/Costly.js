@@ -120,17 +120,17 @@ const Costly = () => {
                     <Table variant="simple" size="md" bg="transparent">
                         <Thead bgColor={borderColor}>
                             <Tr bg="transparent">
-                                <Th>Cryptocurrency</Th>
-                                <Th>Current Value</Th>
-                                <Th>2% Diluted Value</Th>
+                                <Th px={{ base: 1, md: 3 }}>Cryptocurrency</Th>
+                                <Th px={{ base: 1, md: 3 }}>Current Value</Th>
+                                <Th px={{ base: 1, md: 3 }}>2% Diluted Value</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {Object.entries(prices).map(([key, value]) => (
                                 <Tr key={key}>
-                                    <Td>{key.charAt(0).toUpperCase() + key.slice(1)}</Td>
-                                    <Td>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.current)}</Td>
-                                    <Td>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.diluted)}</Td>
+                                    <Td px={{ base: 1, md: 3 }}>{key.charAt(0).toUpperCase() + key.slice(1)}</Td>
+                                    <Td px={{ base: 1, md: 3 }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.current)}</Td>
+                                    <Td px={{ base: 1, md: 3 }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.diluted)}</Td>
                                 </Tr>
                             ))}
                         </Tbody>
