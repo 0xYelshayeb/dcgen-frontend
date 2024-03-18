@@ -46,7 +46,7 @@ const CallToAction = () => {
     return (
         <VStack align="center" p={10}>
             <Heading
-                fontSize={{ base: "xl", md: "xxl", lg: "xxxl" }} // Responsive font sizes
+                fontSize={{ base: "xxl", lg: "xxxl" }} // Responsive font sizes
                 width={{ base: "90%", sm: "85%", md: "70%" }} // Responsive widths
                 textAlign="center"
                 marginBottom={7}
