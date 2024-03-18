@@ -48,7 +48,7 @@ const Research = () => {
   return (
     <Layout>
       <VStack pt={15} pb={15} gap={15}>
-        <VStack p={10} align="left" width="70%" gap={5}>
+        <VStack p={10} align="left" width={{ base: "100%", lg: "70%" }} gap={5}>
           <Box>
             <Heading size="lg" mb={4}>Research & Insights</Heading>
             <Text>
@@ -59,17 +59,17 @@ const Research = () => {
           <Table variant="simple" size="md" bg="transparent">
             <Thead bgColor={borderColor}>
               <Tr bg="transparent">
-                <Th borderColor={borderColor}>Topic</Th>
-                <Th borderColor={borderColor}>Title</Th>
-                <Th borderColor={borderColor}>Summary</Th>
+                <Th px={{ base: 1, md: 3 }} borderColor={borderColor}>Topic</Th>
+                <Th px={{ base: 1, md: 3 }} borderColor={borderColor}>Title</Th>
+                <Th px={{ base: 1, md: 3 }} borderColor={borderColor}>Summary</Th>
               </Tr>
             </Thead>
             <Tbody>
               {papers.map((paper, index) => (
                 <Tr key={index} bg="transparent">
-                  <Td borderColor={borderColor}>{paper.topic}</Td>
-                  <Td borderColor={borderColor}>{paper.title}</Td>
-                  <Td borderColor={borderColor}>{paper.description}</Td>
+                  <Td px={{ base: 1, md: 3 }} fontSize={{ base: "sm", md: "md" }} borderColor={borderColor}>{paper.topic}</Td>
+                  <Td px={{ base: 1, md: 3 }} fontSize={{ base: "sm", md: "md" }} borderColor={borderColor}>{paper.title}</Td>
+                  <Td px={{ base: 1, md: 3 }} fontSize={{ base: "sm", md: "md" }} borderColor={borderColor}>{paper.description}</Td>
                 </Tr>
               ))}
             </Tbody>
@@ -79,20 +79,18 @@ const Research = () => {
 
         <Divider orientation="horizontal" />
 
-        <VStack p={10} align="left" width="70%" gap={5}>
+        <VStack p={10} align="left" width={{ base: "95%", lg: "70%" }} gap={5}>
           <Heading size="lg" mb={4}>Market Benchmarks</Heading>
-          <HStack spacing={10}>
+          <Flex direction={{ base: 'column', lg: 'row' }} gap={10}>
             <VStack
-              align="start"
-              borderRadius="8px"
-              boxShadow="0px 5px 10px rgba(0, 0, 0, 0.25)"
-              width="120%"
-              height="100%"
               as={Link}
               to={"/benchmark"}
               p={2}
+              width={{ base: "full", md: "100%" }}
+              borderRadius="8px"
+              boxShadow="0px 5px 10px rgba(0, 0, 0, 0.25)"
             >
-              <Image src={chartlines}></Image>
+              <Image src={chartlines} height="90%"></Image>
               <Divider orientation="horizontal" mb={0} pb={0} />
               <Flex justify="space-between" align="center" width="100%" p={2}>
                 <Text fontWeight={'Bold'}>Ethereum Governance Index</Text>
@@ -124,7 +122,7 @@ const Research = () => {
                 <Text fontWeight="bold" fontSize="xl" m={0}>capitalization-weighted</Text>
               </VStack>
             </VStack>
-          </HStack>
+          </Flex>
         </VStack>
       </VStack>
     </Layout >
