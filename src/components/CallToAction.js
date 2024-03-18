@@ -66,7 +66,7 @@ const CallToAction = () => {
                 {" "}Products.
             </Heading>
             <Text
-                fontSize={{ base: "l", md: "xl" }} // Responsive font sizes
+                fontSize="xl"
                 fontWeight="600"
                 marginBottom={5}
                 width={{ base: "95%", sm: "85%", md: "40%" }} // Responsive widths
@@ -80,7 +80,7 @@ const CallToAction = () => {
                 href="https://app.dcgen.finance/swap"
                 target="_blank"
                 rel="noopener noreferrer"
-                size={{ base: "sm", md: "lg" }} // Responsive button sizes
+                size={{ base: "md", md: "lg" }} // Responsive button sizes
                 _hover={{
                     bg: 'brand.600',
                     transform: 'scale(1.05)'
