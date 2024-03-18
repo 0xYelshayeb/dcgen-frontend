@@ -54,11 +54,11 @@ const Information = () => {
     return (
 
         <VStack align="left" p={{ base: 4, md: 10 }} width={{ base: "90%", lg: "70%" }}>
-            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={3} width="60%">
+            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={3} width={{ base: "90%", lg: "60%" }}>
                 Join Us On Building A New Financial System.
             </Heading>
             <Text pb={4}>Stay updated on the latest news, products and research. We will keep you posted with our latest suite of products and solutions.</Text>
-            <Box display="flex" alignItems="center" borderRadius="10px" p="2" width="400px" bg="#F7F7F7">
+            <Box display="flex" alignItems="center" borderRadius="10px" p="2" width={{ base: "100%", md: "400px" }} bg="#F7F7F7">
                 <Input
                     type="text"
                     value={email}
