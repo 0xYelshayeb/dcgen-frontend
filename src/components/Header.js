@@ -52,7 +52,7 @@ const Header = () => {
                   href="https://app.dcgen.finance/swap"
                   target="_blank"
                   rel="noopener noreferrer"
-                  height="45px"
+                  height="40px"
                 >App<span className="external-link-icon">
                     <i className="fas fa-external-link-alt"></i>
                   </span>

@@ -80,13 +80,17 @@ const CallToAction = () => {
                 href="https://app.dcgen.finance/swap"
                 target="_blank"
                 rel="noopener noreferrer"
-                size={{ base: "md", md: "lg" }} // Responsive button sizes
+                height="56px"
+                px={8} // Adjust as needed
                 _hover={{
                     bg: 'brand.600',
-                    transform: 'scale(1.05)'
+                    textDecoration: "none"
                 }}
             >
                 Invest Now
+                <span className="external-link-icon" style={{ marginLeft: '24px' }}>
+                    <i className="fas fa-external-link-alt"></i>
+                </span>
             </Button>
         </VStack>
     );

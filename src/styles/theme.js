@@ -42,7 +42,7 @@ const theme = extendTheme({
         Button: {
             baseStyle: {
                 fontWeight: 'semibold',
-                borderRadius: '6px',
+                borderRadius: '8px',
             },
             defaultProps: {
                 colorScheme: 'brand',
