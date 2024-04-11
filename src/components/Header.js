@@ -34,28 +34,36 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className='header-container' ref={headerRef}>
+    <div className='header-container' ref={headerRef} style={{ backdropFilter: 'saturate(120%) blur(5px)'}}>
       <header className={isMenuOpen ? 'menu-open' : ''}>
         <div className="menu-container">
           <div className="logo-container">
             <Link to="/">
-              <img src={logo} alt="Logo" style={{padding:"12px"}}/>
+              <img src={logo} alt="Logo" style={{ padding: "12px" }} />
             </Link>
           </div>
           <nav className={isMenuOpen ? 'active' : ''}>
             <ul>
-              <li><Link to="/research" className={isActive(['/research'])} onClick={toggleMenu}>Research</Link></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
+              <li>
+                <Link to="/research" className={`link-hover-effect ${isActive(['/research'])}`} onClick={toggleMenu}>
+                  Research
+                </Link>
+              </li>
+              <li>
+                <a className="link-hover-effect" target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">
+                  Documentation
+                </a>
+              </li>
               <li>
                 <Button
-                    as="a"
-                    href="https://app.dcgen.finance/swap"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    height="40px"
-                    px={10}
+                  as="a"
+                  href="https://app.dcgen.finance/swap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  height="40px"
+                  px={10}
                 >
-                    App
+                  App
                 </Button>
               </li>
             </ul>
