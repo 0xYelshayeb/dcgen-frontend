@@ -53,7 +53,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   height="40px"
-                >App<span className="external-link-icon">
+                >Invest Now<span className="external-link-icon">
                     <i className="fas fa-external-link-alt"></i>
                   </span>
                 </Button>
