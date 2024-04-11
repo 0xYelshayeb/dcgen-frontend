@@ -81,14 +81,14 @@ const CallToAction = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 height="56px"
-                px={8} // Adjust as needed
+                px={8}
                 _hover={{
                     bg: 'brand.600',
                     textDecoration: "none"
                 }}
             >
                 Invest Now
-                <span className="external-link-icon" style={{ marginLeft: '24px' }}>
+                <span className="external-link-icon">
                     <i className="fas fa-external-link-alt"></i>
                 </span>
             </Button>

@@ -48,14 +48,14 @@ const Header = () => {
               <li><a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a></li>
               <li>
                 <Button
-                  as="a"
-                  href="https://app.dcgen.finance/swap"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  height="40px"
-                >Invest Now<span className="external-link-icon">
-                    <i className="fas fa-external-link-alt"></i>
-                  </span>
+                    as="a"
+                    href="https://app.dcgen.finance/swap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    height="40px"
+                    px={10}
+                >
+                    App
                 </Button>
               </li>
             </ul>
