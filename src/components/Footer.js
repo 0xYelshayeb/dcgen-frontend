@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 import logo from "../images/logo-white.png"
 import x from "../icons/x.svg"
-import discord from "../icons/discord.svg"
 import gitbook from "../icons/gitbook.svg"
-import github from "../icons/github.svg"
 
 const Footer = () => {
     return (
@@ -19,8 +17,6 @@ const Footer = () => {
                 </div>
                 <div className="footer-icons">
                     <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance"><img src={x} alt="X Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="#link2"><img src={discord} alt="Discord Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="#link4"><img src={github} alt="GitHub Icon" /></a>
                     <a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/"><img src={gitbook} alt="GitBook Icon" /></a>
                 </div>
             </div>

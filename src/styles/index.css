@@ -233,8 +233,18 @@ nav ul li a:hover {
   color:black;
 }
 
+
+
+
+/* Icons */
 .external-link-icon {
   margin-left: 24px; /* Adjust the value as needed */
+}
+
+.icon-cta::before{
+  font-size: 24px; /* This will set the icon size */
+  color: white !important;
+  padding-left: 16px; /* This will add padding to the left of the icon */
 }
 
 .menu-toggle {

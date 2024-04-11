@@ -3,6 +3,8 @@ import { VStack, Heading, Text, Button } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import dcgen_blue from "../icons/DCgen_blue.svg";
 import dcgen_black from "../icons/DCgen_black.svg";
+import '../styles/MingCute.css';
+
 
 const MotionImg = motion.img; // Directly use motion with the img tag
 
@@ -14,7 +16,7 @@ const CallToAction = () => {
     // Motion variants for the animations
     const variants = {
         wiggle: {
-            y: [0, -5, 5, -5, 0],
+            y: [0, -2, 2, -2, 0],
             transition: { duration: 0.3 }
         },
         change: {
@@ -88,9 +90,7 @@ const CallToAction = () => {
                 }}
             >
                 Invest Now
-                <span className="external-link-icon">
-                    <i className="fas fa-external-link-alt"></i>
-                </span>
+                <span className="mgc_arrows_right_line icon-cta"></span>
             </Button>
         </VStack>
     );
