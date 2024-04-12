@@ -192,8 +192,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 3vw 10px 4vw;
-  position: relative;
 }
 
 .menu-container {
@@ -203,8 +201,9 @@ header {
   width: 100%;
 }
 
-.logo-container a {
-  padding: 0;
+.logo-container {
+  padding: 1vw;
+  padding-left: 7vw; /* LEFT PADDING */
 }
 
 .logo-container img{
@@ -224,6 +223,10 @@ nav ul li a {
   font-weight: bold;
 }
 
+nav ul li:last-child {
+  padding-right: 8vw;  /* RIGHT PADDING */
+}
+
 nav ul li a:hover {
   text-decoration: none;
 }
@@ -234,6 +237,18 @@ nav ul li a:hover {
 
 .link-hover-effect:hover {
   color: #000 !important;
+}
+
+.header-container {
+  background: rgba(255, 255, 255, 0.85); /* Fallback background color */
+  backdrop-filter: saturate(120%) blur(5px);
+}
+
+/* Use @supports rule to add a fully opaque background only when backdrop-filter is supported */
+@supports (backdrop-filter: saturate(120%) blur(5px)) {
+  .header-container {
+      background: white; /* Reset to full white if blur is supported */
+  }
 }
 
 
@@ -318,7 +333,7 @@ nav ul li a:hover {
   }
 
   header {
-    padding: 20px 6vw 10px 4vw;
+    padding: 20px 6vw 10px 0;
   }
 }
 
@@ -637,10 +652,11 @@ p#response-message{
   flex-direction: column;
   align-items: flex-start;
   padding-right: 10rem;
+  padding-left: 2.17vw;
 }
 
 .footer-logo {
-  width: 120px;
+  width: 115px;
   margin-bottom: 1rem; /* Space below logo */
 }
 
@@ -699,26 +715,45 @@ a:hover {
 @media screen and (max-width: 834px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    padding: 4rem 5vw; /* Adjusted padding for mobile */
+    align-items: flex-start; /* Aligns content to the left */
+    padding: 5rem 3vw; /* Adjusted padding for mobile */
   }
 
-  .icons-container,
+  .footer-logo-and-icons {
+    align-items: flex-start; /* Ensures the logo and icons are aligned to the left */
+    padding-right: 0; /* Removes extra padding on the right */
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  .icons-container {
+    flex-direction: row; /* Keeps icons side by side */
+    justify-content: flex-start; /* Aligns icons to the start */
+    gap: 0rem; /* Adjusts gap between icons */
+    margin-bottom: 1.5rem; /* Space below icons before the columns start */
+  }
+
   .footer-links {
-    width: 100%;
-    justify-content: center;
-    gap: 1rem; /* Adjusts gap for mobile */
+    flex-direction: column; /* Stacks community and resources on top of each other */
+    align-items: flex-start; /* Aligns the columns to the left */
+    gap: 2.5rem; /* Space between community and resources sections */
+    padding-left: 2rem;
   }
 
   .community-section,
   .resources-section {
-    align-items: center; /* Center align for mobile */
-    gap: 0; /* Remove gap for mobile to stack the links */
+    align-items: flex-start; /* Aligns the links inside the columns to the left */
+    padding-left: 0; /* Resets any padding to align with the above elements */
+  }
+
+  .community-section a:first-child,
+  .resources-section a:first-child {
+    margin-top: 0; /* Resets the margin to 0 */
   }
 
   .community-section a,
   .resources-section a {
-    margin-top: 0.5rem; /* Smaller space above each link on mobile */
-    margin-bottom: 0.5rem; /* Smaller space below each link on mobile */
+    margin-top: 0rem; /* Smaller space above each link */
+    margin-bottom: 0.1em; /* Smaller space below each link */
   }
 }
