@@ -3,6 +3,9 @@ import { VStack, Heading, Text, Button } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import dcgen_blue from "../icons/DCgen_blue.svg";
 import dcgen_black from "../icons/DCgen_black.svg";
+import '../styles/MingCute.css';
+import { Box } from '@chakra-ui/react';
+
 
 const MotionImg = motion.img; // Directly use motion with the img tag
 
@@ -14,7 +17,7 @@ const CallToAction = () => {
     // Motion variants for the animations
     const variants = {
         wiggle: {
-            y: [0, -5, 5, -5, 0],
+            y: [0, -2, 2, -2, 0],
             transition: { duration: 0.3 }
         },
         change: {
@@ -81,16 +84,15 @@ const CallToAction = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 height="56px"
-                px={8} // Adjust as needed
+                px={8}
+                rightIcon={<Box as="span" className="mgc_arrows_right_line icon-cta" />}
                 _hover={{
                     bg: 'brand.600',
-                    textDecoration: "none"
+                    textDecoration: "none",
+                    color: 'white',
                 }}
             >
                 Invest Now
-                <span className="external-link-icon" style={{ marginLeft: '24px' }}>
-                    <i className="fas fa-external-link-alt"></i>
-                </span>
             </Button>
         </VStack>
     );

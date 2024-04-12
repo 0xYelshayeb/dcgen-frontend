@@ -192,9 +192,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #D0D1D3;
-  padding: 20px 3vw 10px 4vw;
-  position: relative;
 }
 
 .menu-container {
@@ -204,8 +201,9 @@ header {
   width: 100%;
 }
 
-.logo-container a {
-  padding: 0;
+.logo-container {
+  padding: 1vw;
+  padding-left: 7vw; /* LEFT PADDING */
 }
 
 .logo-container img{
@@ -225,6 +223,10 @@ nav ul li a {
   font-weight: bold;
 }
 
+nav ul li:last-child {
+  padding-right: 8vw;  /* RIGHT PADDING */
+}
+
 nav ul li a:hover {
   text-decoration: none;
 }
@@ -233,13 +235,44 @@ nav ul li a:hover {
   color:black;
 }
 
+.link-hover-effect:hover {
+  color: #000 !important;
+}
+
+.header-container {
+  background: rgba(255, 255, 255, 0.85); /* Fallback background color */
+  backdrop-filter: saturate(120%) blur(5px);
+}
+
+/* Use @supports rule to add a fully opaque background only when backdrop-filter is supported */
+@supports (backdrop-filter: saturate(120%) blur(5px)) {
+  .header-container {
+      background: white; /* Reset to full white if blur is supported */
+  }
+}
+
+
+
+/* Icons */
 .external-link-icon {
-  margin-left: 8px; /* Adjust the value as needed */
+  margin-left: 24px; /* Adjust the value as needed */
+}
+
+.icon-cta::before{
+  font-size: 24px; /* This will set the icon size */
+  color: white !important;
+  padding-left: 16px; /* This will add padding to the left of the icon */
 }
 
 .menu-toggle {
   display: none; /* Initially hidden */
 }
+
+.header-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  /* Other styles */
+}
+
 
 /* Style for the special button */
 .special-button {
@@ -300,7 +333,7 @@ nav ul li a:hover {
   }
 
   header {
-    padding: 20px 6vw 10px 4vw;
+    padding: 20px 6vw 10px 0;
   }
 }
 
@@ -470,7 +503,6 @@ nav ul li a:hover {
 .waitlist-container{
   display: flex;
   align-items: center;
-  margin-top: 20px;
 }
 
 .check {
@@ -604,88 +636,124 @@ p#response-message{
   }
 }
 
-/* footer section */
-
-.footer-section-logo{
-  width: 35vw;
-  margin-left: 20px;
-}
-
-.footer-logo img{
-  width: 150px;
-}
+/* footer */
 
 .footer-container {
   display: flex;
-  padding: 60px 40px 60px 40px;
+  align-items: flex-start;
+  justify-content: flex-start; /* Aligns items to the start of the container */
+  padding: 6vw; /* Adjusted padding to create space around items */
   background-color: #3751FF;
   color: white;
 }
 
-.footer-sections-wrapper {
+.footer-logo-and-icons {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 80px;
+  padding-right: 10rem;
+  padding-left: 2.17vw;
 }
 
-.footer-section h4{
-  margin-top: 0px;
-  padding-top: 0px;
+.footer-logo {
+  width: 115px;
+  margin-bottom: 1rem; /* Space below logo */
 }
 
-.footer-icons {
+.icons-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  max-width: 200px;
+  flex-direction: row; /* Place icons side by side */
+  align-items: center; /* Aligns icons to the center vertically */
 }
 
-.footer-icons img {
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
+.footer-icon-x {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem; /* Space between icons */
 }
 
-a {
+.footer-icon-gitbook {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem; /* Increased gap between the community and resources columns */
+}
+
+.community-section,
+.resources-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space below the headline */
+}
+
+.community-section a,
+.resources-section a {
   color: white;
   text-decoration: none;
-  margin-bottom: 5px;
-  display: block;
+  margin-top: 0rem; /* Space above each link */
+  margin-bottom: 0rem; /* Space below each link */
+}
+
+.community-section a:first-child,
+.resources-section a:first-child {
+  margin-top: 5; /* No space above the first link */
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #D0D2D4;
 }
 
 @media screen and (max-width: 834px) {
   .footer-container {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 7vw 7vw;
+    align-items: flex-start; /* Aligns content to the left */
+    padding: 5rem 3vw; /* Adjusted padding for mobile */
   }
 
-  .footer-logo img{
-    width: 100px;
+  .footer-logo-and-icons {
+    align-items: flex-start; /* Ensures the logo and icons are aligned to the left */
+    padding-right: 0; /* Removes extra padding on the right */
+    padding-bottom: 1rem;
+    padding-left: 2rem;
   }
 
-  .footer-icons img {
-    width: 20px;
-    height: 20px;
-    fill: #ffffff;
+  .icons-container {
+    flex-direction: row; /* Keeps icons side by side */
+    justify-content: flex-start; /* Aligns icons to the start */
+    gap: 0rem; /* Adjusts gap between icons */
+    margin-bottom: 1.5rem; /* Space below icons before the columns start */
   }
 
-  .footer-section-logo{
-    width: 270px;
-    margin-top: 30px;
-    margin-left: 0px;
-    order: 2;
+  .footer-links {
+    flex-direction: column; /* Stacks community and resources on top of each other */
+    align-items: flex-start; /* Aligns the columns to the left */
+    gap: 2.5rem; /* Space between community and resources sections */
+    padding-left: 2rem;
   }
 
-  .footer-sections-wrapper {
-    order: 1;
+  .community-section,
+  .resources-section {
+    align-items: flex-start; /* Aligns the links inside the columns to the left */
+    padding-left: 0; /* Resets any padding to align with the above elements */
   }
 
-  .footer-icons {
-    max-width: 150px;
+  .community-section a:first-child,
+  .resources-section a:first-child {
+    margin-top: 0; /* Resets the margin to 0 */
+  }
+
+  .community-section a,
+  .resources-section a {
+    margin-top: 0rem; /* Smaller space above each link */
+    margin-bottom: 0.1em; /* Smaller space below each link */
   }
 }

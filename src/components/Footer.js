@@ -1,42 +1,35 @@
 // src/components/Footer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.css';
-import logo from "../images/logo-white.png"
-import x from "../icons/x.svg"
-import discord from "../icons/discord.svg"
-import gitbook from "../icons/gitbook.svg"
-import github from "../icons/github.svg"
+import logo from "../images/logo-white.png";
+import x from "../icons/x.svg";
+import gitbook from "../icons/gitbook.svg";
 
 const Footer = () => {
     return (
         <footer className="footer-container">
-            <div className="footer-section footer-section-logo">
-                <div className="footer-logo">
-                    <Link to="/">
-                        <img src={logo} alt="DCgen Logo" />
-                    </Link>
-                </div>
-                <div className="footer-icons">
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance"><img src={x} alt="X Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="#link2"><img src={discord} alt="Discord Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="#link4"><img src={github} alt="GitHub Icon" /></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/"><img src={gitbook} alt="GitBook Icon" /></a>
-                </div>
-            </div>
-            <div className="footer-sections-wrapper">
-                <div className="footer-section footer-section-rest">
-                    <h4>Community</h4>
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CodeForFinance">X (Twitter) </a>
-                    <a target="_blank" rel="noopener noreferrer" href="#Discord">Discord </a>
-                    <a href="mailto:contact@dcgen.finance">
-                        Contact us
+            <div className="footer-logo-and-icons">
+                <Link to="/">
+                    <img className="footer-logo" src={logo} alt="DCgen Logo" />
+                </Link>
+                <div className="icons-container">
+                    <a href="https://twitter.com/CodeForFinance" target="_blank" rel="noopener noreferrer">
+                        <img className="footer-icon-x" src={x} alt="X Icon" />
+                    </a>
+                    <a href="https://dcgen.gitbook.io/dcgen/" target="_blank" rel="noopener noreferrer">
+                        <img className="footer-icon-gitbook" src={gitbook} alt="GitBook Icon" />
                     </a>
                 </div>
-                <div className="footer-section footer-section-rest">
-                    <h4>Resources</h4>
-                    <a target="_blank" rel="noopener noreferrer" href="https://dcgen.gitbook.io/dcgen/">Documentation </a>
-                    <a target="_blank" rel="noopener noreferrer" href="#Github">GitHub </a>
+            </div>
+            <div className="footer-links">
+                <div className="community-section">
+                    <h4 className="footer-heading">Community</h4>
+                    <a href="https://twitter.com/CodeForFinance" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                    <a href="mailto:contact@dcgen.finance">Contact Us</a>
+                </div>
+                <div className="resources-section">
+                    <h4 className="footer-heading">Resources</h4>
+                    <a href="https://dcgen.gitbook.io/dcgen/" target="_blank" rel="noopener noreferrer">Documentation</a>
                     <Link to="/research">Research</Link>
                 </div>
             </div>

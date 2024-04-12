@@ -11,6 +11,7 @@ import ComingSoon from "./pages/ComingSoon";
 import Verification from "./pages/Verification";
 import Benchmark from "./pages/Benchmark";
 
+
 const App = () => {
   return (
     <BrowserRouter>
