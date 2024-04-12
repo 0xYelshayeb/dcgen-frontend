@@ -488,7 +488,6 @@ nav ul li a:hover {
 .waitlist-container{
   display: flex;
   align-items: center;
-  margin-top: 20px;
 }
 
 .check {
@@ -622,88 +621,104 @@ p#response-message{
   }
 }
 
-/* footer section */
-
-.footer-section-logo{
-  width: 35vw;
-  margin-left: 20px;
-}
-
-.footer-logo img{
-  width: 150px;
-}
+/* footer */
 
 .footer-container {
   display: flex;
-  padding: 60px 40px 60px 40px;
+  align-items: flex-start;
+  justify-content: flex-start; /* Aligns items to the start of the container */
+  padding: 6vw; /* Adjusted padding to create space around items */
   background-color: #3751FF;
   color: white;
 }
 
-.footer-sections-wrapper {
+.footer-logo-and-icons {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 80px;
+  padding-right: 10rem;
 }
 
-.footer-section h4{
-  margin-top: 0px;
-  padding-top: 0px;
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem; /* Space below logo */
 }
 
-.footer-icons {
+.icons-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  max-width: 200px;
+  flex-direction: row; /* Place icons side by side */
+  align-items: center; /* Aligns icons to the center vertically */
 }
 
-.footer-icons img {
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
+.footer-icon-x {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem; /* Space between icons */
 }
 
-a {
+.footer-icon-gitbook {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem; /* Increased gap between the community and resources columns */
+}
+
+.community-section,
+.resources-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space below the headline */
+}
+
+.community-section a,
+.resources-section a {
   color: white;
   text-decoration: none;
-  margin-bottom: 5px;
-  display: block;
+  margin-top: 0rem; /* Space above each link */
+  margin-bottom: 0rem; /* Space below each link */
+}
+
+.community-section a:first-child,
+.resources-section a:first-child {
+  margin-top: 5; /* No space above the first link */
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #D0D2D4;
 }
 
 @media screen and (max-width: 834px) {
   .footer-container {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 7vw 7vw;
+    align-items: center;
+    padding: 4rem 5vw; /* Adjusted padding for mobile */
   }
 
-  .footer-logo img{
-    width: 100px;
+  .icons-container,
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem; /* Adjusts gap for mobile */
   }
 
-  .footer-icons img {
-    width: 20px;
-    height: 20px;
-    fill: #ffffff;
+  .community-section,
+  .resources-section {
+    align-items: center; /* Center align for mobile */
+    gap: 0; /* Remove gap for mobile to stack the links */
   }
 
-  .footer-section-logo{
-    width: 270px;
-    margin-top: 30px;
-    margin-left: 0px;
-    order: 2;
-  }
-
-  .footer-sections-wrapper {
-    order: 1;
-  }
-
-  .footer-icons {
-    max-width: 150px;
+  .community-section a,
+  .resources-section a {
+    margin-top: 0.5rem; /* Smaller space above each link on mobile */
+    margin-bottom: 0.5rem; /* Smaller space below each link on mobile */
   }
 }
