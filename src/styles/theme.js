@@ -26,9 +26,9 @@ const theme = extendTheme({
         sm: '14px',
         md: '16px',
         lg: '18px',
-        xl: '25px',
-        xxl: '35px',
-        xxxl: '60px',
+        xl: '24px',
+        xxl: '32px',
+        xxxl: '64px',
     },
     lineHeights: {
         sm: '20px',
