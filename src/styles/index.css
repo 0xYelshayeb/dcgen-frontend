@@ -180,12 +180,20 @@ body {
 
 .header-container {
   position: fixed;
-  width: 100vw;
-  padding: 0;
-  background: white;
-  z-index: 10;
+  width: 100%;
+  top: 0;
   left: 0;
-  transition: height 0.3s ease; /* Smooth transition for hover effect */
+  padding: 0;
+  background: rgba(255, 255, 255, 0.85); /* Fallback background color */
+  z-index: 1000; /* Updated z-index to the higher value */
+  backdrop-filter: saturate(120%) blur(20px);
+  transition: height 0.3s ease; /* Smooth transition for dynamic height changes */
+}
+
+@supports (backdrop-filter: saturate(120%) blur(5px)) {
+  .header-container {
+      background: white; /* Fully opaque white background if blur is supported */
+  }
 }
 
 header {
@@ -203,10 +211,10 @@ header {
 
 .logo-container {
   padding: 1vw;
-  padding-left: 7vw; /* LEFT PADDING */
+  padding-left: 7vw; /* Left padding */
 }
 
-.logo-container img{
+.logo-container img {
   height: 60px;
 }
 
@@ -214,42 +222,34 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 4vw;
-  display: flex;
   align-items: center;
 }
 
 nav ul li a {
-  color: #757575; /* Making the text of the links black */
+  color: #757575; /* Making the text of the links gray (was black in your description) */
   font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition for hover */
 }
 
 nav ul li:last-child {
-  padding-right: 8vw;  /* RIGHT PADDING */
+  padding-right: 8vw; /* Right padding */
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .link-hover-effect:hover, .active-link {
+  color: #000; /* Hover and active link color */
   text-decoration: none;
 }
 
-.active-link{
-  color:black;
+.active-link {
+  color: black;
 }
 
 .link-hover-effect:hover {
   color: #000 !important;
 }
 
-.header-container {
-  background: rgba(255, 255, 255, 0.85); /* Fallback background color */
-  backdrop-filter: saturate(120%) blur(5px);
-}
 
-/* Use @supports rule to add a fully opaque background only when backdrop-filter is supported */
-@supports (backdrop-filter: saturate(120%) blur(5px)) {
-  .header-container {
-      background: white; /* Reset to full white if blur is supported */
-  }
-}
+
 
 
 

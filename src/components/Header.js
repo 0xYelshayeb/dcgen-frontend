@@ -34,7 +34,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className='header-container' ref={headerRef} style={{ backdropFilter: 'saturate(120%) blur(20px)'}}>
+    <div className='header-container' ref={headerRef}>
       <header className={isMenuOpen ? 'menu-open' : ''}>
         <div className="menu-container">
           <div className="logo-container">
