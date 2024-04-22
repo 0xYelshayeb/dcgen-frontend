@@ -1,11 +1,12 @@
 import React from 'react';
-import { VStack, Heading, Text, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
+import { VStack, Heading, Text, Grid, GridItem, Box, useBreakpointValue } from '@chakra-ui/react';
 import { colors } from '../styles/theme';
 import { motion } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts';
-// import arrowHanddrawn from '../icons/arrow_handdrawn.png';
+import arrowHanddrawn from '../icons/arrow_handdrawn.png';
 
 const MotionVStack = motion(VStack);
+const MotionBox = motion(Box);
 
 const data = [
     { name: 'Active Funds', Fees: 1.5 },
@@ -35,6 +36,20 @@ const CustomLabel = (props) => {
     );
 };
 
+const glowAnimation = {
+    initial: { 
+        filter: "drop-shadow(0 0 8px rgba(0,0,0,0.3))"  // Subtle shadow for a glowing effect
+    },
+    hover: { 
+        rotate: [0, 5, -5, 0],  // Rotate slightly on hover
+        transition: {
+            duration: 0.5,  // Half-second rotation
+            yoyo: Infinity,  // Goes back and forth
+        }
+    }
+};
+
+
 const Returns = () => {
     const gap = useBreakpointValue({ base: 5, md: 10, lg: 100 });
 
@@ -54,47 +69,60 @@ const Returns = () => {
                     <Heading fontSize="lg" mb={5}>
                         Typical Fees for Financial Products
                     </Heading>
-                    <ResponsiveContainer width="100%" height={310}>
-                        <BarChart 
-                            data={data} 
-                            margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
-                        >
-                            <XAxis 
-                                dataKey="name" 
-                                stroke={colors.gray[400]} 
-                                interval={0} 
-                                angle={-45} 
-                                textAnchor="end" 
-                                height={60}                             
-                                tickFormatter={(value) => value}
-                                tickLine={false}
-                                axisLine={false}
-                                tick={props => {
-                                    const { x, y, payload } = props;
-                                    const isDCgen = payload.value === 'DCgen';
-                                    return (
-                                        <g transform={`translate(${x},${y})`}>
-                                            <text
-                                                x={0}
-                                                y={0}
-                                                dy={16}
-                                                fill={isDCgen ? colors.t2Blue : '#666'}
-                                                textAnchor="end"
-                                                transform="rotate(-45)"
-                                                fontSize={isDCgen ? 20 : 14}
-                                                fontWeight={isDCgen ? 'bold' : 'normal'}                                        >
-                                                {payload.value}
-                                            </text>
-                                        </g>
-                                    );
-                                }}
-                            />
-                            <YAxis domain={[0, 'dataMax + 0.1']} hide={true} />
-                            <Bar dataKey="Fees" fill="#D0D2D4" radius={[10, 10, 0, 0]}>
-                                <LabelList dataKey="Fees" content={<CustomLabel />} />
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
+                    <div style={{ position: 'relative' }}>
+                        <ResponsiveContainer width="100%" height={310}>
+                            <BarChart 
+                                data={data} 
+                                margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+                            >
+                                <XAxis 
+                                    dataKey="name" 
+                                    stroke={colors.gray[400]} 
+                                    interval={0} 
+                                    angle={-45} 
+                                    textAnchor="end" 
+                                    height={60}                             
+                                    tickFormatter={(value) => value}
+                                    tickLine={false}
+                                    axisLine={false}
+                                    tick={props => {
+                                        const { x, y, payload } = props;
+                                        const isDCgen = payload.value === 'DCgen';
+                                        return (
+                                            <g transform={`translate(${x},${y})`}>
+                                                <text
+                                                    x={0}
+                                                    y={0}
+                                                    dy={16}
+                                                    fill={isDCgen ? colors.t2Blue : '#666'}
+                                                    textAnchor="end"
+                                                    transform="rotate(-45)"
+                                                    fontSize={isDCgen ? 20 : 14}
+                                                    fontWeight={isDCgen ? 'bold' : 'normal'}                                        >
+                                                    {payload.value}
+                                                </text>
+                                            </g>
+                                        );
+                                    }}
+                                />
+                                <YAxis domain={[0, 'dataMax + 0.1']} hide={true} />
+                                <Bar dataKey="Fees" fill="#D0D2D4" radius={[10, 10, 0, 0]}>
+                                    <LabelList dataKey="Fees" content={<CustomLabel />} />
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
+                        <MotionBox 
+                            position="absolute" 
+                            right="-7%" 
+                            bottom="45%" 
+                            zIndex={2} 
+                            variants={glowAnimation}
+                            initial="initial"
+                            whileHover="hover"
+                            >
+                                <img src={arrowHanddrawn} alt="Arrow pointing at DCgen" style={{ width: '120px', height: 'auto' }} />
+                        </MotionBox>
+                    </div>
                 </GridItem>
                 <GridItem>
                     <MotionVStack align="left" spacing={10} initial="hidden" width="100%">
@@ -113,11 +141,6 @@ const Returns = () => {
                     </MotionVStack>
                 </GridItem>
             </Grid>
-{/*
-            <Box position="absolute" right={["51%", "51%", "51%"]} bottom={["54.5%", "54.5%", "54.5%"]} zIndex={2}>
-                <img src={arrowHanddrawn} alt="Arrow pointing at DCgen" style={{ width: '120px', height: 'auto' }} />
-            </Box>
-*/}
         </VStack>
     );
 };
