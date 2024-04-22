@@ -53,8 +53,9 @@ const theme = extendTheme({
             },
             sizes: {
                 md: {
-                    fontSize: 'md',
-                    padding: '12px 24px',
+                    fontSize: 'sm',
+                    lineHeights: 'sm',
+                    padding: '16px 24px',
                 },
             },
             variants: {

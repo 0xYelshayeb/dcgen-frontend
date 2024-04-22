@@ -62,6 +62,11 @@ const Header = () => {
                   rel="noopener noreferrer"
                   height="40px"
                   px={10}
+                  _hover={{
+                    bg: 'brand.600',
+                    textDecoration: "none",
+                    color: 'white',
+                  }}
                 >
                   App
                 </Button>

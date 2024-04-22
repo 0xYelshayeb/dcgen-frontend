@@ -53,7 +53,7 @@ const ScientificApproach = () => {
 
     return (
         <VStack p={{ base: 5, md: 10 }} align="left" width={{ base: "90%", lg: "70%" }} gap={5}>
-            <Text fontSize={{ base: "xl", lg: "xxl" }} fontWeight="600" mb={5} lineHeight="shorter">
+            <Text fontSize={{ base: "xl", lg: "xxl" }} fontWeight="600" mb={5} lineHeight="medium">
                 Delve into Our Research. Invest in Your Future With Our Structured Products.
             </Text>
             <Flex width="full" justifyContent="space-between" gap="5" ref={ref} direction={{ base: 'column', md: 'row' }}>

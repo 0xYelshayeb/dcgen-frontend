@@ -84,6 +84,7 @@ const CallToAction = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 height="56px"
+                fontSize='md'
                 px={8}
                 rightIcon={<Box as="span" className="mgc_arrows_right_line icon-cta" />}
                 _hover={{
