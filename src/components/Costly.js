@@ -2,7 +2,7 @@ import React from 'react';
 import { VStack, Heading, Text, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
 import { colors } from '../styles/theme';
 import { motion } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Label, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Label, Legend, Tooltip } from 'recharts';
 
 const MotionVStack = motion(VStack);
 
@@ -55,6 +55,20 @@ const renderLegend = (props) => {
     );
 };
 
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div style={{ backgroundColor: 'white', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold' }}>
+                <p style={{ color: 'black' }}>{`Year ${label}`}</p>
+                <p style={{ color: colors.t2Blue }}>{`0% Fees: ${payload[2].value}`}</p>
+                <p style={{ color: '#FFC043' }}>{`1% Fees: ${payload[1].value}`}</p>
+                <p style={{ color: '#E11900' }}>{`2% Fees: ${payload[0].value}`}</p>
+            </div>
+        );
+    }
+
+    return null;
+}
 
 const InvestmentGrowth = () => {
     const gap = useBreakpointValue({ base: 5, md: 10, lg: 100 });
@@ -71,41 +85,42 @@ const InvestmentGrowth = () => {
                 Investing Can Be Costly.
             </Heading>
             <Grid templateColumns={{ xl: "repeat(2, 1fr)" }} gap={gap} width="full">
-                <GridItem width={{ base: "100%", md: "120%" }} >
-                    <Heading fontSize="lg" mb={5}>
+                <GridItem width={{ base: "100%", md: "110%" }} >
+                    <Heading fontSize="md" mb={5} width="95%" lineHeight={6} >
                         The Compounding Advantage of Zero Fees
                     </Heading>
-                    <ResponsiveContainer width="100%" height={350}>
+                    <ResponsiveContainer width="100%" height={320}>
                         <LineChart data={lineData} margin={{ top: 4, right: 4, bottom: 16, left: 4 }}>
                             <CartesianGrid horizontal={true} vertical={false} stroke="#EEEEEE" />
-                            <XAxis dataKey="year" interval={Math.floor(lineData.length / 4)} stroke="#EEEEEE" tick={{ fill: '#757575', fontSize: 10 }} tickLine={false}>
+                            <XAxis dataKey="year" interval={Math.floor(lineData.length / 5)} stroke="#EEEEEE" tick={{ fill: '#757575', fontSize: 10 }} tickLine={false}>
                                 <Label value="Year" offset={0} position="insideBottom" fill="#757575" fontSize={10} />
                             </XAxis>
                             <YAxis orientation="right" axisLine={false} stroke="#EEEEEE" tick={{ fill: '#757575', fontSize: 10 }} tickLine={false}>
                                 <Label value="Value in $" angle={-90} position="insideRight" dy={-25} dx={-15} fill="#757575" fontSize={10} />
                             </YAxis>
-                            <Line type="monotone" dataKey="zeroFees" stroke={colors.t2Blue} strokeWidth={3} dot={false} />
-                            <Line type="monotone" dataKey="onePercentFees" stroke="#FFC043" strokeWidth={2} dot={false} />
                             <Line type="monotone" dataKey="twoPercentFees" stroke="#E11900" strokeWidth={2} dot={false} />
+                            <Line type="monotone" dataKey="onePercentFees" stroke="#FFC043" strokeWidth={2} dot={false} />
+                            <Line type="monotone" dataKey="zeroFees" stroke={colors.t2Blue} strokeWidth={3} dot={false} />
                             <Legend content={renderLegend} layout="vertical" wrapperStyle={{ top: 0, left: 0 }} payload={[
                                 { value: '0% Fees', type: 'line', id: 'zeroFees', color: colors.t2Blue },
                                 { value: '1% Fees', type: 'line', id: 'onePercentFees', color: '#FFC043' },
                                 { value: '2% Fees', type: 'line', id: 'twoPercentFees', color: '#E11900' },
                             ]} />
+                            <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'lightgray', strokeWidth: 2 }} />
                         </LineChart>
                     </ResponsiveContainer>
                 </GridItem>
-                <GridItem marginLeft={{ base: "0", md: "10%" }}>
-                    <MotionVStack align="left" spacing={10} initial="hidden" width="100%">
+                <GridItem marginLeft={{ base: "0", md: "0%" }}>
+                    <MotionVStack align="left" spacing={14} initial="hidden" width="100%">
                         <VStack align="left" spacing={2}>
-                            <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
-                            <Text>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
+                            <Text fontSize="lg" >
                             Hidden fees stealthily chip away at potential profits, culminating in significant underperformance over time.
                             </Text>
                         </VStack>
                         <VStack align="left" spacing={2}>
-                            <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Deferred Shock of Fees</Text>
-                            <Text>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>The Deferred Shock of Fees</Text>
+                            <Text fontSize="lg">
                             The true magnitude of fees emerges over time, as the compounding effect escalates their impact, silently but substantially reducing long-term investment gains.
                             </Text>
                         </VStack>

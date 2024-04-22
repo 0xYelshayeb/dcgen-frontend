@@ -99,14 +99,14 @@ const Returns = () => {
                 <GridItem>
                     <MotionVStack align="left" spacing={10} initial="hidden" width="100%">
                         <VStack align="left" spacing={2}>
-                            <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>A Commitment to Zero fees</Text>
-                            <Text>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>A Commitment to Zero fees</Text>
+                            <Text fontSize="lg">
                                 DCgen offers universally free products to maximise your returns in the long run. With our infrastructure we enter a new era for financial products.
                             </Text>
                         </VStack>
                         <VStack align="left" spacing={2}>
-                            <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Strategic Edge of Rebalancing</Text>
-                            <Text>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>The Strategic Edge of Rebalancing</Text>
+                            <Text fontSize="lg">
                                 DCgen's products leverage research-backed strategies that dynamically recalibrate to market conditions through rebalancing procedures.
                             </Text>
                         </VStack>

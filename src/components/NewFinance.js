@@ -45,7 +45,7 @@ const NewFinance = () => {
 
     return (
         <VStack align="left" p={{ base: 4, md: 8, lg: 10 }} width={{ base: "90%", md: "70%"}}>
-            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={10} lineHeight="xxl" width={{ base: "100%", md: "70%" }}>
+            <Heading fontSize={{ base: "xl", md: "xxl" }} fontWeight="600" mb={10} lineHeight="medium" width={{ base: "100%", md: "70%" }}>
                 Building a New Finance with Decentralized Infrastructure.
             </Heading>
             <SimpleGrid
@@ -55,29 +55,37 @@ const NewFinance = () => {
                 width="full"
                 initial="hidden"
             >
-                <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>
-                    <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>Breaking Down Barriers</Text>
-                    <Text>
-                        We're cutting loose from the outdated structures that have long impeded financial markets. Building upon DeFi infrastructure eliminates intermediaries, translating into direct gains for investors.
-                    </Text>
+                <MotionVStack align="left" spacing={14} initial="hidden" variants={item} animate={controls}>
+                    <VStack align="left" spacing={2}>
+                        <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>Breaking Down Barriers</Text>
+                        <Text fontSize="lg">
+                            We're cutting loose from the outdated structures that have long impeded financial markets. Building upon DeFi infrastructure eliminates intermediaries, translating into direct gains for investors.
+                        </Text>
+                    </VStack>
                 </MotionVStack>
-                <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>
-                    <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>Empowering Investors</Text>
-                    <Text>
-                        Our products give you full control. By facilitating direct interaction with protocols, we place the power back into your hands.
-                    </Text>
+                <MotionVStack align="left" spacing={14} initial="hidden" variants={item} animate={controls}>
+                    <VStack align="left" spacing={2}>
+                        <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>Empowering Investors</Text>
+                        <Text fontSize="lg">
+                            Our products give you full control. By facilitating direct interaction with protocols, we place the power back into your hands.
+                        </Text>
+                    </VStack>
                 </MotionVStack>
-                <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>
-                    <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>Advancing Financial Democracy</Text>
-                    <Text>
-                        We believe financial products should be basic public goods that are governed by its community. This is a testament to our belief in a decentralized, democratic financial system.
-                    </Text>
+                <MotionVStack align="left" spacing={14} initial="hidden" variants={item} animate={controls}>
+                    <VStack align="left" spacing={2}>
+                        <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>Advancing Financial Democracy</Text>
+                        <Text fontSize="lg">
+                            We believe financial products should be basic public goods that are governed by its community. This is a testament to our belief in a decentralized, democratic financial system.
+                        </Text>
+                    </VStack>
                 </MotionVStack>
-                <MotionVStack align="left" spacing={4} initial="hidden" variants={item} animate={controls}>
-                    <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>Bridging the Gap</Text>
-                    <Text>
-                        We're relentless in our pursuit to bridge the gap between traditional asset classes and DeFi, charting a new course for financial products.
-                    </Text>
+                <MotionVStack align="left" spacing={14} initial="hidden" variants={item} animate={controls}>
+                    <VStack align="left" spacing={2}>
+                        <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>Bridging the Gap</Text>
+                        <Text fontSize="lg">
+                            We're relentless in our pursuit to bridge the gap between traditional asset classes and DeFi, charting a new course for financial products.
+                        </Text>
+                    </VStack>
                 </MotionVStack>
             </SimpleGrid>
         </VStack>
