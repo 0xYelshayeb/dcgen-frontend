@@ -2,7 +2,7 @@ import React from 'react';
 import { VStack, Heading, Text, Grid, GridItem, Box, useBreakpointValue } from '@chakra-ui/react';
 import { colors } from '../styles/theme';
 import { motion } from 'framer-motion';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList, Tooltip } from 'recharts';
 import arrowHanddrawn from '../icons/arrow_handdrawn.png';
 
 const MotionVStack = motion(VStack);
@@ -38,7 +38,7 @@ const CustomLabel = (props) => {
 
 const glowAnimation = {
     initial: { 
-        filter: "drop-shadow(0 0 8px rgba(0,0,0,0.3))"  // Subtle shadow for a glowing effect
+        filter: "drop-shadow(0 0 8px rgba(0,0,0,0.2))"  // Subtle shadow for a glowing effect
     },
     hover: { 
         rotate: [0, 5, -5, 0],  // Rotate slightly on hover
@@ -109,6 +109,24 @@ const Returns = () => {
                                 <Bar dataKey="Fees" fill="#D0D2D4" radius={[10, 10, 0, 0]}>
                                     <LabelList dataKey="Fees" content={<CustomLabel />} />
                                 </Bar>
+                                <Tooltip
+                                    cursor={{ fill: 'transparent' }}
+                                    contentStyle={{ backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold' }}
+                                    labelStyle={{ color: 'black' }}
+                                    itemStyle={{ color: 'black' }}
+                                    content={({ active, payload, label }) => {
+                                        if (active && payload && payload.length) {
+                                            return (
+                                                <div style={{ backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold', color: 'black' }}>
+                                                    <p>{`${label}`}</p>
+                                                    <p>{`Fees: ${payload[0].value}%`}</p>
+                                                </div>
+                                            );
+                                        }
+
+                                        return null;
+                                    }}
+                                />
                             </BarChart>
                         </ResponsiveContainer>
                         <MotionBox 

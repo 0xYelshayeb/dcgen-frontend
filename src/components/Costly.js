@@ -58,7 +58,7 @@ const renderLegend = (props) => {
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            <div style={{ backgroundColor: 'white', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold' }}>
                 <p style={{ color: 'black' }}>{`Year ${label}`}</p>
                 <p style={{ color: colors.t2Blue }}>{`0% Fees: ${payload[2].value}`}</p>
                 <p style={{ color: '#FFC043' }}>{`1% Fees: ${payload[1].value}`}</p>
