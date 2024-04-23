@@ -34,7 +34,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className='header-container' ref={headerRef} style={{ backdropFilter: 'saturate(120%) blur(5px)'}}>
+    <div className='header-container' ref={headerRef}>
       <header className={isMenuOpen ? 'menu-open' : ''}>
         <div className="menu-container">
           <div className="logo-container">
@@ -62,6 +62,11 @@ const Header = () => {
                   rel="noopener noreferrer"
                   height="40px"
                   px={10}
+                  _hover={{
+                    bg: 'brand.600',
+                    textDecoration: "none",
+                    color: 'white',
+                  }}
                 >
                   App
                 </Button>

@@ -1,147 +1,134 @@
-import React, { useEffect, useState } from 'react';
-import {
-    VStack,
-    Heading,
-    Text,
-    Image,
-    Flex,
-    Table,
-    Thead,
-    Tbody,
-    Tr,
-    Th,
-    Td,
-    useColorModeValue,
-    useBreakpointValue
-} from '@chakra-ui/react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { VStack, Heading, Text, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
 import { colors } from '../styles/theme';
-import axios from 'axios'; // Import axios for API requests
-import ChartSVG from "../images/product-chart.svg";
+import { motion } from 'framer-motion';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Label, Legend, Tooltip } from 'recharts';
 
 const MotionVStack = motion(VStack);
-const MotionImage = motion(Image);
 
-const Costly = () => {
-    const controls = useAnimation();
+// Sample data for the line chart based on the provided image.
+const lineData = [
+    { year: 0, zeroFees: 100, onePercentFees: 100, twoPercentFees: 100 },
+    { year: 1, zeroFees: 107.0, onePercentFees: 105.93, twoPercentFees: 104.86 },
+    { year: 2, zeroFees: 114.49, onePercentFees: 112.21, twoPercentFees: 109.96 },
+    { year: 3, zeroFees: 122.5, onePercentFees: 118.87, twoPercentFees: 115.3 },
+    { year: 4, zeroFees: 131.08, onePercentFees: 125.91, twoPercentFees: 120.9 },
+    { year: 5, zeroFees: 140.26, onePercentFees: 133.38, twoPercentFees: 126.78 },
+    { year: 6, zeroFees: 150.07, onePercentFees: 141.29, twoPercentFees: 132.94 },
+    { year: 7, zeroFees: 160.58, onePercentFees: 149.67, twoPercentFees: 139.4 },
+    { year: 8, zeroFees: 171.82, onePercentFees: 158.54, twoPercentFees: 146.18 },
+    { year: 9, zeroFees: 183.85, onePercentFees: 167.95, twoPercentFees: 153.28 },
+    { year: 10, zeroFees: 196.72, onePercentFees: 177.91, twoPercentFees: 160.73 },
+    { year: 11, zeroFees: 210.49, onePercentFees: 188.46, twoPercentFees: 168.54 },
+    { year: 12, zeroFees: 225.22, onePercentFees: 199.63, twoPercentFees: 176.73 },
+    { year: 13, zeroFees: 240.98, onePercentFees: 211.47, twoPercentFees: 185.32 },
+    { year: 14, zeroFees: 257.85, onePercentFees: 224.01, twoPercentFees: 194.33 },
+    { year: 15, zeroFees: 275.9, onePercentFees: 237.29, twoPercentFees: 203.77 },
+    { year: 16, zeroFees: 295.22, onePercentFees: 251.36, twoPercentFees: 213.68 },
+    { year: 17, zeroFees: 315.88, onePercentFees: 266.27, twoPercentFees: 224.06 },
+    { year: 18, zeroFees: 337.99, onePercentFees: 282.06, twoPercentFees: 234.95 },
+    { year: 19, zeroFees: 361.65, onePercentFees: 298.79, twoPercentFees: 246.37 },
+    { year: 20, zeroFees: 386.97, onePercentFees: 316.5, twoPercentFees: 258.34 },
+    { year: 21, zeroFees: 414.06, onePercentFees: 335.27, twoPercentFees: 270.9 },
+    { year: 22, zeroFees: 443.04, onePercentFees: 355.15, twoPercentFees: 284.06 },
+    { year: 23, zeroFees: 474.05, onePercentFees: 376.22, twoPercentFees: 297.87 },
+    { year: 24, zeroFees: 507.24, onePercentFees: 398.52, twoPercentFees: 312.35 },
+    { year: 25, zeroFees: 542.74, onePercentFees: 422.16, twoPercentFees: 327.53 },
+    { year: 26, zeroFees: 580.74, onePercentFees: 447.19, twoPercentFees: 343.44 },
+    { year: 27, zeroFees: 621.39, onePercentFees: 473.71, twoPercentFees: 360.14 },
+    { year: 28, zeroFees: 664.88, onePercentFees: 501.8, twoPercentFees: 377.64 },
+    { year: 29, zeroFees: 711.43, onePercentFees: 531.56, twoPercentFees: 395.99 },
+    { year: 30, zeroFees: 761.23, onePercentFees: 563.08, twoPercentFees: 415.24 }
+];
 
-    const inViewThreshold = useBreakpointValue({ base: 0.4, md: 0.8 });
+const renderLegend = (props) => {
+    const { payload } = props;
+    return (
+        <ul style={{ listStyleType: 'none' }}>
+            {payload.map((entry, index) => (
+                <li key={`item-${index}`} style={{ color: entry.color, fontSize: '10px', fontWeight:'semibold'}}>
+                    <span style={{ display: 'inline-block', marginRight: '4px', marginBottom: '2px',width: '20px', borderBottom: `2px solid ${entry.color}` }}></span>
+                    {entry.value}
+                </li>
+            ))}
+        </ul>
+    );
+};
 
-    const { ref, inView } = useInView({ threshold: inViewThreshold });
-    const [prices, setPrices] = useState({
-        bitcoin: { current: '...', diluted: '...' },
-        ethereum: { current: '...', diluted: '...' },
-        xrp: { current: '...', diluted: '...' }
-    });
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.8)', border: 'none', borderRadius: '8px', padding: '10px', fontSize: '12px', fontWeight:'semibold' }}>
+                <p style={{ color: 'black' }}>{`Year ${label}`}</p>
+                <p style={{ color: colors.t2Blue }}>{`0% Fees: ${payload[2].value}`}</p>
+                <p style={{ color: '#FFC043' }}>{`1% Fees: ${payload[1].value}`}</p>
+                <p style={{ color: '#E11900' }}>{`2% Fees: ${payload[0].value}`}</p>
+            </div>
+        );
+    }
 
-        const fetchPrices = async () => {
-            // Calculate years since launch for dilution calculation; replace with actual launch years
-            const bitcoinYears = new Date().getFullYear() - 2009; // Replace with actual launch year
-            const ethereumYears = new Date().getFullYear() - 2015; // Replace with actual launch year
-            const xrpYears = new Date().getFullYear() - 2012; // Replace with actual launch year
+    return null;
+}
 
-            const ids = ['bitcoin', 'ethereum', 'ripple'];
-            const years = [bitcoinYears, ethereumYears, xrpYears];
-            const fetchedPrices = {};
-
-            for (let id of ids) {
-                try {
-                    console.log(`https://api.dcgen.finance/coingecko/simple/price?ids=${id}&vs_currencies=usd`)
-                    const response = await axios.get(`https://api.dcgen.finance/coingecko/simple/price?ids=${id}&vs_currencies=usd`);
-                    console.log(`https://api.dcgen.finance/coingecko/simple/price?ids=${id}&vs_currencies=usd`)
-                    const currentPrice = response.data.price;
-                    // make this only show 2 decimal places
-                    let dilutedPrice = currentPrice * Math.pow((1 - 0.02), years[ids.indexOf(id)]);
-                    dilutedPrice = dilutedPrice.toFixed(2);
-                    console.log(currentPrice);
-                    fetchedPrices[id] = {
-                        current: currentPrice,
-                        diluted: dilutedPrice
-                    };
-                } catch (error) {
-                    console.error(`Error fetching ${id} price:`, error);
-                }
-            }
-
-            setPrices(fetchedPrices);
-        };
-
-        fetchPrices();
-    }, [controls, inView]);
-
-    const item = {
-        hidden: { x: -100, opacity: 0 },
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                type: "tween",
-                ease: "anticipate",
-                duration: 1.2
-            }
-        }
-    };
-
-    const borderColor = useColorModeValue('gray.200', 'gray.600');
-
+const InvestmentGrowth = () => {
+    const gap = useBreakpointValue({ base: 5, md: 10, lg: 100 });
 
     return (
-        <VStack align="left" p={{ base: 4, md: 10 }} width={{ base: "90%", md: "70%" }}>
+        <VStack align="left" p={{ base: 4, md: 8, lg: 10 }} width={{ base: "90%", md: "70%" }}>
             <Heading
                 fontSize={{ base: "xl", md: "xxl" }}
                 fontWeight="600"
                 mb={10}
-                lineHeight="shorter"
-                width={{ base: "70%", md: "60%" }}
+                lineHeight="medium"
+                width="75%"
             >
                 Investing Can Be Costly.
             </Heading>
-            <Flex
-                direction={{ base: "column", xl: "row" }}
-                gap={10}
-                ref={ref}
-            >
-                <MotionImage
-                    variants={item}
-                    initial="hidden"
-                    animate={controls}
-                    src={ChartSVG}
-                    alt="Typical Fees for Financial Products"
-                    width={{ base: "100%", md: "100%", xl: "70%" }}
-                />
-                <MotionVStack align="left" spacing={4} variants={item} initial="hidden" animate={controls}>
-                    <Text fontSize="lg" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
-                    <Text>Hidden<Text as="span" fontWeight="bold" > streaming fees</Text> stealthily chip away at potential profits, culminating in <Text as="span" fontWeight="bold" >significant underperformance</Text> over time.</Text>
-                    <Table variant="simple" size="md" bg="transparent">
-                        <Thead bgColor={borderColor}>
-                            <Tr bg="transparent">
-                                <Th px={{ base: 1, md: 3 }}>Cryptocurrency</Th>
-                                <Th px={{ base: 1, md: 3 }}>Current Value</Th>
-                                <Th px={{ base: 1, md: 3 }}>2% Diluted Value</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {Object.entries(prices).map(([key, value]) => (
-                                <Tr key={key}>
-                                    <Td px={{ base: 1, md: 3 }}>{key.charAt(0).toUpperCase() + key.slice(1)}</Td>
-                                    <Td px={{ base: 1, md: 3 }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.current)}</Td>
-                                    <Td px={{ base: 1, md: 3 }}>${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(value.diluted)}</Td>
-                                </Tr>
-                            ))}
-                        </Tbody>
-                    </Table>
-                    <Text>
-                        Understanding the impact: from <Text as="span" fontWeight="bold" >${prices.bitcoin.current}</Text> to <Text as="span" fontWeight="bold" >${prices.bitcoin.diluted}</Text>, every penny lost to fees is a chunk of your future eroded. Don't let the invisible drain your potential; <Text as="span" fontWeight="bold">witness the difference and act to safeguard your growth</Text>.
-                    </Text>
-                </MotionVStack>
-            </Flex>
+            <Grid templateColumns={{ xl: "repeat(2, 1fr)" }} gap={gap} width="full">
+                <GridItem width={{ base: "100%", md: "110%" }} >
+                    <Heading fontSize="md" mb={5} width="95%" lineHeight={6} >
+                        The Compounding Advantage of Zero Fees
+                    </Heading>
+                    <ResponsiveContainer width="100%" height={320}>
+                        <LineChart data={lineData} margin={{ top: 4, right: 4, bottom: 16, left: 4 }}>
+                            <CartesianGrid horizontal={true} vertical={false} stroke="#EEEEEE" />
+                            <XAxis dataKey="year" interval={Math.floor(lineData.length / 5)} stroke="#EEEEEE" tick={{ fill: '#757575', fontSize: 10 }} tickLine={false}>
+                                <Label value="Year" offset={0} position="insideBottom" fill="#757575" fontSize={10} />
+                            </XAxis>
+                            <YAxis orientation="right" axisLine={false} stroke="#EEEEEE" tick={{ fill: '#757575', fontSize: 10 }} tickLine={false}>
+                                <Label value="Value in $" angle={-90} position="insideRight" dy={-25} dx={-15} fill="#757575" fontSize={10} />
+                            </YAxis>
+                            <Line type="monotone" dataKey="twoPercentFees" stroke="#E11900" strokeWidth={2} dot={false} />
+                            <Line type="monotone" dataKey="onePercentFees" stroke="#FFC043" strokeWidth={2} dot={false} />
+                            <Line type="monotone" dataKey="zeroFees" stroke={colors.t2Blue} strokeWidth={3} dot={false} />
+                            <Legend content={renderLegend} layout="vertical" wrapperStyle={{ top: 0, left: 0 }} payload={[
+                                { value: '0% Fees', type: 'line', id: 'zeroFees', color: colors.t2Blue },
+                                { value: '1% Fees', type: 'line', id: 'onePercentFees', color: '#FFC043' },
+                                { value: '2% Fees', type: 'line', id: 'twoPercentFees', color: '#E11900' },
+                            ]} />
+                            <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'lightgray', strokeWidth: 2 }} />
+                        </LineChart>
+                    </ResponsiveContainer>
+                </GridItem>
+                <GridItem marginLeft={{ base: "0", md: "0%" }}>
+                    <MotionVStack align="left" spacing={14} initial="hidden" width="100%">
+                        <VStack align="left" spacing={2}>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>The Silent Profit Eater</Text>
+                            <Text fontSize="lg" >
+                            Hidden fees stealthily chip away at potential profits, culminating in significant underperformance over time.
+                            </Text>
+                        </VStack>
+                        <VStack align="left" spacing={2}>
+                            <Text fontSize="md" fontWeight="bold" color={colors.t2Blue}>The Deferred Shock of Fees</Text>
+                            <Text fontSize="lg">
+                            The true magnitude of fees emerges over time, as the compounding effect escalates their impact, silently but substantially reducing long-term investment gains.
+                            </Text>
+                        </VStack>
+                    </MotionVStack>
+                </GridItem>
+            </Grid>
         </VStack>
     );
 };
 
-export default Costly;
+export default InvestmentGrowth;

@@ -26,9 +26,13 @@ const theme = extendTheme({
         sm: '14px',
         md: '16px',
         lg: '18px',
-        xl: '25px',
-        xxl: '35px',
-        xxxl: '60px',
+        lgg: '20px',
+        lggg: '22px',
+        xl: '24px',
+        xxl: '32px',
+        xxxl: '36px',
+        xxxxl: '56px',
+        xxxxxl: '64px',
     },
     lineHeights: {
         sm: '20px',
@@ -49,8 +53,9 @@ const theme = extendTheme({
             },
             sizes: {
                 md: {
-                    fontSize: 'md',
-                    padding: '12px 24px',
+                    fontSize: 'sm',
+                    lineHeights: 'sm',
+                    padding: '16px 24px',
                 },
             },
             variants: {
