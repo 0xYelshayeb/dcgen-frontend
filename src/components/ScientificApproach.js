@@ -1,55 +1,46 @@
 import React from 'react';
-import {
-    VStack,
-    Heading,
-    Text,
-    Flex,
-    Box,
-    Image,
-    useBreakpointValue
-} from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-
+import { VStack, Heading, Text, Flex, Box, Image, Link } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { colors } from '../styles/theme';
-import triangles from "../icons/triangles.svg";
-import chart from "../images/chart.png";
+import triangles from "../icons/triangles.svg"; // Make sure path is correct
+import chart from "../images/chart.png"; // Make sure path is correct
 
-import '@fortawesome/fontawesome-free/css/all.css';
+import '../styles/MingCute.css'; // Make sure path is correct
 
 const MotionBox = motion(Box);
 
 const ScientificApproach = () => {
-
-    // Animation controls to start the animations when the element is in view
     const controls = useAnimation();
-
-    const inViewThreshold = useBreakpointValue({ base: 0.4, md: 0.8 });
-
+    const inViewThreshold = 0.8;
     const { ref, inView } = useInView({ threshold: inViewThreshold });
 
-    // Start the animation when the element comes into view
     React.useEffect(() => {
         if (inView) {
             controls.start("visible");
         }
     }, [controls, inView]);
 
-    // Define the initial and animate properties for the motion component
-    const item = {
+    const boxVariants = {
         hidden: { x: -100, opacity: 0 },
         visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                type: "tween",
-                ease: "anticipate",
-                duration: 1.2
-            }
+          x: 0,
+          opacity: 1,
+          transition: {
+            type: "tween",
+            ease: "anticipate",
+            duration: 1.2
+          }
+        },
+        hover: {
+          scale: 1.03,
+          transition: {
+            type: "tween",
+            ease: "easeInOut",
+            duration: 0.2
+          }
         }
-    };
+      };
 
     return (
         <VStack p={{ base: 5, md: 10 }} align="left" width={{ base: "90%", lg: "70%" }} gap={5}>
@@ -58,48 +49,56 @@ const ScientificApproach = () => {
             </Text>
             <Flex width="full" justifyContent="space-between" gap="5" ref={ref} direction={{ base: 'column', md: 'row' }}>
                 <MotionBox
-                    flex={{ base: "1 1 auto", md: "40%" }}
-                    backgroundColor={colors.gray}
-                    variants={item}
+                    flex={{ base: "1 1 auto", md: "45%" }}
+                    backgroundColor='#F5F5F5'
+                    borderRadius='8px'
+                    mb={{ base: 5, md: 0 }}
+                    variants={boxVariants}
                     initial="hidden"
                     animate={controls}
-                    mb={{ base: 5, md: 0 }}
+                    whileHover="hover"
                     as={Link}
                     to="/research"
-                    _hover={{ textDecoration: 'none' }} // Remove underline on hover
-
+                    position="relative"
+                    _hover={{
+                        textDecoration: 'none', // Remove underline on hover
+                        scale: 1.05, // Pop effect
+                        backgroundColor: '#F5F5F5'
+                    }}
+                    style={{ color: 'inherit' }}
                 >
-                    <Image src={triangles} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
-                    <Heading fontSize="xl">Market Research</Heading>
-                    <Flex align="end" justify="space-between">
-                        <Text pb="10px">
-                            We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
-                        </Text>
-                        <Link to="/research" style={{ padding: "0px 15px 10px 0px" }}>
-                            <i className="fas fa-external-link-alt" style={{ color: "black" }}></i>
-                        </Link>
-                    </Flex>
+                    <Image src={triangles} height={{ base: 150, md: 300 }} filter="blur(20px)" />
+                    <Heading fontSize="md" pb='2' pl='4'>Market Research</Heading>
+                    <Text fontSize="sm" pl='4' pb='4' width='90%'>
+                        We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
+                    </Text>
+                    <Box as="span" position="absolute" bottom="4" right="4" className="mgc_external_link_line icon-external-link-darkblue" />
                 </MotionBox>
                 <MotionBox
-                    flex="60%"
-                    backgroundColor={colors.gray}
-                    variants={item}
+                    flex="55%"
+                    backgroundColor='#F5F5F5'
+                    borderRadius='8px'
+                    mb={{ base: 5, md: 0 }}
+                    variants={boxVariants}
                     initial="hidden"
                     animate={controls}
+                    whileHover="hover"
                     as={Link}
                     to="https://app.dcgen.finance"
-                    _hover={{ textDecoration: 'none' }} // Remove underline on hover
+                    position="relative"
+                    _hover={{
+                        textDecoration: 'none', // Remove underline on hover
+                        scale: 1.05, // Pop effect
+                        backgroundColor: '#F5F5F5'
+                    }}
+                    style={{ color: 'inherit' }}
                 >
-                    <Image src={chart} height={{ base: 200, md: 400 }} filter="blur(5px)"></Image>
-                    <Heading fontSize="xl">Structured Products</Heading>
-                    <Flex align="end" justify="space-between">
-                        <Text pb="10px" width="70%">
-                            Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.
-                        </Text>
-                        <Link to="https://app.dcgen.finance" style={{ padding: "0px 15px 10px 0px" }}>
-                            <i className="fas fa-external-link-alt" style={{ color: "blue" }}></i>
-                        </Link>
-                    </Flex>
+                    <Image src={chart} height={{ base: 150, md: 300 }} filter="blur(20px)" />
+                    <Heading fontSize="md" pb='2' pl='4'>Structured Products</Heading>
+                    <Text width="90%" fontSize="sm" pl='4' pb='4'>
+                        Enhance your portfolio with our automated strategies designed for crypto professionals. Capitalize on dynamic rebalancing and the power of compounding effects.
+                    </Text>
+                    <Box as="span" position="absolute" bottom="4" right="4" className="mgc_external_link_line icon-external-link-blue" />
                 </MotionBox>
             </Flex>
         </VStack>

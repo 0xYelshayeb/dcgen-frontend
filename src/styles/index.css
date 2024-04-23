@@ -251,19 +251,40 @@ nav ul li a:hover, .link-hover-effect:hover, .active-link {
 
 
 
+/* ScientificApproach */
 
-
-/* Icons */
-.external-link-icon {
-  margin-left: 24px; /* Adjust the value as needed */
+.mgc_box:hover {
+  transform: scale(1.05); /* Scales up the box slightly */
+  /* Removed box-shadow */
+  transition: all 0.2s ease-in-out; /* Smooth transition for the effect */
 }
 
+/* Ensure this class is applied to your Text components to prevent grey background on hover */
+.mgc_text:hover {
+  background-color: transparent; /* This will prevent the grey background on hover */
+}
+
+
+
+/* MingCute icon styles */
 .icon-cta::before{
   font-size: 24px; /* This will set the icon size */
   color: white !important;
   padding-left: 16px; /* This will add padding to the left of the icon */
 }
 
+.icon-external-link-blue::before {
+  font-size: 24px;
+  color: #3751FF !important;
+}
+
+.icon-external-link-darkblue::before {
+  font-size: 24px;
+  color: #050A30 !important;
+}
+
+
+/* Icons */
 .menu-toggle {
   display: none; /* Initially hidden */
 }
