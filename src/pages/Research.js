@@ -23,8 +23,9 @@ const MotionBox = motion(Box);
 
 
 const popAnimationVariants = {
-  initial: { scale: 0.2 },
-  animate: { scale: 1 },
+  initial: { opacity: 0, y: -100 },
+  animate: { opacity: 1, y: 0 },
+  transition: { type: 'spring', stiffness: 100, damping: 200 },
   hover: {
     scale: 1.03,
         transition: {

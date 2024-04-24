@@ -82,8 +82,10 @@ const ScientificApproach = () => {
                     initial="hidden"
                     animate={controls}
                     whileHover="hover"
-                    as={Link}
-                    to="https://app.dcgen.finance"
+                    as="a"
+                    href="https://app.dcgen.finance"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     position="relative"
                     _hover={{
                         textDecoration: 'none', // Remove underline on hover
