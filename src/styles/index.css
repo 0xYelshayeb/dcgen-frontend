@@ -266,6 +266,11 @@ nav ul li a:hover, .link-hover-effect:hover, .active-link {
 }
 
 /* MingCute icon styles */
+.icon-black:before {
+  font-size: 24px;
+  color: black !important;
+}
+
 .icon-box:before {
   font-size: 32px;
   color: white !important;

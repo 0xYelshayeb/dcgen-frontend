@@ -8,15 +8,15 @@ const TimeFrameButton = ({ text, isSelected, onClick }) => {
     <Button
       size="sm"
       onClick={onClick}
-      bg={isSelected ? "#000000" : "gray.200"}
-      color={isSelected ? "white" : "black"}
+      bg={isSelected ? "#050A30" : "#EEEEEE"}
+      color={isSelected ? "white" : "#757575"}
       _hover={{
-        bg: isSelected ? "#000000" : "gray.300",
+        bg: isSelected ? "#050A30" : "#CFCFCF",
       }}
       _active={{
-        bg: isSelected ? "#000000" : "gray.400",
+        bg: isSelected ? "#050A30" : "#757575",
       }}
-      borderRadius="0"
+      borderRadius="4px"
       border="none"
       fontWeight="bold"
     >
@@ -86,24 +86,24 @@ const ChartSection = () => {
   return (
     <Box pb="20px">
       <VStack spacing align="stretch">
-        <Text fontSize="xl" fontWeight="bold" color="gray">Performance</Text>
+        <Text fontSize="xl" fontWeight="bold" color="black">Index Level</Text>
         <Flex justifyContent="space-between" paddingTop={3} width="50%" flexDirection={{base: "column", lg: "row"}}>
           <Box pb={{base : "15px", lg:"5px"}}>
             <Heading as="h2" size="xl">
               ${currentIndexValue || lastValue.toFixed(2)}
             </Heading>
-            <Text fontSize="md" fontWeight="bold">Price</Text>
+            <Text fontSize="md" fontWeight="bold">Net Asset Value (NAV)</Text>
           </Box>
           <Box>
-            <Heading as="h2" size="xl" color={changeClass === "positive" ? "green.500" : "red.500"}>
+            <Heading as="h2" size="xl" color={changeClass === "positive" ? "#05944F" : "#E11900"}>
               {currentReturn || (isNaN(percentChange) ? "---" : percentChange.toFixed(2))}%
             </Heading>
-            <Text fontSize="md" fontWeight="bold">{timeFrame === 'MAX' ? "Overall" : timeFrame} Return</Text>
+            <Text fontSize="md" fontWeight="bold">{timeFrame === 'MAX' ? "Overall" : timeFrame} Change</Text>
           </Box>
         </Flex>
       </VStack>
       <Box paddingTop={5}>
-        <Flex gap={3}>
+        <Flex gap={4}>
           {['3M', '6M', '1Y', 'MAX'].map((frame) => (
             <TimeFrameButton
               key={frame}

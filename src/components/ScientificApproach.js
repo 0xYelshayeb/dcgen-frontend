@@ -59,6 +59,7 @@ const ScientificApproach = () => {
                     whileHover="hover"
                     as={Link}
                     to="/research"
+                    cursor="pointer"
                     position="relative"
                     _hover={{
                         textDecoration: 'none', // Remove underline on hover
@@ -86,6 +87,7 @@ const ScientificApproach = () => {
                     href="https://app.dcgen.finance"
                     target="_blank"
                     rel="noopener noreferrer"
+                    cursor="pointer"
                     position="relative"
                     _hover={{
                         textDecoration: 'none', // Remove underline on hover

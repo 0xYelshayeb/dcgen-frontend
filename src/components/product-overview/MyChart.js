@@ -68,7 +68,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
 
       plotLines: [{
         value: referenceValue,  // y-position of the line
-        color: '#000000',  // Color of the line
+        color: '#050A30',  // Color of the line
         dashStyle: 'Dash',  // Style of the line
         width: 2,  // Width of the line
         zIndex: 1,  // zIndex to ensure the line is drawn behind the series
@@ -100,7 +100,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
       crosshair: {
         dashStyle: 'Solid',
         width: 1,
-        color: '#000000'
+        color: '#050A30'
       },
       lineWidth: 0, // remove x-axis line
       tickWidth: 0,
@@ -111,7 +111,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
     series: [{
       name: 'Index', // series name
       data: chartData,
-      color: '#000000', // white line
+      color: '#050A30', // white line
       lineWidth: adjustedLineWidth, // set to 1 for a sharper line
       shadow: {
         width: 2,  // adjust to your preference for thickness
@@ -128,8 +128,8 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
     },
     tooltip: {
       useHTML: true, // Allows the use of HTML in the tooltip
-      borderRadius: 0,  // Removes rounded corners by setting the border radius to 0
-      backgroundColor: '#000000',  // Sets the background color of the tooltip
+      borderRadius: '4',  // Removes rounded corners by setting the border radius to 0
+      backgroundColor: '#050A30',  // Sets the background color of the tooltip
       style: {
           color: '#FFFFFF'  // Sets the text color in the tooltip
       },
