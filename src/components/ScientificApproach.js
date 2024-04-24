@@ -3,6 +3,7 @@ import { VStack, Heading, Text, Flex, Box, Image, Link } from '@chakra-ui/react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+
 import triangles from "../icons/triangles.svg"; // Make sure path is correct
 import chart from "../images/chart.png"; // Make sure path is correct
 
@@ -38,8 +39,8 @@ const ScientificApproach = () => {
             type: "tween",
             ease: "easeInOut",
             duration: 0.2
-          }
-        }
+          },
+        },
       };
 
     return (
@@ -62,15 +63,14 @@ const ScientificApproach = () => {
                     position="relative"
                     _hover={{
                         textDecoration: 'none', // Remove underline on hover
-                        scale: 1.05, // Pop effect
                         backgroundColor: '#F5F5F5'
                     }}
                     style={{ color: 'inherit' }}
                 >
                     <Image src={triangles} height={{ base: 150, md: 300 }} filter="blur(20px)" />
-                    <Heading fontSize="md" pb='2' pl='4'>Market Research</Heading>
+                    <Heading fontSize="md" pb='2' pl='4'>Research</Heading>
                     <Text fontSize="sm" pl='4' pb='4' width='90%'>
-                        We synthesize and conduct in-depth market research to publish actionable insights and comprehensive benchmarks tailored for the professional investor.
+                        We synthesize and conduct in-depth market research to publish indices and research papers tailored for the professional investor.
                     </Text>
                     <Box as="span" position="absolute" bottom="4" right="4" className="mgc_external_link_line icon-external-link-darkblue" />
                 </MotionBox>

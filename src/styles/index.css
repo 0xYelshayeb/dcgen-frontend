@@ -207,11 +207,12 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  font-size: 16px;
 }
 
 .logo-container {
   padding: 1vw;
-  padding-left: 7vw; /* Left padding */
+  padding-left: 7vw; 
 }
 
 .logo-container img {
@@ -264,9 +265,12 @@ nav ul li a:hover, .link-hover-effect:hover, .active-link {
   background-color: transparent; /* This will prevent the grey background on hover */
 }
 
-
-
 /* MingCute icon styles */
+.icon-box:before {
+  font-size: 32px;
+  color: white !important;
+}
+
 .icon-cta::before{
   font-size: 24px; /* This will set the icon size */
   color: white !important;
@@ -283,6 +287,10 @@ nav ul li a:hover, .link-hover-effect:hover, .active-link {
   color: #050A30 !important;
 }
 
+.icon-ethereum-large::before {
+  font-size: 24px;
+  color: white !important;
+}
 
 /* Icons */
 .menu-toggle {
