@@ -18,10 +18,8 @@ import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
 import '../styles/MingCute.css';
 import '../styles/index.css';
-import dcgen_black from "../icons/DCgen_black.svg";
 
 const MotionBox = motion(Box);
-const MotionImg = motion.img; 
 
 
 const popAnimationVariants = {

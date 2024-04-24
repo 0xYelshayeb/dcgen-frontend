@@ -1,11 +1,10 @@
 import React from 'react';
-import { VStack, Heading, Text, Flex, Box, Image, Link } from '@chakra-ui/react';
+import { VStack, Heading, Text, Flex, Box, Image } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-
 import triangles from "../icons/triangles.svg"; // Make sure path is correct
 import chart from "../images/chart.png"; // Make sure path is correct
+import { Link } from 'react-router-dom';
 
 import '../styles/MingCute.css'; // Make sure path is correct
 
