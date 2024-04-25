@@ -86,19 +86,19 @@ const ChartSection = () => {
   return (
     <Box pb="20px">
       <VStack spacing align="stretch">
-        <Text fontSize="xl" fontWeight="bold" color="black">Index Level</Text>
+        <Text fontSize="xl" fontWeight="bold" color="black">Performance</Text>
         <Flex justifyContent="space-between" paddingTop={3} width="50%" flexDirection={{base: "column", lg: "row"}}>
           <Box pb={{base : "15px", lg:"5px"}}>
             <Heading as="h2" size="xl">
               ${currentIndexValue || lastValue.toFixed(2)}
             </Heading>
-            <Text fontSize="md" fontWeight="bold">Net Asset Value (NAV)</Text>
+            <Text fontSize="md" fontWeight="bold">Index Level</Text>
           </Box>
           <Box>
             <Heading as="h2" size="xl" color={changeClass === "positive" ? "#05944F" : "#E11900"}>
               {currentReturn || (isNaN(percentChange) ? "---" : percentChange.toFixed(2))}%
             </Heading>
-            <Text fontSize="md" fontWeight="bold">{timeFrame === 'MAX' ? "Overall" : timeFrame} Change</Text>
+            <Text fontSize="md" fontWeight="bold">{timeFrame === 'MAX' ? "Overall" : timeFrame} Return</Text>
           </Box>
         </Flex>
       </VStack>

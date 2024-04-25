@@ -8,7 +8,7 @@ const ConstituentDetail = ({ name, percentage }) => {
   const progressWidth = `${10 + percentage * 5}%`;
 
   return (
-    <Box position="relative" borderRadius="md" height="48px" width="100%" bg="#EEEEEE" overflow="hidden">
+    <Box position="relative" borderRadius="md" height="48px" width="100%" bg="#F7F7F7" overflow="hidden">
       <Box 
         height="100%" 
         width={progressWidth} 

@@ -1,7 +1,7 @@
 import { Box, Text, Stack } from '@chakra-ui/react';
 
 import ChartSection from './ChartSection.js';
-import AssetAllocation from './AssetAllocation.js';
+import ConstituentWeights from './ConstituentWeights.js';
 import QuickFacts from './QuickFacts.js';
 import Characteristics from './Characteristics.js';
 
@@ -18,7 +18,7 @@ const OverviewAndPerformance = () => {
         <ChartSection />
         <QuickFacts />
         <Characteristics />
-        <AssetAllocation />
+        <ConstituentWeights />
       </Stack>
     </Box>
   );

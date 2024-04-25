@@ -10,7 +10,7 @@ const options = (chartData, timeFrame, onUpdateValues) => { // Make options a fu
 
   let labelFormat;
   let screenWidth = 800;
-  let adjustedLineWidth = 2; // Default line width
+  let adjustedLineWidth = 3; // Default line width
 
   if (typeof window !== 'undefined') {
     screenWidth = window.innerWidth;

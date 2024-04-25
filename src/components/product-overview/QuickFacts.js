@@ -8,7 +8,6 @@ const QuickFacts = () => {
     'Rebalancing Frequency': 'two-month interval',
     'Launch Date': '14.02.2024',
     'Market': 'Ethereum',
-    'Index-linked products': 'DCgen Governance Core',
   };
 
   return (
