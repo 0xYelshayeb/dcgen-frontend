@@ -73,10 +73,8 @@ const ConstituentWeights = () => {
 
     return (
         <VStack spacing={8} align="stretch">
-            <Flex direction={{ base: "column", md: "row" }} justify="space-between" alignItems="stretch">
-
                 {/* First Column: Constituent Weights */}
-                <Box width={{ base: "60%", md: "60%" }}>
+                <Box width={{ base: "100%", md: "100%" }} mb={'32'}>
                     <Heading fontSize="xl" mb={8} >Constituent Weights</Heading>
                     <VStack align="left" pr='24' spacing={'4'} >
                         {tokens.map((token, index) => (
@@ -87,14 +85,14 @@ const ConstituentWeights = () => {
                             />
                         ))}
                     </VStack>
-                    <Button mt={8} onClick={onOpen} backgroundColor={'#050A30'} _hover={{ backgroundColor: '#000A54' }}>
-                        See All
+                    <Button pl='16px' mt={4} onClick={onOpen} color='#276EF1' backgroundColor={'white'} _hover={{ backgroundColor: 'white' }}>
+                        Show All
                     </Button>
                 </Box>
 
 
                 {/* Second Column: Index-linked Products */}
-                <Box width={{ base: "40%", md: "40%" }}>
+                <Box width={{ base: "40%", md: "40%" }} mb={'40'}>
                     <Heading fontSize="xl" mb={8}>Index-linked Products</Heading>
                     <MotionBox
                         as="a"
@@ -126,7 +124,6 @@ const ConstituentWeights = () => {
                     <Box as="span" position="absolute" bottom="4" right="4" className="mgc_external_link_line icon-black" />
                     </MotionBox>
                 </Box>
-            </Flex>
 
 
             {/* Constituent Weights Modal */}
