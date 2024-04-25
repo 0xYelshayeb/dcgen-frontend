@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Box, Text, Image, HStack, VStack, Heading, Flex,
+    Box, Text, VStack, Heading, 
     Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody,
     useDisclosure, Button
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
 
 // import PieChart from './PieChart'; 
 import ConstituentDetail from './ConstituentDetail';
 import '../../styles/MingCute.css';
-import { color } from 'highcharts';
 
 const MotionBox = motion(Box);
 
