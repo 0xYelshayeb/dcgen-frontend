@@ -1,7 +1,6 @@
 // src/components/product-overview/ConstituentDetail.js
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import { colors } from '../../styles/theme';
 
 const ConstituentDetail = ({ name, percentage }) => {
   
