@@ -1,3 +1,4 @@
+// src/components/product-overview/ConstituentWeights.js
 import React, { useState, useEffect } from 'react';
 import {
     Box, Text, Image, HStack, VStack, Heading, Flex,
@@ -97,7 +98,7 @@ const ConstituentWeights = () => {
                     <MotionBox
                         as="a"
                         display="block"
-                        href="https://app.dcgen.finance"
+                        href=""
                         target="_blank"
                         rel="noopener noreferrer"
                         p='4'

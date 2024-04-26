@@ -80,7 +80,7 @@ const CallToAction = () => {
             </Text>
             <Button
                 as="a"
-                href="https://app.dcgen.finance/swap"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 height="56px"

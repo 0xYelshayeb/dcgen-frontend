@@ -84,7 +84,7 @@ const ScientificApproach = () => {
                     animate={controls}
                     whileHover="hover"
                     as="a"
-                    href="https://app.dcgen.finance"
+                    href=""
                     target="_blank"
                     rel="noopener noreferrer"
                     cursor="pointer"
