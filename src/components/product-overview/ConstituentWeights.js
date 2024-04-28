@@ -1,6 +1,7 @@
+// src/components/product-overview/ConstituentWeights.js
 import React, { useState, useEffect } from 'react';
 import {
-    Box, Text, VStack, Heading, 
+    Box, Text, VStack, Heading,
     Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody,
     useDisclosure, Button
 } from '@chakra-ui/react';
@@ -8,7 +9,7 @@ import axios from 'axios';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// import PieChart from './PieChart'; 
+
 import ConstituentDetail from './ConstituentDetail';
 import '../../styles/MingCute.css';
 
@@ -95,7 +96,7 @@ const ConstituentWeights = () => {
                     <MotionBox
                         as="a"
                         display="block"
-                        href="https://app.dcgen.finance"
+                        href=""
                         target="_blank"
                         rel="noopener noreferrer"
                         p='4'

@@ -57,7 +57,7 @@ const Header = () => {
               <li>
                 <Button
                   as="a"
-                  href="https://app.dcgen.finance/swap"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   height="40px"
